@@ -68,7 +68,7 @@ re-audit procedure, so "looks fine" is never accepted without evidence.
 - **1.2.0 (Oct 24)** — effectiveness pass: trigger-optimized description,
   render-and-re-audit workflow step, worked example with numeric house
   defaults (all hexes from `references/palettes.md`).
-- **1.3.0 (Oct 24)** — renamed the skill from `information-is-beautiful`
+- **1.3.0 (Oct 24)** — renamed the skill from `information-beautiful-design`
   to `information-is-beautiful` at the owner's request, so the folder, spec
   `name`, and slash command match the book title; frontmatter disclaimers
   (not affiliated with the author/publisher) carry the provenance weight.
@@ -84,3 +84,16 @@ cp -r public/skills/information-is-beautiful ~/.agents/skills/
 ```
 
 The `~/.zcode/skills/information-is-beautiful` symlink follows automatically.
+
+## Publication (2026-10-24)
+
+- **Public repo:** https://github.com/karefined-eng/information-is-beautiful (MIT)
+- **Live site:** https://information-is-beautiful.vercel.app — the skill is also
+  directly downloadable at
+  https://information-is-beautiful.vercel.app/skills/information-is-beautiful/SKILL.md
+- The project moved from `eleviewer/Downloads/` to `~/information-is-beautiful`
+  before publication; this folder is now the repo root (earlier path mentions
+  in this file are historical record, not current locations).
+- Vercel Deployment Protection is `all_except_custom_domains`: raw deployment
+  URLs stay behind SSO, while the production alias is public by design.
+- Topics: `agent-skills`, `data-visualization`, `information-design`, `claude-code`.
