@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f3eee1;
+  --color-paper-deep: #e9e2cf;
+  --color-ink: #17140e;
+  --color-ink-soft: #4a463c;
+  --color-tangerine: #ff5d1f;
+  --color-teal: #00a5a8;
+  --color-sun: #ffb300;
+  --color-magenta: #e22d96;
+  --color-cobalt: #3557ff;
+  --color-leaf: #4f9d3a;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Space Grotesk", "system-ui", sans-serif;
+  --font-mono: "JetBrains Mono", "ui-monospace", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-tangerine);
+  color: var(--color-paper);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+  border: 2px solid var(--color-paper);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tangerine);
+}
+
+/* ------- film grain ------- */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 90;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 0.9s steps(4) infinite;
+}
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, 3%); }
+  50% { transform: translate(3%, -2%); }
+  75% { transform: translate(-3%, -3%); }
+  100% { transform: translate(2%, 2%); }
+}
+
+/* ------- marquee ------- */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.animate-marquee-left {
+  animation: marquee-left 36s linear infinite;
+}
+.animate-marquee-right {
+  animation: marquee-right 44s linear infinite;
+}
+
+/* ------- blueprint grid ------- */
+.grid-paper {
+  background-image:
+    linear-gradient(to right, rgb(23 20 14 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(23 20 14 / 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.axis-x {
+  background-image: linear-gradient(to right, rgb(23 20 14 / 0.5) 1px, transparent 1px);
+  background-size: 16px 100%;
+}
+
+/* ------- outlined display text ------- */
+.text-hollow {
+  -webkit-text-stroke: 1.5px var(--color-ink);
+  color: transparent;
+}
+.text-hollow-paper {
+  -webkit-text-stroke: 1.5px var(--color-paper);
+  color: transparent;
+}
+
+/* ------- blink for loader cursor / live dot ------- */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1.1s steps(2) infinite;
+}
+
+@keyframes dash-spin {
+  to { transform: rotate(360deg); }
+}
+.animate-slow-spin {
+  animation: dash-spin 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right,
+  .animate-slow-spin,
+  .grain::after {
+    animation: none;
+  }
+}
