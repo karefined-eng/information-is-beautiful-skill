@@ -8,7 +8,7 @@
     {
       "name": "information-is-beautiful",
       "description": "Teach your agent the craft of honest information design: form follows data, honest scales, colour as a data channel, earned ink, annotation as narration. Original synthesis of David McCandless' public philosophy; no book content.",
-      "version": "1.3.1",
+      "version": "1.0.0",
       "source": "./",
       "skills": ["./skills/information-is-beautiful"],
       "author": {
