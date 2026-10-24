@@ -73,6 +73,13 @@ re-audit procedure, so "looks fine" is never accepted without evidence.
   `name`, and slash command match the book title; frontmatter disclaimers
   (not affiliated with the author/publisher) carry the provenance weight.
 
+- **1.3.1 (Oct 24)** — fixed the YAML-breaking colon in the description
+  frontmatter that made the skill invisible to `npx skills add` (strict YAML
+  rejects `): ` inside unquoted scalars — it reports "No skills found" with
+  no obvious cause); skill folder moved to the ecosystem-standard `skills/`
+  location and a `.claude-plugin/marketplace.json` manifest added; repo
+  description, topics, and README rebuilt around the `npx skills add` path.
+
 ## Maintenance rule
 
 The canonical copy lives in this project (`skills/information-is-beautiful/`).
@@ -80,7 +87,7 @@ After editing it, re-sync the install:
 
 ```bash
 rm -rf ~/.agents/skills/information-is-beautiful
-cp -r public/skills/information-is-beautiful ~/.agents/skills/
+cp -r skills/information-is-beautiful ~/.agents/skills/
 ```
 
 The `~/.zcode/skills/information-is-beautiful` symlink follows automatically.

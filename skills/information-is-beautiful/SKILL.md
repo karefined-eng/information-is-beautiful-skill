@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any Agent-Skills-compatible agent (Claude Code, VS Code Copilot, OpenAI Codex, Cursor, Gemini CLI and others). Pure markdown; no binaries or network required.
 metadata:
   author: karefined
-  version: "1.3.0"
+  version: "1.3.1"
   inspiration: "Information is Beautiful, David McCandless (William Collins, ISBN 978-0007492893)"
   provenance: "original synthesis of public principles; lineage documented in references/sources.md"
 ---
