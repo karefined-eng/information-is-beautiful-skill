@@ -2,10 +2,15 @@
   <img src="public/prints.jpg" width="880" alt="Editorial information design — charts that are honest enough to be trusted">
 </p>
 
-<h1 align="center">information-is-beautiful</h1>
+<h1 align="center">information-is-beautiful <span style="font-weight:400">(IIB)</span></h1>
 
 <p align="center">
   <em>Beautiful enough to be looked at. Honest enough to be trusted.</em>
+</p>
+
+<p align="center">
+  <strong>Five checkable laws. One decision table. A 25-point audit.</strong><br>
+  <strong>Your agent ships charts people actually trust — not default-software slop.</strong>
 </p>
 
 <p align="center">
