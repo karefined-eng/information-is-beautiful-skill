@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://information-is-beautiful-skill.vercel.app/sitemap.xml

@@ -3,17 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="An interactive tribute to Information is Beautiful by David McCandless — the atlas of infographics. Explore the spreads, play with data, and find legitimate ways to read the book." />
+    <meta
+      name="description"
+      content="A fan tribute to Information is Beautiful by David McCandless — and an installable Agent Skill that teaches AI agents honest, editorial data design."
+    />
     <title>Information is Beautiful — An Interactive Tribute</title>
+    <link rel="canonical" href="https://information-is-beautiful-skill.vercel.app/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="information-is-beautiful" />
+    <meta property="og:title" content="Information is Beautiful — An Interactive Tribute" />
+    <meta
+      property="og:description"
+      content="A fan tribute to David McCandless' atlas of infographics, plus an Agent Skill that teaches AI agents honest, editorial data design."
+    />
+    <meta property="og:url" content="https://information-is-beautiful-skill.vercel.app/" />
+    <meta property="og:image" content="https://information-is-beautiful-skill.vercel.app/prints.jpg" />
+    <meta property="og:image:width" content="1248" />
+    <meta property="og:image:height" content="832" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://information-is-beautiful-skill.vercel.app/#website",
+            "url": "https://information-is-beautiful-skill.vercel.app/",
+            "name": "Information is Beautiful — An Interactive Tribute",
+            "publisher": { "@id": "https://information-is-beautiful-skill.vercel.app/#author" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://information-is-beautiful-skill.vercel.app/#author",
+            "name": "karefined",
+            "url": "https://github.com/karefined-eng",
+            "sameAs": ["https://github.com/karefined-eng/information-is-beautiful-skill"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "information-is-beautiful",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any",
+            "description": "An Agent Skill that teaches AI coding agents honest, editorial-quality information design — five laws, a chart matcher, and a 25-point quality audit.",
+            "author": { "@type": "Person", "name": "karefined" },
+            "license": "https://opensource.org/licenses/MIT",
+            "url": "https://github.com/karefined-eng/information-is-beautiful-skill",
+            "installUrl": "https://github.com/karefined-eng/information-is-beautiful-skill",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static fallback: what crawlers and no-JS visitors see. The React app
+           replaces this when it mounts. Keep it truthful and self-sufficient. -->
+      <main
+        style="max-width: 42rem; margin: 0 auto; padding: 4rem 1.5rem; min-height: 100vh; background: #f3eee1; color: #17140e; font-family: Georgia, 'Times New Roman', serif; line-height: 1.6"
+      >
+        <h1>Information is Beautiful — an interactive tribute</h1>
+        <p>
+          A fan-made homage to David McCandless' atlas of infographics, and the home of
+          <strong>information-is-beautiful</strong>: an MIT-licensed Agent Skill that teaches AI coding
+          agents the craft of honest, editorial-quality information design — five checkable laws, a
+          chart-matching decision table, and a 25-point quality audit.
+        </p>
+        <h2>Install the skill</h2>
+        <p>
+          Run <code>npx skills add karefined-eng/information-is-beautiful-skill</code>, or read the
+          <a href="/skills/information-is-beautiful/SKILL.md">skill instructions directly</a>. It works with
+          Claude Code, Codex, Cursor, ZCode and any Agent-Skills-compatible agent.
+        </p>
+        <h2>Explore</h2>
+        <p>
+          The full interactive experience — the atlas, the playground, the book — loads when JavaScript is
+          enabled. Meanwhile: <a href="https://github.com/karefined-eng/information-is-beautiful-skill">browse
+          the source on GitHub</a>, or
+          <a href="/skills/information-is-beautiful/references/sources.md">read the provenance of every principle</a>.
+        </p>
+        <p><em>Beautiful enough to be looked at. Honest enough to be trusted.</em></p>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

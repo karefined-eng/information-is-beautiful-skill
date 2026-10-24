@@ -1,0 +1,18 @@
+# Information is Beautiful — skill + tribute site
+
+> An MIT-licensed Agent Skill that teaches AI coding agents honest, editorial-quality information design, plus an interactive fan tribute to David McCandless' "Information is Beautiful". Not affiliated with the author or publisher; no book content is reproduced — provenance for every principle is cited.
+
+Install: `npx skills add karefined-eng/information-is-beautiful-skill`
+
+## Docs
+
+- [SKILL.md](https://information-is-beautiful-skill.vercel.app/skills/information-is-beautiful/SKILL.md): the five laws, workflow, failure modes, worked example
+- [chart-matcher](https://information-is-beautiful-skill.vercel.app/skills/information-is-beautiful/references/chart-matcher.md): data shape → visual form decision table
+- [palettes](https://information-is-beautiful-skill.vercel.app/skills/information-is-beautiful/references/palettes.md): colour as a data channel, exact hexes
+- [quality-checklist](https://information-is-beautiful-skill.vercel.app/skills/information-is-beautiful/references/quality-checklist.md): the 25-point beauty audit
+- [sources](https://information-is-beautiful-skill.vercel.app/skills/information-is-beautiful/references/sources.md): verified lineage (McCandless, Tufte, Few, Cairo, WCAG)
+
+## Optional
+
+- [Source repository](https://github.com/karefined-eng/information-is-beautiful-skill): site + skill, MIT
+- [Origin & provenance](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/docs/origin.md): where the skill came from, lineage verification
