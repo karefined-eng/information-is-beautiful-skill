@@ -87,7 +87,7 @@ The `~/.zcode/skills/information-is-beautiful` symlink follows automatically.
 
 ## Publication (2026-10-24)
 
-- **Public repo:** https://github.com/karefined-eng/information-is-beautiful (MIT)
+- **Public repo:** https://github.com/karefined-eng/information-is-beautiful-skill (MIT)
 - **Live site:** https://information-is-beautiful.vercel.app — the skill is also
   directly downloadable at
   https://information-is-beautiful.vercel.app/skills/information-is-beautiful/SKILL.md
