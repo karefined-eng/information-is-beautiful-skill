@@ -88,9 +88,17 @@ The `~/.zcode/skills/information-is-beautiful` symlink follows automatically.
 ## Publication (2026-10-24)
 
 - **Public repo:** https://github.com/karefined-eng/information-is-beautiful-skill (MIT)
-- **Live site:** https://information-is-beautiful.vercel.app — the skill is also
+- **Live site:** https://information-is-beautiful-skill.vercel.app — the skill is also
   directly downloadable at
-  https://information-is-beautiful.vercel.app/skills/information-is-beautiful/SKILL.md
+  https://information-is-beautiful-skill.vercel.app/skills/information-is-beautiful/SKILL.md
+- Repo and Vercel project renamed from `information-is-beautiful` to
+  `information-is-beautiful-skill` on 2026-10-24 to keep the trademarked book
+  title out of the product's own name; the old Vercel domain was removed
+  (404) and the old GitHub URL redirects (301).
+- Site additions (2026-10-24): TED talk embedded in the Author section via the
+  official TED embed player (CC BY-NC-ND, click-to-load — no TED scripts run
+  until the visitor asks), and opt-in UI sounds (WebAudio synthesis, muted by
+  default, toggle in the nav, preference persisted).
 - The project moved from `eleviewer/Downloads/` to `~/information-is-beautiful`
   before publication; this folder is now the repo root (earlier path mentions
   in this file are historical record, not current locations).
