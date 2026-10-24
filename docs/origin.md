@@ -23,7 +23,7 @@ evidence, gathered 2026-10-24:
   (SEO skills), i.e. this project is not part of that import pattern.
 
 The three historical zips were consolidated on 2026-10-24 into one canonical
-copy (this project's `public/skills/information-is-beautiful/`), installed
+copy (this project's `skills/information-is-beautiful/`), installed
 to `~/.agents/skills/` with a symlink at `~/.zcode/skills/`, and the zips were
 deleted after their unique content (the README) was rescued.
 
@@ -75,7 +75,7 @@ re-audit procedure, so "looks fine" is never accepted without evidence.
 
 ## Maintenance rule
 
-The canonical copy lives in this project (`public/skills/information-is-beautiful/`).
+The canonical copy lives in this project (`skills/information-is-beautiful/`).
 After editing it, re-sync the install:
 
 ```bash

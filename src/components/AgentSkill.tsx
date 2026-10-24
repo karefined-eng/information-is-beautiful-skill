@@ -528,7 +528,7 @@ export default function AgentSkill() {
               {failed ? (
                 <p className="font-mono text-xs leading-relaxed text-paper/60">
                   (raw files not reachable in this preview — they live in
-                  <span className="text-teal"> public/skills/information-is-beautiful/ </span>
+                  <span className="text-teal"> skills/information-is-beautiful/ </span>
                   inside the project)
                 </p>
               ) : content ? (

@@ -1,56 +1,87 @@
-# Information is Beautiful — skill + tribute site
+<p align="center">
+  <img src="public/prints.jpg" width="880" alt="Editorial information design — charts that are honest enough to be trusted">
+</p>
 
-A fan-made tribute to David McCandless' _Information is Beautiful_, and home
-of **`information-is-beautiful`** — an MIT-licensed [Agent Skill](https://agentskills.io)
-that teaches AI agents to design honest, editorial-quality charts,
-infographics, KPI dashboards, and data-driven layouts.
+<h1 align="center">information-is-beautiful</h1>
 
-Not affiliated with the author or publisher. No content from the book is
-reproduced anywhere — the lineage of every principle is documented and cited
-in [`public/skills/information-is-beautiful/references/sources.md`](public/skills/information-is-beautiful/references/sources.md).
+<p align="center">
+  <em>Beautiful enough to be looked at. Honest enough to be trusted.</em>
+</p>
 
-## What's inside
+<p align="center">
+  <a href="https://github.com/karefined-eng/information-is-beautiful-skill/stargazers"><img src="https://img.shields.io/github/stars/karefined-eng/information-is-beautiful-skill?style=flat-square&color=111111&label=stars" alt="Stars"></a>
+  <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
+  <a href="https://information-is-beautiful-skill.vercel.app"><img src="https://img.shields.io/badge/demo-live-111111?style=flat-square" alt="Live site"></a>
+  <img src="https://img.shields.io/badge/works%20with-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20Cursor%20%C2%B7%20ZCode-111111?style=flat-square" alt="Works with Agent-Skills-compatible agents">
+</p>
 
-```
-├─ public/skills/information-is-beautiful/   # the Agent Skill
-│  ├─ SKILL.md                               # five laws, workflow, worked example
-│  ├─ README.md                              # install & invocation guide
-│  └─ references/                            # chart-matcher, palettes,
-│                                            # quality-checklist, sources
-├─ src/                                      # Vite + React + TS tribute site
-│  └─ components/AgentSkill.tsx              # showcases the skill
-└─ docs/origin.md                            # origin story & verified lineage
-```
+---
 
-## Install the skill
+An [Agent Skill](https://agentskills.io) that teaches AI coding agents the craft of
+**honest, editorial-quality information design** — charts, graphs, infographics,
+KPI dashboards, and data-driven layouts that follow one discipline: *form follows
+data*. It is an original synthesis of David McCandless' publicly stated design
+philosophy and the wider craft lineage (Tufte, Few, Cairo, WCAG). It contains
+**nothing from the book** — every principle's lineage is cited in
+[`skills/information-is-beautiful/references/sources.md`](skills/information-is-beautiful/references/sources.md).
 
-Any Agent-Skills-compatible agent (Claude Code, ZCode, VS Code Copilot,
-Cursor, Gemini CLI, …):
+## Install
+
+**One command, any Agent-Skills-compatible agent:**
 
 ```bash
-cp -r public/skills/information-is-beautiful ~/.agents/skills/
-ln -s ~/.agents/skills/information-is-beautiful ~/.zcode/skills/   # ZCode
-cp -r public/skills/information-is-beautiful ~/.claude/skills/     # Claude Code
+npx skills add karefined-eng/information-is-beautiful-skill
 ```
 
-Then invoke it explicitly — everything after the command is the brief:
+**Or copy the folder** wherever your agent loads skills:
+
+```bash
+# Claude Code
+cp -r skills/information-is-beautiful ~/.claude/skills/
+
+# ZCode
+cp -r skills/information-is-beautiful ~/.agents/skills/
+ln -s ~/.agents/skills/information-is-beautiful ~/.zcode/skills/
+```
+
+## What your agent gets
+
+Five checkable laws it must satisfy before shipping any visual:
+
+1. **Form follows data** — geometry matches the comparison, chosen via a
+   [decision-table matcher](skills/information-is-beautiful/references/chart-matcher.md)
+   (quantity / time / category / geography / network / hierarchy), never "pick a chart type and force data in".
+2. **Honest scales** — axes start at zero, area encodes by area, units named everywhere.
+3. **Colour is a data channel** — hue = category, intensity = magnitude, one accent hue per visual, from a
+   [house palette](skills/information-is-beautiful/references/palettes.md) with exact hexes.
+4. **Ink must be earned** — chartjunk deleted aggressively: no 3D, no dual axes, no legend wallpaper.
+5. **Annotation is narration** — the title states the *insight* ("Bailouts dwarf malaria funding 40:1"), not the topic.
+
+Plus a [25-point quality checklist](skills/information-is-beautiful/references/quality-checklist.md)
+the agent must pass before delivery, a render-and-re-audit step, and a worked
+example with numeric defaults. Pure markdown — no binaries, no network, no scripts.
+
+## Use
 
 ```
 /information-is-beautiful redesign this bar chart honestly
 /information-is-beautiful pick the right form for: country, gdp_2024, population
+/information-is-beautiful audit this SVG against the checklist
 ```
 
-…or let it auto-trigger on chart, dashboard, and infographic tasks.
+Or just ask for a chart, dashboard, or infographic — the description match triggers it automatically.
 
-## Run the site
+## See it live
 
-```bash
-npm install
-npm run dev
-```
+The [tribute site](https://information-is-beautiful-skill.vercel.app) showcases the
+skill, serves it for
+[direct download](https://information-is-beautiful-skill.vercel.app/skills/information-is-beautiful/SKILL.md),
+and tells the [origin story](docs/origin.md) — including the verified lineage of
+every principle.
 
-## License
+## Provenance
 
-MIT — see [LICENSE](LICENSE). Remix freely; just don't imply affiliation with
-or endorsement by David McCandless or HarperCollins, and keep
+Fan-made homage, MIT-licensed for remixing. Not affiliated with or endorsed by
+David McCandless or HarperCollins. No text, figures, or datasets from the book are
+reproduced; cite the authentic sources, never this skill. Keep
 `references/sources.md` intact so provenance survives the fork.
