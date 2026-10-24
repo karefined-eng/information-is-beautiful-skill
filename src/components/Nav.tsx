@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { Asterisk } from "lucide-react";
+import { Asterisk, Volume2, VolumeX } from "lucide-react";
+import { useEffect, useState } from "react";
+import { initSound, setSound, soundEnabled } from "../utils/sound";
 
 const links = [
   { label: "The Book", href: "#book" },
@@ -9,6 +11,12 @@ const links = [
 ];
 
 export default function Nav() {
+  const [sound, setSoundState] = useState(false);
+  useEffect(() => {
+    initSound();
+    setSoundState(soundEnabled());
+  }, []);
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -39,12 +47,27 @@ export default function Nav() {
           ))}
         </nav>
 
-        <a
-          href="#get"
-          className="rounded-full border border-ink bg-ink px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-paper transition-colors hover:border-tangerine hover:bg-tangerine"
-        >
-          Get the book
-        </a>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              const next = !sound;
+              setSound(next);
+              setSoundState(next);
+            }}
+            aria-pressed={sound}
+            title={sound ? "Sound on — hovers and clicks chirp" : "Sound off — click to enable"}
+            className="grid h-9 w-9 place-items-center rounded-full border border-ink/15 text-ink-soft transition-colors hover:border-tangerine hover:text-tangerine"
+          >
+            {sound ? <Volume2 className="h-4 w-4" /> : <VolumeX className="h-4 w-4" />}
+          </button>
+          <a
+            href="#get"
+            className="rounded-full border border-ink bg-ink px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-paper transition-colors hover:border-tangerine hover:bg-tangerine"
+          >
+            Get the book
+          </a>
+        </div>
       </div>
     </motion.header>
   );

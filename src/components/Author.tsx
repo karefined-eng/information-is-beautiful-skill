@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { ArrowUpRight, Play, Quote } from "lucide-react";
 import { tedTalk } from "../data/book";
 import SectionHead from "./SectionHead";
@@ -12,6 +13,7 @@ const tomes = [
 ];
 
 export default function Author() {
+  const [showTalk, setShowTalk] = useState(false);
   return (
     <section className="relative border-t border-paper/10 bg-ink px-5 pb-24 pt-4 text-paper md:px-14 md:pb-36">
       <SectionHead
@@ -53,6 +55,11 @@ export default function Author() {
             href={tedTalk}
             target="_blank"
             rel="noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowTalk((v) => !v);
+            }}
+            aria-expanded={showTalk}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -72,6 +79,38 @@ export default function Author() {
             </span>
             <ArrowUpRight className="h-5 w-5 shrink-0 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-ink" />
           </motion.a>
+
+          {showTalk && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease }}
+              className="mt-6 overflow-hidden rounded-2xl border border-paper/20"
+            >
+              <div className="relative aspect-video">
+                <iframe
+                  src="https://embed.ted.com/talks/david_mccandless_the_beauty_of_data_visualization"
+                  title="The beauty of data visualization — David McCandless (TEDGlobal 2010)"
+                  className="absolute inset-0 h-full w-full"
+                  frameBorder={0}
+                  scrolling="no"
+                  loading="lazy"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <p className="px-5 py-3 font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-paper/40">
+                official TED embed — CC BY-NC-ND © David McCandless / TED
+              </p>
+              <button
+                type="button"
+                onClick={() => setShowTalk(false)}
+                className="w-full border-t border-paper/15 bg-paper/5 py-2.5 font-mono text-[10px] uppercase tracking-[0.25em] text-paper/50 transition-colors hover:text-tangerine"
+              >
+                hide video
+              </button>
+            </motion.div>
+          )}
         </div>
 
         {/* tomes ledger */}
