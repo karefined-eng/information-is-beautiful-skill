@@ -62,23 +62,20 @@ re-audit procedure, so "looks fine" is never accepted without evidence.
 
 ## Version history
 
-- **1.0.x (Oct 19)** — original authored versions (zip lineages).
-- **1.1.0 (Oct 24)** — consolidation merge: newest content restored to proper
-  markdown, README rescued, sources unioned.
-- **1.2.0 (Oct 24)** — effectiveness pass: trigger-optimized description,
-  render-and-re-audit workflow step, worked example with numeric house
-  defaults (all hexes from `references/palettes.md`).
-- **1.3.0 (Oct 24)** — renamed the skill from `information-beautiful-design`
-  to `information-is-beautiful` at the owner's request, so the folder, spec
-  `name`, and slash command match the book title; frontmatter disclaimers
-  (not affiliated with the author/publisher) carry the provenance weight.
+Public releases follow semver from 1.0.0; earlier numbers were internal
+pre-public drafts and are kept below as lineage only.
 
-- **1.3.1 (Oct 24)** — fixed the YAML-breaking colon in the description
-  frontmatter that made the skill invisible to `npx skills add` (strict YAML
-  rejects `): ` inside unquoted scalars — it reports "No skills found" with
-  no obvious cause); skill folder moved to the ecosystem-standard `skills/`
-  location and a `.claude-plugin/marketplace.json` manifest added; repo
-  description, topics, and README rebuilt around the `npx skills add` path.
+- **1.0.0 (Oct 24) — first public release.** Skill at the ecosystem-standard
+  `skills/<name>/` location with a `.claude-plugin/marketplace.json`
+  manifest, installable via `npx skills add`; trigger-optimized description,
+  render-and-re-audit workflow step, worked example, landing-page README,
+  verified provenance, Google site verification.
+- **Internal drafts (Oct 19–24, pre-public):** original authored zips,
+  consolidation merge (README rescued, sources unioned, markdown restored),
+  effectiveness pass (trigger description, re-audit step, worked example),
+  rename from `information-beautiful-design`, ecosystem-discovery fixes
+  (skills/ layout, marketplace manifest, YAML description colon). None of
+  these ever shipped to anyone, so the public count starts at 1.0.0.
 
 ## Maintenance rule
 
