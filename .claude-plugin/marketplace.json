@@ -1,0 +1,23 @@
+{
+  "name": "information-is-beautiful",
+  "description": "information-is-beautiful: honest, editorial-quality information design for coding agents — five laws, a chart matcher, and a 25-point beauty audit for charts, dashboards and infographics.",
+  "owner": {
+    "name": "karefined"
+  },
+  "plugins": [
+    {
+      "name": "information-is-beautiful",
+      "description": "Teach your agent the craft of honest information design: form follows data, honest scales, colour as a data channel, earned ink, annotation as narration. Original synthesis of David McCandless' public philosophy; no book content.",
+      "version": "1.3.0",
+      "source": "./",
+      "skills": ["./skills/information-is-beautiful"],
+      "author": {
+        "name": "karefined"
+      },
+      "homepage": "https://information-is-beautiful-skill.vercel.app",
+      "repository": "https://github.com/karefined-eng/information-is-beautiful-skill",
+      "license": "MIT",
+      "keywords": ["skills", "data-visualization", "charts", "infographics", "dashboards", "design", "information-design"]
+    }
+  ]
+}
