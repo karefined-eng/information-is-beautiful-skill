@@ -51,6 +51,12 @@ ln -s ~/.agents/skills/information-is-beautiful ~/.zcode/skills/
 
 ## What your agent gets
 
+<p align="center">
+  <img src="examples/before-after.svg" width="880" alt="The same support-ticket data drawn twice: left, default software — truncated axis, legend, topic title; right, information-is-beautiful — insight in the title, honest scales, one accent colour, direct labels, source line.">
+</p>
+
+<p align="center"><sub>Same data, two agents. Left is what you get by default (note where APAC and LATAM went — the axis starts at 100). Right follows the five laws.</sub></p>
+
 Five checkable laws it must satisfy before shipping any visual:
 
 1. **Form follows data** — geometry matches the comparison, chosen via a
