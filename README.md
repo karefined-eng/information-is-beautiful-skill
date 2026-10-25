@@ -49,6 +49,26 @@ cp -r skills/information-is-beautiful ~/.agents/skills/
 ln -s ~/.agents/skills/information-is-beautiful ~/.zcode/skills/
 ```
 
+<details>
+<summary><strong>Want the short command?</strong> Create a local <code>/iib</code> alias</summary>
+
+Keep it out of the published skill — a second listed skill would split install counts.
+A five-line local wrapper is all it takes:
+
+```bash
+mkdir -p ~/.agents/skills/iib && cat > ~/.agents/skills/iib/SKILL.md <<'EOF'
+---
+name: iib
+description: Fast alias for information-is-beautiful — behave exactly like that skill, with the typed arguments as the design brief.
+license: MIT
+---
+Load and fully follow ~/.agents/skills/information-is-beautiful/SKILL.md and its
+references/ folder; treat the user's typed arguments as its design brief.
+EOF
+ln -s ~/.agents/skills/iib ~/.zcode/skills/iib   # ZCode (optional)
+```
+</details>
+
 ## What your agent gets
 
 <p align="center">
