@@ -52,10 +52,10 @@ ln -s ~/.agents/skills/information-is-beautiful ~/.zcode/skills/
 ## What your agent gets
 
 <p align="center">
-  <img src="examples/before-after.svg" width="880" alt="The same support-ticket data drawn twice: left, default software — truncated axis, legend, topic title; right, information-is-beautiful — insight in the title, honest scales, one accent colour, direct labels, source line.">
+  <img src="examples/before-after.svg" width="880" alt="Ghana's real inflation series drawn twice: left, a default-software 3D pie treating time-series rates as parts of a whole; right, an information-is-beautiful line chart — insight in the title, honest time-proportional axis, direct labels, source cited.">
 </p>
 
-<p align="center"><sub>Same data, two agents. Left is what you get by default (note where APAC and LATAM went — the axis starts at 100). Right follows the five laws.</sub></p>
+<p align="center"><sub>Real data — Ghana's CPI, year-on-year (Ghana Statistical Service). Left: a 3D pie of rates over time, shares of a whole that never existed. Right: the five laws — the insight is the title, and every point carries its value and its source.</sub></p>
 
 Five checkable laws it must satisfy before shipping any visual:
 
