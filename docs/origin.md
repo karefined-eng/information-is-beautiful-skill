@@ -70,6 +70,10 @@ pre-public drafts and are kept below as lineage only.
   manifest, installable via `npx skills add`; trigger-optimized description,
   render-and-re-audit workflow step, worked example, landing-page README,
   verified provenance, Google site verification.
+- **1.1.0 (Oct 25)** — adopted four patterns from Vercel's internal
+  product-design skill: a Request-modes table (Shape/Build/Audit/Fix with
+  narrowest-mode rule), a materiality definition, a "design every data
+  reality" state list, and impact-ordered audit output.
 - **Internal drafts (Oct 19–24, pre-public):** original authored zips,
   consolidation merge (README rescued, sources unioned, markdown restored),
   effectiveness pass (trigger description, re-audit step, worked example),

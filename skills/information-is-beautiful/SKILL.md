@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any Agent-Skills-compatible agent (Claude Code, VS Code Copilot, OpenAI Codex, Cursor, Gemini CLI and others). Pure markdown; no binaries or network required.
 metadata:
   author: karefined
-  version: "1.0.0"
+  version: "1.1.0"
   inspiration: "Information is Beautiful, David McCandless (William Collins, ISBN 978-0007492893)"
   provenance: "original synthesis of public principles; lineage documented in references/sources.md"
 ---
@@ -23,6 +23,19 @@ When invoked directly, e.g. `/information-is-beautiful <brief>`, the typed argum
 If the brief lacks data, ask for it or state clearly that your output uses illustrative placeholder values.
 
 Resolve companion files relative to the skill directory (`${CLAUDESKILLDIR}/references/…` in Claude Code environments) when reading them programmatically.
+
+## Request modes
+
+Resolve the mode from the user's verb and artifact before acting. When intent is ambiguous, choose the narrowest mode. A URL, file, or screenshot identifies scope — it does not by itself authorize edits.
+
+| Mode | Typical request | Required behavior |
+| ---- | --------------- | ----------------- |
+| Shape | "How should I visualize this?", a dataset with no settled chart | Interrogate the data, pick the form via `references/chart-matcher.md`, define the insight sentence. Do not draw unless asked. |
+| Build | "Make a chart of this", "turn this CSV into an infographic" | Apply the five laws end to end; deliver the artifact plus insight sentence, source line, and checklist result. |
+| Audit | "What's wrong with this chart?", "is this misleading?" | Score against `references/quality-checklist.md`; report findings ordered by reader impact, each with the smallest concrete fix. Do not edit unless asked. |
+| Fix | "This chart is misleading / ugly / cluttered" | Diagnose against the laws, then make the smallest change that restores honesty and legibility. |
+
+A **material** change alters what the reader will conclude from the data — scale, comparison, emphasis, or omissions. Recolouring and label wording usually are not material; a changed baseline or a dropped series always is.
 
 ## The five laws
 
@@ -55,6 +68,10 @@ Check every artifact against all five before shipping:
 - **Emphasis budget.** Only one thing may shout: one accent hue, one heavy stroke, one bold number. Everything else is a speaking voice or a whisper.
 - **Scale awareness.** Honour magnitude: a billion and a million must *feel* different (this is the whole trick of the Billion-Dollar-Gram idea: same units, comparable areas).
 
+## Design every data reality
+
+The happy path is not the data. Before delivery, check how the artifact behaves with: an empty dataset; a single point; ties; missing or null values; outliers far outside the range; negative, decimal, and huge values; zero as a meaningful value; more categories than fit; labels longer than their space; and numerals, currencies, or units localized differently (including RTL). Choose each treatment deliberately — a chart that only works on the average case is a defect.
+
 ## Interaction (web & app output)
 
 - Default state must work as a static image; interaction is progressive disclosure, never a crutch.
@@ -83,6 +100,7 @@ Check every artifact against all five before shipping:
 - **SVG** for editorial/print/web vector work; **HTML/CSS** for text-heavy data lists; **Canvas/WebGL** only for > ~10k marks.
 - Favour mono-spaced numerals (tabular figures) inside charts. Label in sentence case, 9–11 px minimum at final size.
 - Always hand over: the graphic, the insight sentence, the source line, and the checklist result.
+- For audits, lead with findings ordered by reader impact: first anything that misleads (scale, omission, false emphasis), then legibility failures, then craft. Each finding names where it is, which law it breaks, the consequence for the reader, and the smallest concrete fix.
 
 ## Worked example
 
