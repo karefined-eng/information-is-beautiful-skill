@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" font-family="Arial, Helvetica, sans-serif">
+  <!-- Data (real, sourced): Ember Global Electricity Review 2025 (2024 data), share of world
+       electricity generation — coal 34, gas 22, other fossil 3 | hydro 14, nuclear 9, wind 8,
+       solar 7, bioenergy & other 3. Renewables 32% confirmed by Reuters, Apr 2025. -->
+  <rect width="1200" height="470" fill="#ffffff"/>
+
+  <text x="16" y="22" font-size="12" fill="#a5a5a5" font-weight="bold">&#10007; default software</text>
+  <text x="616" y="22" font-size="12" fill="#ff5d1f" font-weight="bold">&#10003; with information-is-beautiful</text>
+  <line x1="599" y1="8" x2="599" y2="462" stroke="#dddddd" stroke-width="1"/>
+
+  <!-- ==================== BEFORE: 8-slice exploded 3D pie ==================== -->
+  <rect x="10" y="30" width="580" height="430" fill="#ffffff" stroke="#bfbfbf"/>
+  <text x="290" y="55" text-anchor="middle" font-size="15" font-weight="bold" fill="#404040">World Electricity Generation Mix 2024</text>
+
+  <path d="M 160 225 A 130 85 0 0 0 420 225 L 420 247 A 130 85 0 0 1 160 247 Z" fill="#808080"/>
+  <path d="M 300.5 219.2 L 300.5 134.2 A 130 85 0 0 1 410.3 264.7 Z" fill="#4472C4"/>
+  <path d="M 290 225 L 399.8 270.5 A 130 85 0 0 1 242.1 304.0 Z" fill="#ED7D31"/>
+  <path d="M 290 225 L 242.1 304.0 A 130 85 0 0 1 166.4 251.3 Z" fill="#A5A5A5"/>
+  <path d="M 290 225 L 166.4 251.3 A 130 85 0 0 1 164.1 203.9 Z" fill="#FFC000"/>
+  <path d="M 290 225 L 164.1 203.9 A 130 85 0 0 1 195.2 166.8 Z" fill="#5B9BD5"/>
+  <path d="M 290 225 L 195.2 166.8 A 130 85 0 0 1 242.1 146.0 Z" fill="#70AD47"/>
+  <path d="M 290 225 L 242.1 146.0 A 130 85 0 0 1 265.6 141.5 Z" fill="#264478"/>
+  <path d="M 290 225 L 265.6 141.5 A 130 85 0 0 1 290 140 Z" fill="#9E480E"/>
+
+  <rect x="440" y="90" width="140" height="118" fill="#ffffff" stroke="#bfbfbf"/>
+  <g font-size="9" fill="#404040">
+    <rect x="446" y="96"  width="10" height="10" fill="#4472C4"/><text x="461" y="105">Coal 34%</text>
+    <rect x="446" y="112" width="10" height="10" fill="#ED7D31"/><text x="461" y="121">Gas 22%</text>
+    <rect x="446" y="128" width="10" height="10" fill="#A5A5A5"/><text x="461" y="137">Hydro 14%</text>
+    <rect x="446" y="144" width="10" height="10" fill="#FFC000"/><text x="461" y="153">Nuclear 9%</text>
+    <rect x="446" y="160" width="10" height="10" fill="#5B9BD5"/><text x="461" y="169">Wind 8%</text>
+    <rect x="446" y="176" width="10" height="10" fill="#70AD47"/><text x="461" y="185">Solar 7%</text>
+    <rect x="446" y="192" width="10" height="10" fill="#264478"/><text x="461" y="201">Bio 3%</text>
+    <rect x="446" y="208" width="10" height="10" fill="#9E480E"/><text x="461" y="217">Oil 3%</text>
+  </g>
+  <text x="300" y="440" text-anchor="middle" font-size="9" fill="#a5a5a5" font-style="italic">eight slices, one exploded, zero insight &#8212; the 59/41 question is invisible</text>
+
+  <!-- ==================== AFTER: aggregated to the comparison that matters ==================== -->
+  <text x="680" y="52" font-size="17" font-weight="bold" fill="#17140e" font-family="Georgia, 'Times New Roman', serif">Fossil fuels still make 3 of every 5 units</text>
+  <text x="680" y="72" font-size="17" font-weight="bold" fill="#17140e" font-family="Georgia, 'Times New Roman', serif">of the world's electricity</text>
+
+  <!-- percentage scale -->
+  <line x1="680" y1="190" x2="1120" y2="190" stroke="#17140e" stroke-opacity="0.2"/>
+  <g font-size="9" fill="#4a463c" font-family="'Courier New', monospace" text-anchor="middle">
+    <text x="680" y="182">0%</text><text x="790" y="182">25%</text><text x="900" y="182">50%</text>
+    <text x="1010" y="182">75%</text><text x="1120" y="182">100%</text>
+  </g>
+
+  <!-- the bar: fossil 59% / low-carbon 41% -->
+  <rect x="680" y="210" width="259.6" height="44" fill="#ff5d1f"/>
+  <rect x="939.6" y="210" width="180.4" height="44" fill="#4a463c"/>
+  <text x="809.8" y="237" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif">FOSSIL 59%</text>
+  <text x="1029.8" y="237" text-anchor="middle" font-size="12" font-weight="bold" fill="#f3eee1" font-family="Georgia, 'Times New Roman', serif">LOW-CARBON 41%</text>
+
+  <!-- constituent breakdown under each segment -->
+  <g font-size="10" font-family="'Courier New', monospace" fill="#4a463c" text-anchor="middle">
+    <text x="809.8" y="276">coal 34 &#183; gas 22 &#183; other fossil 3</text>
+    <text x="1029.8" y="276">hydro 14 &#183; nuclear 9</text>
+    <text x="1029.8" y="291">wind 8 &#183; solar 7 &#183; bio+other 3</text>
+  </g>
+  <line x1="939.6" y1="254" x2="939.6" y2="262" stroke="#17140e" stroke-width="1"/>
+
+  <text x="1120" y="424" text-anchor="end" font-size="9" fill="#4a463c" font-family="'Courier New', monospace">Source: Ember Global Electricity Review 2025 (2024 data) &#183; Reuters, Apr 2025</text>
+</svg>

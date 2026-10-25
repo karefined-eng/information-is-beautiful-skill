@@ -71,13 +71,32 @@ ln -s ~/.agents/skills/iib ~/.zcode/skills/iib   # ZCode (optional)
 
 ## What your agent gets
 
+**Three data shapes, three different forms.** A ranking becomes sorted bars, a composition becomes
+one aggregated bar, a time series becomes a line — the
+[chart-matcher](skills/information-is-beautiful/references/chart-matcher.md) picks the geometry,
+and the five laws keep it honest. Every number in these demos is real and cited.
+
+**1 · Ranking — the comparison hides until you sort.** Sloppy software lists countries alphabetically
+with an axis too small for the giants, so India and China clip flat and look identical. The skill
+sorts by magnitude and accents the only comparison that matters:
+
+<p align="center">
+  <img src="examples/ranking.svg" width="880" alt="Ten most populous countries drawn twice: left, alphabetical bars with a clipped axis where India and China look identical; right, sorted horizontal bars with India and China accented and every value labeled.">
+</p>
+
+**2 · Composition — a pie is the wrong answer to a simple question.** Eight slices, one exploded,
+nothing said. The matcher aggregates to the comparison the reader actually cares about:
+
+<p align="center">
+  <img src="examples/composition.svg" width="880" alt="World electricity mix drawn twice: left, an 8-slice exploded 3D pie with a legend; right, one stacked bar answering fossil 59% vs low-carbon 41% with the sources broken out beneath.">
+</p>
+
+**3 · Time — and yes, we can localize.** Ghana's real CPI collapse, from the 54% peak to holding
+near 5% (Ghana Statistical Service):
+
 <p align="center">
   <img src="examples/before-after.svg" width="880" alt="Ghana's real inflation series drawn twice: left, a default-software 3D pie treating time-series rates as parts of a whole; right, an information-is-beautiful line chart — insight in the title, honest time-proportional axis, direct labels, source cited.">
 </p>
-
-<p align="center"><sub>Real data — Ghana's CPI, year-on-year (Ghana Statistical Service). Left: a 3D pie of rates over time, shares of a whole that never existed. Right: the five laws — the insight is the title, and every point carries its value and its source.</sub></p>
-
-Five checkable laws it must satisfy before shipping any visual:
 
 1. **Form follows data** — geometry matches the comparison, chosen via a
    [decision-table matcher](skills/information-is-beautiful/references/chart-matcher.md)

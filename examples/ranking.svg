@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" font-family="Arial, Helvetica, sans-serif">
+  <!-- Data (real, sourced): UN World Population Prospects 2024, mid-2024 estimates, millions —
+       India 1,450 | China 1,419 | USA 345 | Indonesia 279 | Pakistan 251 | Nigeria 233 |
+       Brazil 212 | Bangladesh 174 | Russia 144 | Ethiopia 130 -->
+  <rect width="1200" height="470" fill="#ffffff"/>
+
+  <text x="16" y="22" font-size="12" fill="#a5a5a5" font-weight="bold">&#10007; default software</text>
+  <text x="616" y="22" font-size="12" fill="#ff5d1f" font-weight="bold">&#10003; with information-is-beautiful</text>
+  <line x1="599" y1="8" x2="599" y2="462" stroke="#dddddd" stroke-width="1"/>
+
+  <!-- ==================== BEFORE: alphabetical soup, clipped axis ==================== -->
+  <rect x="10" y="30" width="580" height="430" fill="#ffffff" stroke="#bfbfbf"/>
+  <text x="300" y="55" text-anchor="middle" font-size="15" font-weight="bold" fill="#404040">Country Populations List</text>
+
+  <!-- gridline wallpaper every 50M -->
+  <g stroke="#d9d9d9" stroke-width="1">
+    <line x1="90" y1="358" x2="470" y2="358"/><line x1="90" y1="326" x2="470" y2="326"/>
+    <line x1="90" y1="294" x2="470" y2="294"/><line x1="90" y1="262" x2="470" y2="262"/>
+    <line x1="90" y1="230" x2="470" y2="230"/><line x1="90" y1="198" x2="470" y2="198"/>
+    <line x1="90" y1="166" x2="470" y2="166"/><line x1="90" y1="134" x2="470" y2="134"/>
+    <line x1="90" y1="102" x2="470" y2="102"/>
+  </g>
+  <g font-size="8" fill="#808080" text-anchor="end">
+    <text x="85" y="393">0</text><text x="85" y="361">50</text><text x="85" y="329">100</text>
+    <text x="85" y="297">150</text><text x="85" y="265">200</text><text x="85" y="233">250</text>
+    <text x="85" y="201">300</text><text x="85" y="169">350</text><text x="85" y="137">400</text>
+    <text x="85" y="105">450</text><text x="85" y="73">500</text>
+  </g>
+
+  <!-- bars in ALPHABETICAL order; axis ends at 500M so India and China clip flat -->
+  <g stroke="#a6a6a6" stroke-width="0.5">
+    <rect x="95"  y="278.6" width="28" height="111.4" fill="#4472C4"/><!-- Bangladesh 174 -->
+    <rect x="131" y="254.3" width="28" height="135.7" fill="#ED7D31"/><!-- Brazil 212 -->
+    <rect x="167" y="70"    width="28" height="320"   fill="#A5A5A5"/><!-- China 1419 CLIPPED -->
+    <rect x="203" y="306.8" width="28" height="83.2"  fill="#FFC000"/><!-- Ethiopia 130 -->
+    <rect x="239" y="70"    width="28" height="320"   fill="#4472C4"/><!-- India 1450 CLIPPED -->
+    <rect x="275" y="211.4" width="28" height="178.6" fill="#ED7D31"/><!-- Indonesia 279 -->
+    <rect x="311" y="240.9" width="28" height="149.1" fill="#A5A5A5"/><!-- Nigeria 233 -->
+    <rect x="347" y="229.4" width="28" height="160.6" fill="#FFC000"/><!-- Pakistan 251 -->
+    <rect x="383" y="297.8" width="28" height="92.2"  fill="#4472C4"/><!-- Russia 144 -->
+    <rect x="419" y="169.2" width="28" height="220.8" fill="#ED7D31"/><!-- USA 345 -->
+  </g>
+
+  <line x1="90" y1="70" x2="90" y2="390" stroke="#808080"/>
+  <line x1="90" y1="390" x2="480" y2="390" stroke="#808080"/>
+  <g font-size="8" fill="#808080">
+    <text x="109" y="400" transform="rotate(-45 109 400)">Bangladesh</text>
+    <text x="145" y="400" transform="rotate(-45 145 400)">Brazil</text>
+    <text x="181" y="400" transform="rotate(-45 181 400)">China</text>
+    <text x="217" y="400" transform="rotate(-45 217 400)">Ethiopia</text>
+    <text x="253" y="400" transform="rotate(-45 253 400)">India</text>
+    <text x="289" y="400" transform="rotate(-45 289 400)">Indonesia</text>
+    <text x="325" y="400" transform="rotate(-45 325 400)">Nigeria</text>
+    <text x="361" y="400" transform="rotate(-45 361 400)">Pakistan</text>
+    <text x="397" y="400" transform="rotate(-45 397 400)">Russia</text>
+    <text x="433" y="400" transform="rotate(-45 433 400)">USA</text>
+  </g>
+  <text x="300" y="440" text-anchor="middle" font-size="9" fill="#a5a5a5" font-style="italic">alphabetical order, axis too small &#8212; India and China clip flat and look identical</text>
+
+  <!-- ==================== AFTER: sorted, honest, the comparison accented ==================== -->
+  <text x="680" y="52" font-size="17" font-weight="bold" fill="#17140e" font-family="Georgia, 'Times New Roman', serif">India has passed China as the</text>
+  <text x="680" y="72" font-size="17" font-weight="bold" fill="#17140e" font-family="Georgia, 'Times New Roman', serif">world's most populous nation</text>
+
+  <g>
+    <rect x="782" y="100" width="300"   height="16" fill="#ff5d1f"/>
+    <rect x="782" y="126" width="293.7" height="16" fill="#ff5d1f"/>
+    <rect x="782" y="152" width="71.4"  height="16" fill="#4a463c"/>
+    <rect x="782" y="178" width="57.7"  height="16" fill="#4a463c"/>
+    <rect x="782" y="204" width="51.9"  height="16" fill="#4a463c"/>
+    <rect x="782" y="230" width="48.2"  height="16" fill="#4a463c"/>
+    <rect x="782" y="256" width="43.9"  height="16" fill="#4a463c"/>
+    <rect x="782" y="282" width="36"    height="16" fill="#4a463c"/>
+    <rect x="782" y="308" width="29.8"  height="16" fill="#4a463c"/>
+    <rect x="782" y="334" width="26.9"  height="16" fill="#4a463c"/>
+  </g>
+  <line x1="782" y1="95" x2="782" y2="355" stroke="#17140e" stroke-width="1"/>
+
+  <g font-size="11" fill="#17140e" text-anchor="end" font-family="Georgia, 'Times New Roman', serif">
+    <text x="776" y="112">India</text><text x="776" y="138">China</text><text x="776" y="164">United States</text>
+    <text x="776" y="190">Indonesia</text><text x="776" y="216">Pakistan</text><text x="776" y="242">Nigeria</text>
+    <text x="776" y="268">Brazil</text><text x="776" y="294">Bangladesh</text><text x="776" y="320">Russia</text>
+    <text x="776" y="346">Ethiopia</text>
+  </g>
+  <g font-size="10" font-family="'Courier New', monospace" fill="#4a463c">
+    <text x="1088" y="112" fill="#ff5d1f" font-weight="bold">1,450M</text>
+    <text x="1082" y="138" fill="#ff5d1f" font-weight="bold">1,419M</text>
+    <text x="859" y="164">345M</text><text x="846" y="190">279M</text><text x="840" y="216">251M</text>
+    <text x="836" y="242">233M</text><text x="832" y="268">212M</text><text x="824" y="294">174M</text>
+    <text x="818" y="320">144M</text><text x="815" y="346">130M</text>
+  </g>
+  <text x="1180" y="424" text-anchor="end" font-size="9" fill="#4a463c" font-family="'Courier New', monospace">Source: UN World Population Prospects 2024, mid-2024 estimates</text>
+</svg>
