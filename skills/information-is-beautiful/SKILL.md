@@ -5,7 +5,7 @@ license: MIT
 compatibility: Any Agent-Skills-compatible agent (Claude Code, VS Code Copilot, OpenAI Codex, Cursor, Gemini CLI and others). Pure markdown; no binaries or network required.
 metadata:
   author: karefined
-  version: "1.1.0"
+  version: "1.2.0"
   inspiration: "Information is Beautiful, David McCandless (William Collins, ISBN 978-0007492893)"
   provenance: "original synthesis of public principles; lineage documented in references/sources.md"
 ---
@@ -50,7 +50,7 @@ Check every artifact against all five before shipping:
 ## Workflow
 
 1. **Interrogate the data first.** How many variables? What types? What is the single comparison or pattern a reader must remember? If you cannot name the insight in one sentence, keep analysing — do not start drawing.
-2. **Match the shape to a form** using `references/chart-matcher.md`. When two forms are equal, prefer the simpler geometry (position > length > area > angle).
+2. **Match the shape to a form** using `references/chart-matcher.md`. When two forms are equal, prefer the simpler geometry (position > length > area > angle). If the honest form is correct but *forgettable* — the insight lives between charts, in a juxtaposition or a second dimension — consult `references/creative-moves.md` before settling.
 3. **Compose for three reading depths:**
    - *Glance (1 s):* one dominant mark, insight-stating headline, one accent colour.
    - *Study (10 s):* axes, direct labels, benchmarks, the "so-what" annotation.

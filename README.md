@@ -98,6 +98,12 @@ near 5% (Ghana Statistical Service):
   <img src="examples/before-after.svg" width="880" alt="Ghana's real inflation series drawn twice: left, a default-software 3D pie treating time-series rates as parts of a whole; right, an information-is-beautiful line chart — insight in the title, honest time-proportional axis, direct labels, source cited.">
 </p>
 
+And when the honest form is *correct but forgettable*, the
+[creative-moves](skills/information-is-beautiful/references/creative-moves.md) reference supplies
+the ingenuity layer — eight generative patterns (one scale for incommensurables, time as terrain,
+evidence grids, meta-visuals) distilled from the formats that made information design iconic.
+Cited as concepts with full lineage, never redrawn.
+
 1. **Form follows data** — geometry matches the comparison, chosen via a
    [decision-table matcher](skills/information-is-beautiful/references/chart-matcher.md)
    (quantity / time / category / geography / network / hierarchy), never "pick a chart type and force data in".

@@ -74,6 +74,12 @@ pre-public drafts and are kept below as lineage only.
   product-design skill: a Request-modes table (Shape/Build/Audit/Fix with
   narrowest-mode rule), a materiality definition, a "design every data
   reality" state list, and impact-ordered audit output.
+- **1.2.0 (Oct 25)** — the ingenuity layer: `references/creative-moves.md`
+  adds eight generative patterns (one scale for incommensurables, time as
+  terrain, grid a spectrum, mosaic of meaning, evidence grid, rank-and-tier,
+  small multiples, meta-visual) — distilled from the publicly known iconic
+  formats, cited as concepts per the provenance rules, never redrawn. The
+  Workflow now routes there when the honest form is correct but forgettable.
 - **Internal drafts (Oct 19–24, pre-public):** original authored zips,
   consolidation merge (README rescued, sources unioned, markdown restored),
   effectiveness pass (trigger description, re-audit step, worked example),
