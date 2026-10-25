@@ -138,3 +138,58 @@ script (kept pure-markdown on purpose — compatibility line promises "no binari
   (`technical-bad-content-type`, missing og on .md pages). Ignore by rule name.
 - Google Fonts rule flags the preconnect URLs for missing `display=swap` — the actual
   stylesheet link has it. False positive.
+
+## Appendix — reference material from the trending research
+
+### Marketplace manifest schema (modeled on Leonxlnx/taste-skill, verified 2026-10-24)
+
+```json
+{
+  "name": "<skill-name>",
+  "description": "<one-line description>",
+  "owner": { "name": "<handle>" },
+  "plugins": [
+    {
+      "name": "<skill-name>",
+      "description": "<longer description>",
+      "version": "1.0.0",
+      "source": "./",
+      "skills": ["./skills/<skill-name>"],
+      "author": { "name": "<handle>" },
+      "homepage": "<site>",
+      "repository": "<github url>",
+      "license": "MIT",
+      "keywords": ["skills", "..."]
+    }
+  ]
+}
+```
+
+Lives at `.claude-plugin/marketplace.json`. For wider agent coverage, the winners also
+ship `.codex-plugin/`, `.cursor-plugin/`, `.devin-plugin/`, `.kimi-plugin/`, `.grok-plugin/`,
+`.openclaw/` variants (ponytail) — same idea, per-agent manifests — plus `.agents/plugins/marketplace.json`.
+
+### Directories the skills CLI scans (PRIORITY_PREFIXES, from cli.mjs)
+
+Root `SKILL.md`, then: `skills/`, `skills/.curated/`, `skills/.experimental/`,
+`skills/.system/`, `.agents/skills/`, `.claude/skills/`, `.cline/skills/`,
+`.codebuddy/skills/`, `.codex/skills/`, `.commandcode/skills/`, `.continue/skills/`,
+`.factory/skills/`, `.github/skills/`, `.goose/skills/`, `.grok/skills/`, `.iflow/skills/`,
+`.junie/skills/`, `.kilo/skills/`, `.kilocode/skills/`, `.kimchi/skills/`, `.kiro/skills/`,
+`.minimax/skills/`, `.mux/skills/`, `.neovate/skills/`, `.opencode/skills/`,
+`.openhands/skills/`, `.pi/skills/`, `.posit/assistant/skills/`, `.qoder/skills/`,
+`.roo/skills/`, `.trae/skills/`, `.windsurf/skills/`, `.zcode/skills/`, `.zencoder/skills/`.
+Walk depth: three levels per container (covers `skills/<name>/SKILL.md` and
+`skills/<category>/<name>/SKILL.md`); `SKIP_DIRS`: node_modules, .git, dist, build, __pycache__.
+
+### Winner README anatomy checklist
+
+- Centered logo/hero image with alt text (ponytail: logo + story banner; ECC: hero.png)
+- Badges row: npm version, skills.sh badge, stars, release, license, "works with N agents", Discord
+- Trending badges (trendshift / star-history) — add only once actually trending
+- One bold hook line under the tagline (REA: "See a feature you like. Understand how it works.")
+- Install command inside the first screenful (npx / setup one-liner)
+- Measured-numbers block with methodology footnote (ponytail: 39 tasks, Opus 5.5, 5 runs each)
+- Social proof section ("Already built with X" logos)
+- i18n language switcher at top (REA: 24 languages)
+- Docs-site link (rea.tools pattern) and FAQ/docs anchors
