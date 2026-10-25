@@ -15,6 +15,7 @@
 
 <p align="center">
   <a href="https://github.com/karefined-eng/information-is-beautiful-skill/stargazers"><img src="https://img.shields.io/github/stars/karefined-eng/information-is-beautiful-skill?style=flat-square&color=111111&label=stars" alt="Stars"></a>
+  <a href="https://github.com/karefined-eng/information-is-beautiful-skill/releases"><img src="https://img.shields.io/github/v/release/karefined-eng/information-is-beautiful-skill?style=flat-square&color=111111&label=release" alt="Release"></a>
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
   <a href="https://information-is-beautiful-skill.vercel.app"><img src="https://img.shields.io/badge/demo-live-111111?style=flat-square" alt="Live site"></a>
   <img src="https://img.shields.io/badge/works%20with-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20Cursor%20%C2%B7%20ZCode-111111?style=flat-square" alt="Works with Agent-Skills-compatible agents">
