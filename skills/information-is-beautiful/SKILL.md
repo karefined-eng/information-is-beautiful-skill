@@ -102,6 +102,30 @@ The happy path is not the data. Before delivery, check how the artifact behaves 
 - Always hand over: the graphic, the insight sentence, the source line, and the checklist result.
 - For audits, lead with findings ordered by reader impact: first anything that misleads (scale, omission, false emphasis), then legibility failures, then craft. Each finding names where it is, which law it breaks, the consequence for the reader, and the smallest concrete fix.
 
+## TED Talk Insights — Philosophy Beyond the Laws
+
+The following insights from David McCandless' TEDGlobal 2010 talk ("The beauty of data visualization") are **not captured by the five laws** but inform the skill's posture. Source: `references/ted-law-mapping.md`; full transcript: `references/mccandless_ted.en-orig.vtt`.
+
+### Process Philosophy
+- **Data as "soil" / fertile creative medium** — "data is the new soil because for me it feels like a fertile creative medium... visualizations, infographics, data visualizations they feel like flowers blooming from this medium" (5:41–6:08)
+- **"Data detective" mindset** — "what I love is finding hidden patterns... being a data detective... there's a very interesting and odd pattern hidden in this data that you can only see when you visualize it" (4:02–4:06)
+- **Metaphor adaptation** — "data is the new oil... I would say the data is the new soil" — metaphors shape how we think about data's role (5:19–5:48)
+
+### Perceptual Principles
+- **Scale relativity** — "the only way to understand it is visually and relatively" (1:03) → extends Law 2: every quantity needs a reference
+- **Emotional relationship to numbers** — "you start to have a different relationship to the numbers... more importantly you start to see patterns and connections" (1:22) → extends Law 5: annotation changes how readers *feel* about data
+
+### Pattern Recognition
+- **Gap detection** — "can you spot it see that Gap there... it starts September 2001 when we had something very real to be scared about" (4:57–5:06) → extends Law 1: anomalies reveal hidden truths
+- **Information map when lost** — "eyes a kind of map really a sort of information map when you're lost in information an information map is kind of useful" (2:53–2:56) → Law 1: form = navigation tool
+
+### Case Studies as Patterns
+- **Billion Dollar Gram** — "scaled the boxes according to those amounts and the colors here represent the motivation behind the money... purple is fighting, red is giving money away, green is profiteering" (1:09–1:16) → exemplifies Laws 1, 2, 3
+- **Mountains Out of Molehills** — "mountains out of molehills... a timeline of global media panic... these are what our fears look like over time in a media" (3:07–3:55) → fear timeline pattern
+- **Hidden pattern in video game violence** — "Twin Peaks every year... same month every year... November Christmas video games come out... April 1999 Columbine shooting... fear remembered by media" (4:15–4:44) → seasonal + event-driven pattern detection
+
+---
+
 ## Worked example
 
 Brief: a 12-row CSV of quarterly support tickets by region. Interrogate: 4 categories over 4 time points; the one-sentence insight is "EMEA tickets doubled in Q3 while every other region held flat." Chart-matcher pick: few series, few points, time on x → line chart, position encoding, direct labels, no legend.

@@ -12,11 +12,14 @@ preserved in `references/sources.md`.
 information-is-beautiful/
 ├─ SKILL.md                       # instructions + spec frontmatter
 ├─ README.md                      # this file
+├─ CHANGELOG.md                   # version history
 └─ references/
-   ├─ chart-matcher.md            # data shape → visual form
-   ├─ palettes.md                 # colour as a data channel
-   ├─ quality-checklist.md        # the 25-point beauty audit
-   └─ sources.md                  # authentic provenance & citations
+    ├─ chart-matcher.md           # data shape → visual form
+    ├─ creative-moves.md          # eight generative patterns for unforgettable forms
+    ├─ palettes.md                # colour as a data channel
+    ├─ quality-checklist.md       # the 25-point beauty audit
+    ├─ sources.md                 # authentic provenance & citations
+    └─ ted-law-mapping.md         # TED talk insights → five laws mapping
 ```
 
 ## Install
@@ -41,6 +44,8 @@ cp -r information-is-beautiful .claude/skills/
 Cursor, Gemini CLI, …): place the folder wherever that client loads skills, or
 point it at `SKILL.md`. The skill is pure markdown — no binaries, no network.
 
+**Fast alias:** also install `iib/` (16-line wrapper) for `/iib` shorthand.
+
 ## Use — commands & arguments
 
 The skill follows the agentskills.io progressive-disclosure model, so most of
@@ -60,6 +65,11 @@ arguments**:
 /information-is-beautiful audit this SVG against the checklist
 ```
 
+Fast alias:
+```
+/iib redesign this bar chart honestly
+```
+
 Automatic triggers (no command needed — the description match does it):
 
 - "make me a dashboard of these metrics"
@@ -71,6 +81,82 @@ Tips:
 - Mention a reference by name to route the agent straight to it
   ("use the chart-matcher", "run the beauty audit", "check the palette").
 - The skill is invoked per turn; re-invoke whenever you want a fresh audit.
+
+## Request modes
+
+| Mode | Typical request | Required behavior |
+| ---- | --------------- | ----------------- |
+| **Shape** | "How should I visualize this?", a dataset with no settled chart | Interrogate the data, pick the form via `references/chart-matcher.md`, define the insight sentence. Do not draw unless asked. |
+| **Build** | "Make a chart of this", "turn this CSV into an infographic" | Apply the five laws end to end; deliver the artifact plus insight sentence, source line, and checklist result. |
+| **Audit** | "What's wrong with this chart?", "is this misleading?" | Score against `references/quality-checklist.md`; report findings ordered by reader impact, each with the smallest concrete fix. Do not edit unless asked. |
+| **Fix** | "This chart is misleading / ugly / cluttered" | Diagnose against the laws, then make the smallest change that restores honesty and legibility. |
+
+A **material** change alters what the reader will conclude from the data — scale, comparison, emphasis, or omissions. Recolouring and label wording usually are not material; a changed baseline or a dropped series always is.
+
+## The five laws
+
+Check every artifact against all five before shipping:
+
+1. **Form follows data.** The geometry of the chart must match the shape of the comparison. Never start from a chart type and force data into it — start from the variable types (quantity / time / category / geography / network / hierarchy) and the one insight that matters. Consult `references/chart-matcher.md` before drawing anything.
+2. **Honest scales.** Reserve length/position for precise judgment, area for magnitude impressions, angle/colour only for rough grouping. Quantitative axes start at zero (length encodings) — or explicitly break + say so. Area encodings: value is proportional to **area**, never to radius or width alone. Units are named everywhere they appear.
+3. **Colour is a data channel.** Hue = category. Intensity = magnitude (light → dark = small → large on light paper). Never rainbow-by-default; never let colour fight the message. One accent colour highlights the key series — context series fade to neutral ink/gray. Follow `references/palettes.md`.
+4. **Ink must be earned.** Remove chartjunk aggressively: no 3D, no gradients-as-decoration, no heavy borders, no gridline wallpaper, no redundant legends when direct labels are possible. If an element can be deleted without losing meaning, delete it. (Lineage: Tufte's data-ink maxim — see `references/sources.md`.)
+5. **Annotation is narration.** The title states the *insight*, not the topic ("Bailouts dwarf malaria funding 40:1", not "Spending comparison"). Place labels next to the marks they describe. Cite the source and the year. Layer the reading: glance → study → immerse.
+
+## Workflow
+
+1. **Interrogate the data first.** How many variables? What types? What is the single comparison or pattern a reader must remember? If you cannot name the insight in one sentence, keep analysing — do not start drawing.
+2. **Match the shape to a form** using `references/chart-matcher.md`. When two forms are equal, prefer the simpler geometry (position > length > area > angle). If the honest form is correct but *forgettable* — the insight lives between charts, in a juxtaposition or a second dimension — consult `references/creative-moves.md` before settling.
+3. **Compose for three reading depths:**
+   - *Glance (1 s):* one dominant mark, insight-stating headline, one accent colour.
+   - *Study (10 s):* axes, direct labels, benchmarks, the "so-what" annotation.
+   - *Immerse (1 min):* source line, methods, units, caveats, per-point detail.
+4. **Build it clean.** Start on paper-white, ink-near-black. Add marks in order of importance. Use a consistent spacing grid; let whitespace separate groups instead of borders.
+5. **Stress-test honestly.** Squint test: does the main pattern survive? Cover-the-legend test: can you still decode every series? Inversion test: try the opposite headline — would the graphic mislead either way?
+6. **Review** every item in `references/quality-checklist.md`. A "no" anywhere is a defect, not a taste call.
+7. **Render, then re-audit the pixels, not the code.** Produce the artifact at final size (screenshot it or open it in a browser) and re-run `references/quality-checklist.md` against what is actually displayed: zoom out to ~25% for the squint test, hide or cover the legend and confirm every series still decodes, and read the headline inverted against the data. A chart that passes in source but fails on screen is a fail.
+
+## Composition principles
+
+- **One scene per visual.** If there are two insights, make two visuals (or small multiples). Small multiples > overplotted spaghetti 9 times out of 10.
+- **Order deliberately.** Sort bars by meaning (magnitude, time, or narrative) — never alphabetically unless lookup is the task.
+- **Reading gravity.** Headline top-left, largest mark near the optical centre, sources/methods bottom-right in quiet type.
+- **Emphasis budget.** Only one thing may shout: one accent hue, one heavy stroke, one bold number. Everything else is a speaking voice or a whisper.
+- **Scale awareness.** Honour magnitude: a billion and a million must *feel* different (this is the whole trick of the Billion-Dollar-Gram idea: same units, comparable areas).
+
+## Design every data reality
+
+The happy path is not the data. Before delivery, check how the artifact behaves with: an empty dataset; a single point; ties; missing or null values; outliers far outside the range; negative, decimal, and huge values; zero as a meaningful value; more categories than fit; labels longer than their space; and numerals, currencies, or units localized differently (including RTL). Choose each treatment deliberately — a chart that only works on the average case is a defect.
+
+## Interaction (web & app output)
+
+- Default state must work as a static image; interaction is progressive disclosure, never a crutch.
+- Hover/focus reveals per-point values; selection isolates a series; never hide essential labels behind hover.
+- Animate only to preserve object constancy (axis transitions, filtering) — no gratuitous motion.
+
+## Failure modes to reject on sight
+
+- 3D anything. Dual y-axes implying false correlation. Truncated bar axes.
+- Pies beyond ~5 slices; nested pies; donut-with-random-hole.
+- Default software palettes, default fonts, default legends — defaults are visible.
+- Labels rotated more than 45°; multi-line legends; a legend for a chart with one series.
+- Choropleths of raw counts (normalise first); maps where a sorted bar would be clearer.
+- Area charts where radius ∝ value; stacked areas for precise comparison.
+- Data points with no source, no date, no units.
+- A chart whose only message is "the data exists" — find the insight or don't chart it.
+
+## Accessibility floor
+
+- Mark-vs-background contrast ≥ 3:1; body text ≥ 4.5:1. Never red/green as the only categorical distinction. Colourblind-safe pairs from `references/palettes.md`. (Thresholds: WCAG 2.x — see `references/sources.md`, not the book.)
+- Colour is never the only channel: pair it with position, pattern, or direct labels.
+- Every delivered visual carries true alt-text: one sentence of what it *shows*, not what it *is* ("Bar chart of X" is a fail; "Bar chart showing X fell 40% since 2010" passes).
+
+## Output guidance
+
+- **SVG** for editorial/print/web vector work; **HTML/CSS** for text-heavy data lists; **Canvas/WebGL** only for > ~10k marks.
+- Favour mono-spaced numerals (tabular figures) inside charts. Label in sentence case, 9–11 px minimum at final size.
+- Always hand over: the graphic, the insight sentence, the source line, and the checklist result.
+- For audits, lead with findings ordered by reader impact: first anything that misleads (scale, omission, false emphasis), then legibility failures, then craft. Each finding names where it is, which law it breaks, the consequence for the reader, and the smallest concrete fix.
 
 ## Distribution
 

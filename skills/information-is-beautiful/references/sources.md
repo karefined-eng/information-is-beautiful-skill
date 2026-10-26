@@ -7,6 +7,7 @@ This skill is an original synthesis of widely taught information-design principl
 - **David McCandless, _Information is Beautiful_**, William Collins (HarperCollins), London. First edition 2009, ISBN 978-0007294664; new edition 2012 ("thoroughly revised, recalculated and reimagined"), 256 pp., ISBN 978-0007492893. Published in the US as _The Visual Miscellaneum: A Colorful Guide to the World's Most Consequential Trivia_ (Harper Design, 2009, ISBN 978-0061748363). The skill's entire posture — form follows data, beauty as a means of comprehension, data as landscape — is a response to this atlas. Bibliographic record: https://openlibrary.org/books/OL44136188M/Information_Is_Beautiful
 - **informationisbeautiful.net** — the author's site and the blog the book grew from; hundreds of free visualizations with open datasets, constantly revised. https://informationisbeautiful.net
 - **TEDGlobal 2010 (Oxford, July 2010), "The beauty of data visualization"** — the public statement of the philosophy this skill encodes (infographics as "knowledge compression"; data as "the new soil"). https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization
+  - **Full transcript + law mapping:** `references/ted-law-mapping.md` — every TED quote mapped to the five laws
 - **davidmccandless.com** — the author's portfolio; sequels _Knowledge is Beautiful_ (2014) and _Beautiful News_ (2022). https://davidmccandless.com
 - **Legal access routes:** the publisher (HarperCollins), bookshops, public libraries via WorldCat, Open Library controlled lending, Google Books preview.
 
@@ -28,11 +29,11 @@ Chart titles such as the "Billion-Dollar-o-Gram", "Snake Oil Supplements", "Moun
 
 ## Skill-section → source map
 
-- Law I (form follows data) + three reading depths → McCandless (book/TED/site), Few.
-- Law II (honest scales) + failure modes → Tufte, Few, Cairo.
-- Law III (colour as a channel) + `palettes.md` → Few/Cairo + the book's "Colours in Culture" lesson that hue carries culture-dependent meaning.
-- Law IV (earned ink) → Tufte.
-- Law V (annotation as narration) → McCandless + Cairo.
+- Law I (form follows data) + three reading depths → McCandless (book/TED/site), Few. **TED transcript mapping:** `references/ted-law-mapping.md#law-1-form-follows-data`
+- Law II (honest scales) + failure modes → Tufte, Few, Cairo. **TED mapping:** `references/ted-law-mapping.md#law-2-honest-scales`
+- Law III (colour as a channel) + `palettes.md` → Few/Cairo + the book's "Colours in Culture" lesson that hue carries culture-dependent meaning. **TED mapping:** `references/ted-law-mapping.md#law-3-colour-is-a-data-channel`
+- Law IV (earned ink) → Tufte. **TED mapping:** `references/ted-law-mapping.md#law-4-ink-must-be-earned`
+- Law V (annotation as narration) → McCandless + Cairo. **TED mapping:** `references/ted-law-mapping.md#law-5-annotation-is-narration`
 - Accessibility floor → WCAG 2.x.
 - Cultural-colour caution → the book's Colours-in-Culture spread (concept only).
 

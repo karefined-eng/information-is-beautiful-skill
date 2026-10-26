@@ -2,6 +2,13 @@
 
 All notable changes to the `information-is-beautiful` skill. Dates are 2026.
 
+## [1.3.0] — 2026-10-26
+
+- **Added:** `references/ted-law-mapping.md` — maps every insight from David McCandless' TEDGlobal 2010 talk ("The beauty of data visualization") to the five laws, with timestamps and case-study patterns (Billion Dollar Gram, Mountains Out of Molehills, hidden seasonal patterns).
+- **Changed:** `SKILL.md` expanded with full workflow, composition principles, failure modes, accessibility floor, and output guidance (now ~15 KB).
+- **Changed:** `references/sources.md` updated with TED transcript citation and skill-section → source map.
+- **Changed:** `references/creative-moves.md` refined.
+
 ## [1.2.0] — 2026-10-25
 
 - **Added:** the ingenuity layer — `references/creative-moves.md`, eight generative
