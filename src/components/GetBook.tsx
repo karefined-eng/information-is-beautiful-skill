@@ -16,12 +16,10 @@ export default function GetBook() {
   return (
     <section id="get" className="relative px-5 py-24 md:px-14 md:py-36">
       <SectionHead
-        fig="fig. 06"
-        kicker="the honest routes"
         title={
           <>
-            No free PDF here —<br />
-            <em className="font-light text-tangerine">every legal one.</em>
+            No free PDF here<br />
+            <span className="font-light text-tangerine">every legal one.</span>
           </>
         }
       />
@@ -36,7 +34,7 @@ export default function GetBook() {
         <BookHeart className="mt-0.5 h-5 w-5 shrink-0 text-tangerine" />
         <p className="text-[15px] leading-relaxed text-ink-soft">
           <span className="font-semibold text-ink">Why nothing to download?</span> The book is a
-          256-page designed object — years of an author’s labour — and it stays in copyright. But
+          256-page designed object – years of an author’s labour – and it stays in copyright. But
           you can read it free at a library, borrow it legally online, or preview it first. Buying a
           copy funds the next atlas of infographics.
         </p>
@@ -62,7 +60,7 @@ export default function GetBook() {
               <div className="absolute inset-x-0 top-0 h-1 bg-[var(--acc)] transition-all duration-300 group-hover:h-1.5" />
               <div className="flex items-start justify-between">
                 <span
-                  className="flex items-center gap-2 rounded-full border border-ink/20 px-3 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.2em]"
+                  className="flex items-center gap-2 rounded-full border border-ink/20 px-3 py-1 font-mono text-[12px] font-bold uppercase tracking-[0.2em]"
                   style={{ color: accent }}
                 >
                   <Icon className="h-3 w-3" />
@@ -74,7 +72,7 @@ export default function GetBook() {
                 <h3 className="font-display text-2xl font-bold leading-tight">{o.venue}</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">{o.blurb}</p>
               </div>
-              <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.25em] text-ink-soft/70">{o.meta}</p>
+              <p className="mt-5 font-mono text-[12px] uppercase tracking-[0.25em] text-ink-soft/70">{o.meta}</p>
             </motion.a>
           );
         })}
@@ -85,11 +83,11 @@ export default function GetBook() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-ink/15 pt-6 font-mono text-[10px] uppercase tracking-[0.25em] text-ink-soft"
+        className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-ink/15 pt-6 font-mono text-[12px] uppercase tracking-[0.25em] text-ink-soft"
       >
         <span>ISBN 978-0007492893 · new edition</span>
         <span>
-          official home: <span className="text-tangerine">informationisbeautiful.net</span> — hundreds of visuals, free
+          official home: <span className="text-tangerine">informationisbeautiful.net</span> – hundreds of visuals, free
         </span>
       </motion.div>
     </section>

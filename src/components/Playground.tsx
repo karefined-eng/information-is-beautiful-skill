@@ -192,14 +192,14 @@ export default function Playground() {
         ctx.fillStyle = b.c;
         ctx.fill();
         ctx.lineWidth = 2;
-        ctx.strokeStyle = "rgba(23,20,14,0.9)";
+        ctx.strokeStyle = "rgba(18,16,10,0.9)";
         ctx.stroke();
-        ctx.fillStyle = b.dark ? "#17140e" : "#f3eee1";
-        ctx.font = `700 ${Math.max(10, b.r * 0.3)}px "JetBrains Mono", monospace`;
+        ctx.fillStyle = b.dark ? "#12100a" : "#f5f0e6";
+        ctx.font = `700 ${Math.max(11, b.r * 0.3)}px "JetBrains Mono", monospace`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText(b.label.toUpperCase(), b.x, b.y - 2);
-        ctx.font = `500 ${Math.max(7, b.r * 0.16)}px "JetBrains Mono", monospace`;
+        ctx.font = `500 ${Math.max(11, b.r * 0.16)}px "JetBrains Mono", monospace`;
         ctx.globalAlpha = b.dark ? 0.7 : 0.75;
         ctx.fillText(`${Math.round(b.r * 4)} pts`, b.x, b.y + b.r * 0.3);
         ctx.globalAlpha = 1;
@@ -229,24 +229,22 @@ export default function Playground() {
   return (
     <section id="play" className="relative border-t border-paper/10 bg-ink px-5 py-24 text-paper md:px-14 md:py-36">
       <SectionHead
-        fig="fig. 03"
-        kicker="the laboratory"
         invert
         title={
           <>
-            Data is <em className="font-light text-teal">play</em>
+            Data is <span className="font-light text-teal">play</span>
             <span className="text-tangerine">.</span>
           </>
         }
       />
 
-      <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-        <p className="max-w-xl text-base leading-relaxed text-paper/60">
-          The book’s real lesson is that numbers behave like matter — they cluster, collide and
-          settle into patterns. Here are the book’s obsessions as physical bubbles. Grab one. Fling
+<div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+        <p className="max-w-xl text-base leading-relaxed text-paper/90">
+          The book's real lesson is that numbers behave like matter – they cluster, collide and
+          settle into patterns. Here are the book's obsessions as physical bubbles. Grab one. Fling
           it. Information is <span className="text-paper">visceral</span>.
         </p>
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-paper/40">
+        <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-paper/40">
           n = 14 topics · census of a curious mind
         </span>
       </div>
@@ -260,7 +258,7 @@ export default function Playground() {
       >
         <div
           ref={wrapRef}
-          className="relative h-[62vh] min-h-[420px] overflow-hidden rounded-3xl border border-paper/15 bg-[radial-gradient(ellipse_at_center,#241f14_0%,#17140e_70%)]"
+          className="relative h-[62vh] min-h-[420px] overflow-hidden rounded-3xl border border-paper/15 bg-[radial-gradient(ellipse_at_center,#1e1b12_0%,#12100a_70%)]"
         >
           <canvas
             ref={canvasRef}
@@ -272,7 +270,7 @@ export default function Playground() {
               <motion.div
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.4 }}
-                className="pointer-events-none absolute left-1/2 top-6 flex -translate-x-1/2 items-center gap-3 rounded-full border border-paper/15 bg-ink/70 px-5 py-2.5 font-mono text-[10px] uppercase tracking-[0.25em] text-paper/70 backdrop-blur-sm"
+                className="pointer-events-none absolute left-1/2 top-6 flex -translate-x-1/2 items-center gap-3 rounded-full border border-paper/15 bg-ink/70 px-5 py-2.5 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/70 backdrop-blur-sm"
               >
                 <motion.span animate={{ x: [0, 8, -6, 0], y: [0, -4, 2, 0] }} transition={{ repeat: Infinity, duration: 2.4 }}>
                   <Hand className="h-3.5 w-3.5 text-sun" />
@@ -281,10 +279,10 @@ export default function Playground() {
               </motion.div>
             )}
           </AnimatePresence>
-          <div className="pointer-events-none absolute bottom-4 left-5 font-mono text-[10px] uppercase tracking-[0.25em] text-paper/30">
+          <div className="pointer-events-none absolute bottom-4 left-5 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/30">
             simulation 1.0 · gravity: curiosity
           </div>
-          <div className="pointer-events-none absolute bottom-4 right-5 font-mono text-[10px] uppercase tracking-[0.25em] text-paper/30">
+          <div className="pointer-events-none absolute bottom-4 right-5 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/30">
             canvas physics · no data was harmed
           </div>
         </div>

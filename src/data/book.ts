@@ -3,7 +3,7 @@
 /*  the author's site and public bibliographic records.                */
 /* ------------------------------------------------------------------ */
 
-export const ACCENTS = ["#ff5d1f", "#00a5a8", "#ffb300", "#e22d96", "#3557ff", "#4f9d3a"] as const;
+export const ACCENTS = ["#d04000", "#007a7d", "#b88000", "#a01565", "#2538b8", "#306b22"] as const;
 
 export const marqueeTopics = [
   "Billion–Dollar–o–Gram",
@@ -56,7 +56,7 @@ export const atlasPieces: AtlasPiece[] = [
     index: "01",
     title: "Billion–Dollar–o–Gram",
     kind: "blocks",
-    color: "#ff5d1f",
+    color: "#d04000",
     tagline: "Big money, made legible.",
     body:
       "The book’s signature spread stacks the vast sums that swirl through the news — bailouts, wars, aid, crimes, earnings — into a single coloured lattice. Figures that are meaningless as headlines suddenly snap into proportion. This homage re-blocks some of that money at illustrative scale.",
@@ -67,7 +67,7 @@ export const atlasPieces: AtlasPiece[] = [
     index: "02",
     title: "Snake Oil? Supplements",
     kind: "bubbles",
-    color: "#00a5a8",
+    color: "#007a7d",
     tagline: "Hype vs. evidence, bubbled.",
     body:
       "One of the most beloved charts in the book maps health supplements by the strength of scientific evidence versus their popularity. The higher the bubble floats, the stronger the proof. Garlic hovers near the top; fads sink to the murky bottom. Bubble size is an echo of the original’s spirit — not the dataset.",
@@ -78,7 +78,7 @@ export const atlasPieces: AtlasPiece[] = [
     index: "03",
     title: "Mountains out of Molehills",
     kind: "spikes",
-    color: "#e22d96",
+    color: "#a01565",
     tagline: "A timeline of media panics.",
     body:
       "A decade of front-page terrors — bird flu, SARS, killer everything — charted by press coverage volume. Each mountain is a fear; most are molehills with terrific PR. The rhythm of alarm becomes visible as landscape. Peaks here are illustrative echoes of that idea.",
@@ -89,7 +89,7 @@ export const atlasPieces: AtlasPiece[] = [
     index: "04",
     title: "Colours in Culture",
     kind: "wheel",
-    color: "#ffb300",
+    color: "#b88000",
     tagline: "What colours mean around the world.",
     body:
       "The same hue can signal mourning in one culture and celebration in another. The book’s colour wheel aligns shade with meaning across dozens of cultures — a Rosetta stone of chroma. This wheel is an illustrative reconstruction in the spirit of the original.",
@@ -100,7 +100,7 @@ export const atlasPieces: AtlasPiece[] = [
     index: "05",
     title: "Twentieth Century Death",
     kind: "squares",
-    color: "#3557ff",
+    color: "#2538b8",
     tagline: "The century’s grim ledger.",
     body:
       "Humanity’s hundred hardest years, counted. Wars, genocides, famines and disasters rendered as a field of tallying squares so that scale — numb in prose — becomes felt on the page. One of the book’s most sobering spreads, echoed here with illustrative blocks.",
@@ -111,7 +111,7 @@ export const atlasPieces: AtlasPiece[] = [
     index: "06",
     title: "Left vs Right",
     kind: "split",
-    color: "#4f9d3a",
+    color: "#306b22",
     tagline: "Two world-views, one diagram.",
     body:
       "A respectful X-ray of the political divide: the values, instincts and hopes that animate the left and the right, mirrored across a shared centre. Neither side mocked nor crowned — just mapped. Labels here sketch the concept, not the full canvas of the original.",

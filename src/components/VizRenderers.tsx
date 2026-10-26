@@ -3,7 +3,7 @@ import { type ReactElement } from "react";
 import { mulberry } from "../data/book";
 
 /* ------------------------------------------------------------------ */
-/*  Six bespoke SVG renderers — illustrative homages to the book’s     */
+/*  Six bespoke SVG renderers – illustrative homages to the book’s     */
 /*  spreads. All figures here are fictional echoes, not the datasets.  */
 /* ------------------------------------------------------------------ */
 
@@ -11,14 +11,14 @@ const MONO = "JetBrains Mono, monospace";
 const VIEW = "0 0 800 440";
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const TANGERINE = "#ff5d1f";
-const TEAL = "#00a5a8";
-const SUN = "#ffb300";
-const MAGENTA = "#e22d96";
-const COBALT = "#3557ff";
-const LEAF = "#4f9d3a";
-const INK = "#17140e";
-const PAPER = "#f3eee1";
+const TANGERINE = "#d04000";
+const TEAL = "#007a7d";
+const SUN = "#b88000";
+const MAGENTA = "#a01565";
+const COBALT = "#2538b8";
+const LEAF = "#306b22";
+const INK = "#12100a";
+const PAPER = "#f5f0e6";
 
 export type VizKey = "blocks" | "bubbles" | "spikes" | "wheel" | "squares" | "split";
 
@@ -67,15 +67,15 @@ function BlocksViz() {
               <text x={r.x + 10} y={r.y + 26} fontFamily={MONO} fontSize="15" fontWeight="700" fill={r.c === SUN ? INK : PAPER}>
                 ${r.v}bn
               </text>
-              <text x={r.x + 10} y={r.y + 44} fontFamily={MONO} fontSize="9.5" letterSpacing="1.5" fill={r.c === SUN ? INK : PAPER} opacity={0.85}>
+              <text x={r.x + 10} y={r.y + 44} fontFamily={MONO} fontSize="11" letterSpacing="0.5" fill={r.c === SUN ? INK : PAPER} opacity={0.85}>
                 {r.label.toUpperCase()}
               </text>
             </>
           )}
-          {r.s <= 70 && <title>{`${r.label} — $${r.v}bn`}</title>}
+          {r.s <= 70 && <title>{`${r.label} – $${r.v}bn`}</title>}
         </motion.g>
       ))}
-      <text x={20} y={430} fontFamily={MONO} fontSize="10" letterSpacing="2.5" fill={INK} opacity={0.5}>
+      <text x={20} y={430} fontFamily={MONO} fontSize="12" letterSpacing="0.5" fill={INK} opacity={0.5}>
         AREA = MONEY ($BN) · VALUES ARE AN ILLUSTRATIVE HOMAGE, NOT THE ORIGINAL DATASET
       </text>
     </svg>
@@ -112,21 +112,21 @@ function BubblesViz() {
       {[0, 25, 50, 75, 100].map((t) => (
         <g key={t}>
           <line x1={70} y1={Y(t)} x2={730} y2={Y(t)} stroke={INK} strokeOpacity={0.12} strokeDasharray="3 5" />
-          <text x={32} y={Y(t) + 4} fontFamily={MONO} fontSize="9" fill={INK} opacity={0.5}>
+          <text x={32} y={Y(t) + 4} fontFamily={MONO} fontSize="11" fill={INK} opacity={0.5}>
             {t}
           </text>
         </g>
       ))}
-      <text x={20} y={30} fontFamily={MONO} fontSize="10" letterSpacing="2.5" fill={INK} opacity={0.55}>
+      <text x={20} y={30} fontFamily={MONO} fontSize="12" letterSpacing="0.5" fill={INK} opacity={0.55}>
         STRONG EVIDENCE ↑
       </text>
-      <text x={590} y={420} fontFamily={MONO} fontSize="10" letterSpacing="2.5" fill={INK} opacity={0.55}>
+      <text x={590} y={420} fontFamily={MONO} fontSize="12" letterSpacing="0.5" fill={INK} opacity={0.55}>
         VERY POPULAR →
       </text>
       <line x1={70} y1={400} x2={730} y2={400} stroke={INK} strokeWidth={1.5} />
       <line x1={70} y1={400} x2={70} y2={30} stroke={INK} strokeWidth={1.5} />
-      <text x={80} y={Y(10) - 6} fontFamily={MONO} fontSize="9" letterSpacing="3" fill={MAGENTA}>
-        — — SNAKE OIL TERRITORY — —
+      <text x={80} y={Y(10) - 6} fontFamily={MONO} fontSize="11" letterSpacing="0.5" fill={MAGENTA}>
+        – – SNAKE OIL TERRITORY – –
       </text>
       {data.map(([name, ev, pop], i) => {
         const r = Math.sqrt(pop) * 2.1 + 4;
@@ -140,7 +140,7 @@ function BubblesViz() {
               {r > 16 ? name.split(" ")[0].slice(0, 8).toUpperCase() : ""}
             </text>
             {r <= 16 && (
-              <text x={cx} y={cy - r - 5} textAnchor="middle" fontFamily={MONO} fontSize="8.5" fill={INK} opacity={0.7}>
+              <text x={cx} y={cy - r - 5} textAnchor="middle" fontFamily={MONO} fontSize="11" fill={INK} opacity={0.7}>
                 {name.toUpperCase()}
               </text>
             )}
@@ -184,14 +184,14 @@ function SpikesViz() {
           <motion.g key={p.name} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: pi * 0.1, ease }}>
             <path d={d} fill={p.color} fillOpacity={0.82} stroke={INK} strokeWidth={1.2} />
             <line x1={X(p.c)} y1={base - p.h - 26} x2={X(p.c)} y2={base - p.h - 12} stroke={INK} strokeWidth={1} />
-            <text x={X(p.c)} y={base - p.h - 32} textAnchor="middle" fontFamily={MONO} fontSize="10" letterSpacing="1.5" fontWeight="700" fill={INK}>
+            <text x={X(p.c)} y={base - p.h - 32} textAnchor="middle" fontFamily={MONO} fontSize="12" letterSpacing="0.5" fontWeight="700" fill={INK}>
               {p.name.toUpperCase()}
             </text>
           </motion.g>
         );
       })}
       {[1998, 2001, 2004, 2007].map((yr, i) => (
-        <text key={yr} x={30 + i * 12 * 3.4 * 6.05 + 20} y={base + 22} fontFamily={MONO} fontSize="9" fill={INK} opacity={0.5}>
+        <text key={yr} x={30 + i * 12 * 3.4 * 6.05 + 20} y={base + 22} fontFamily={MONO} fontSize="11" fill={INK} opacity={0.5}>
           {yr}
         </text>
       ))}
@@ -247,10 +247,10 @@ function WheelViz() {
         })
       )}
       <circle cx={cx} cy={cy} r={44} fill={INK} />
-      <text x={cx} y={cy - 3} textAnchor="middle" fontFamily={MONO} fontSize="9" letterSpacing="2" fill={PAPER}>
+      <text x={cx} y={cy - 3} textAnchor="middle" fontFamily={MONO} fontSize="11" letterSpacing="2" fill={PAPER}>
         HUE =
       </text>
-      <text x={cx} y={cy + 10} textAnchor="middle" fontFamily={MONO} fontSize="9" letterSpacing="2" fill={SUN}>
+      <text x={cx} y={cy + 10} textAnchor="middle" fontFamily={MONO} fontSize="11" letterSpacing="2" fill={SUN}>
         MEANING
       </text>
       {meanings.map((m, mi) => {
@@ -259,7 +259,7 @@ function WheelViz() {
         const ly = cy + 214 * Math.sin(rad(a));
         const rot = a > 90 && a < 270 ? a + 180 : a;
         return (
-          <text key={m} fontFamily={MONO} fontSize="9.5" letterSpacing="1.5" fill={INK} textAnchor={rot > 90 ? "end" : "start"} transform={`rotate(${rot} ${lx} ${ly})`} x={lx} y={ly + 3} opacity={0.75}>
+          <text key={m} fontFamily={MONO} fontSize="11" letterSpacing="0.5" fill={INK} textAnchor={rot > 90 ? "end" : "start"} transform={`rotate(${rot} ${lx} ${ly})`} x={lx} y={ly + 3} opacity={0.75}>
             {m.toUpperCase()}
           </text>
         );
@@ -268,13 +268,13 @@ function WheelViz() {
         {cultures.map((c, ci) => (
           <g key={c}>
             <rect x={560} y={74 + ci * 40} width={200 - ci * 19 - 16 > 0 ? 14 : 14} height={14} rx={3} fill={exc[`${ci},1`] ?? (ci % 2 ? INK : [SUN, MAGENTA, TEAL, COBALT][ci % 4])} stroke={INK} strokeWidth={1.2} />
-            <text x={582} y={85 + ci * 40} fontFamily={MONO} fontSize="10" letterSpacing="1.5" fill={INK} opacity={0.8}>
+            <text x={582} y={85 + ci * 40} fontFamily={MONO} fontSize="12" letterSpacing="0.5" fill={INK} opacity={0.8}>
               {c.toUpperCase()}
             </text>
             <line x1={560} y1={81 + ci * 40} x2={540} y2={81 + ci * 40} stroke={INK} strokeOpacity={0.25} strokeDasharray="2 3" />
           </g>
         ))}
-        <text x={560} y={56} fontFamily={MONO} fontSize="10" letterSpacing="2.5" fill={INK} opacity={0.55}>
+        <text x={560} y={56} fontFamily={MONO} fontSize="12" letterSpacing="0.5" fill={INK} opacity={0.55}>
           RINGS = CULTURES →
         </text>
       </g>
@@ -324,7 +324,7 @@ function SquaresViz() {
           </motion.rect>
         );
       })}
-      <text x={startX} y={70} fontFamily={MONO} fontSize="10" letterSpacing="2.5" fill={INK} opacity={0.55}>
+      <text x={startX} y={70} fontFamily={MONO} fontSize="12" letterSpacing="0.5" fill={INK} opacity={0.55}>
         ONE SQUARE ≈ 250,000 LIVES · {total} SQUARES SHOWN · ILLUSTRATIVE
       </text>
       {cats.map(([cat, count, color], i) => {
@@ -356,7 +356,7 @@ function SplitViz() {
   return (
     <svg viewBox={VIEW} className="h-auto w-full" role="img" aria-label="Left versus right concept map homage">
       <line x1={400} y1={36} x2={400} y2={404} stroke={INK} strokeOpacity={0.15} strokeDasharray="4 6" />
-      <text x={400} y={26} textAnchor="middle" fontFamily={MONO} fontSize="9" letterSpacing="3" fill={INK} opacity={0.45}>
+      <text x={400} y={26} textAnchor="middle" fontFamily={MONO} fontSize="11" letterSpacing="0.5" fill={INK} opacity={0.45}>
         THE SPECTRUM
       </text>
 
@@ -387,10 +387,10 @@ function SplitViz() {
 
       <motion.g initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.4, ease }} style={{ transformOrigin: "400px 218px" }}>
         <circle cx={400} cy={cy} r={52} fill={INK} />
-        <text x={400} y={cy - 8} textAnchor="middle" fontFamily={MONO} fontSize="10" letterSpacing="2" fill={SUN} fontWeight="700">
+        <text x={400} y={cy - 8} textAnchor="middle" fontFamily={MONO} fontSize="12" letterSpacing="2" fill={SUN} fontWeight="700">
           COMMON
         </text>
-        <text x={400} y={cy + 5} textAnchor="middle" fontFamily={MONO} fontSize="10" letterSpacing="2" fill={PAPER} fontWeight="700">
+        <text x={400} y={cy + 5} textAnchor="middle" fontFamily={MONO} fontSize="12" letterSpacing="2" fill={PAPER} fontWeight="700">
           HOPES
         </text>
         <text x={400} y={cy + 20} textAnchor="middle" fontFamily={MONO} fontSize="7.5" fill={PAPER} opacity={0.6}>

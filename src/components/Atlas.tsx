@@ -26,7 +26,7 @@ function LinkedInIcon({ className }: { className?: string }) {
 
 function ShareButtons() {
   const url = typeof window !== "undefined" ? window.location.href : "https://information-is-beautiful-skill.vercel.app";
-  const title = "Information is Beautiful — Interactive Atlas";
+  const title = "Information is Beautiful – Interactive Atlas";
   const text = "Explore six spreads from the interactive tribute to David McCandless' Information is Beautiful.";
 
   const shareTwitter = () => {
@@ -84,8 +84,6 @@ export default function Atlas() {
   return (
     <section id="atlas" className="relative border-t border-ink/10 px-5 py-24 md:px-14 md:py-36">
       <SectionHead
-        fig="fig. 02"
-        kicker="inside the atlas"
         title={
           <>
             Six spreads,
@@ -96,7 +94,7 @@ export default function Atlas() {
       />
 
       <div className="grid gap-10 lg:grid-cols-[minmax(300px,380px)_1fr] lg:gap-16">
-        {/* menu — desktop */}
+        {/* menu – desktop */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -104,7 +102,7 @@ export default function Atlas() {
           transition={{ duration: 0.8, ease }}
           className="hidden lg:block"
         >
-          <p className="mb-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ink-soft">
+          <p className="mb-4 flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.25em] text-ink-soft">
             <MousePointerClick className="h-3.5 w-3.5 text-tangerine" />
             choose a spread · all sketches are homages
           </p>
@@ -117,7 +115,7 @@ export default function Atlas() {
                   onClick={() => setIdx(i)}
                   className={`group flex w-full items-baseline gap-4 border-b border-ink/15 px-4 py-5 text-left transition-all duration-300 ${active ? "bg-ink text-paper" : "hover:bg-paper-deep/60"}`}
                 >
-                  <span className={`font-mono text-[10px] tracking-[0.2em] ${active ? "text-tangerine" : "text-ink-soft"}`}>{p.index}</span>
+                  <span className={`font-mono text-[12px] tracking-[0.2em] ${active ? "text-tangerine" : "text-ink-soft"}`}>{p.index}</span>
                   <span
                     className="mt-0.5 h-3 w-3 shrink-0 self-center rounded-full border border-ink/40"
                     style={{ background: p.color }}
@@ -133,13 +131,13 @@ export default function Atlas() {
           </div>
         </motion.div>
 
-        {/* chips — mobile */}
+        {/* chips – mobile */}
         <div className="-mx-5 flex gap-2.5 overflow-x-auto px-5 pb-1 lg:hidden">
           {atlasPieces.map((p, i) => (
             <button
               key={p.id}
               onClick={() => setIdx(i)}
-              className={`flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] transition-colors ${i === idx ? "border-ink bg-ink text-paper" : "border-ink/25 text-ink-soft"}`}
+              className={`flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 font-mono text-[12px] uppercase tracking-[0.15em] transition-colors ${i === idx ? "border-ink bg-ink text-paper" : "border-ink/25 text-ink-soft"}`}
             >
               <span className="h-2 w-2 rounded-full" style={{ background: p.color }} />
               {p.title}
@@ -155,16 +153,15 @@ export default function Atlas() {
           transition={{ duration: 0.9, ease, delay: 0.1 }}
         >
           <div className="rounded-2xl border border-ink/15 bg-paper-deep/30 p-4 md:p-7">
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-3 px-1 font-mono text-[10px] uppercase tracking-[0.25em]">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-3 px-1 font-mono text-[12px] uppercase tracking-[0.25em]">
               <span className="flex items-center gap-2.5">
                 <span className="h-2.5 w-2.5 rounded-sm" style={{ background: piece.color }} />
-                <span className="text-ink">fig. {piece.index} · {piece.tagline}</span>
+                <span className="text-ink">{piece.index} · {piece.tagline}</span>
               </span>
               <span className="text-ink-soft">{piece.axis}</span>
             </div>
 
-            <div className="relative overflow-hidden rounded-xl border border-ink/20 bg-paper shadow-[inset_0_0_60px_rgb(23_20_14/0.04)]">
-              <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait">
                 <motion.div
                   key={piece.id}
                   initial={{ opacity: 0, y: 26, scale: 0.985 }}
@@ -176,7 +173,6 @@ export default function Atlas() {
                   <Renderer />
                 </motion.div>
               </AnimatePresence>
-            </div>
 
             {/* piece narrative */}
             <AnimatePresence mode="wait">
@@ -190,7 +186,7 @@ export default function Atlas() {
               >
                 <div>
                   <h3 className="font-display text-3xl font-black leading-[1.02] tracking-tight">{piece.title}</h3>
-                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ink-soft">
+                  <p className="mt-2 font-mono text-[12px] uppercase tracking-[0.25em] text-ink-soft">
                     homage · not the dataset
                   </p>
                 </div>
@@ -232,7 +228,7 @@ export default function Atlas() {
                 ))}
               </div>
               <div className="flex items-center gap-4">
-                <span className="font-mono text-[11px] tracking-[0.25em] text-ink-soft">
+                <span className="font-mono text-[12px] tracking-[0.25em] text-ink-soft">
                   {piece.index} / 06
                 </span>
                 <ShareButtons />

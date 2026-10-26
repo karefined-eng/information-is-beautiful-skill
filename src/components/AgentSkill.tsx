@@ -52,7 +52,7 @@ const HOSTS: Host[] = [
     icon: TerminalSquare,
     steps: [
       {
-        text: "Unzip and drop the folder where Claude Code looks for skills — personal scope (every project) or project scope (travels with the repo):",
+        text: "Unzip and drop the folder where Claude Code looks for skills – personal scope (every project) or project scope (travels with the repo):",
         code: [
           "unzip information-is-beautiful.zip",
           "mkdir -p ~/.claude/skills",
@@ -62,7 +62,7 @@ const HOSTS: Host[] = [
         ],
       },
       {
-        text: "Verify Claude Code discovered it, then invoke it directly — everything after the command is passed to the skill as its brief ($ARGUMENTS):",
+        text: "Verify Claude Code discovered it, then invoke it directly – everything after the command is passed to the skill as its brief ($ARGUMENTS):",
         code: ["/skills", "/information-is-beautiful chart this CSV of q3 churn by plan"],
       },
       {
@@ -77,10 +77,10 @@ const HOSTS: Host[] = [
     steps: [
       { text: "Enable the runtime first: Settings → Capabilities → switch on “Code execution and file creation” (on Team/Enterprise, an owner enables Skills under Organization settings → Plugins & skills)." },
       {
-        text: "Upload the zip — it is already packaged folder-as-root exactly as the uploader expects:",
+        text: "Upload the zip – it is already packaged folder-as-root exactly as the uploader expects:",
         code: ["Customize → Skills → “+” → Create skill → Upload a skill", "→ choose information-is-beautiful.zip"],
       },
-      { text: "Toggle the skill on. There’s no command to remember in chat — ask naturally (“design a comparison of these two datasets as an editorial infographic”) and Claude uses the skill when it fits." },
+      { text: "Toggle the skill on. There’s no command to remember in chat – ask naturally (“design a comparison of these two datasets as an editorial infographic”) and Claude uses the skill when it fits." },
     ],
   },
   {
@@ -89,7 +89,7 @@ const HOSTS: Host[] = [
     icon: Zap,
     steps: [
       {
-        text: "Upload through the Skills API (or the CLI helper). Zip path — one call:",
+        text: "Upload through the Skills API (or the CLI helper). Zip path – one call:",
         code: [
           "zip -r information-is-beautiful.zip information-is-beautiful/",
           "ant apply information-is-beautiful   # CLI upload",
@@ -101,7 +101,7 @@ const HOSTS: Host[] = [
         code: ["client.beta.skills.create(files=files_from_dir(\"information-is-beautiful\"))"],
       },
       {
-        text: "Attach the skill to a container that has the code-execution tool enabled; its files land at /skills/information-is-beautiful/ and Claude loads it when your prompt is about visualizing information. Upload must stay under 30 MB uncompressed — this package is 19 KB.",
+        text: "Attach the skill to a container that has the code-execution tool enabled; its files land at /skills/information-is-beautiful/ and Claude loads it when your prompt is about visualizing information. Upload must stay under 30 MB uncompressed – this package is 19 KB.",
       },
     ],
   },
@@ -139,8 +139,8 @@ function Markdown({ src }: { src: string }) {
       i++;
     }
     i++;
-    out.push(
-      <div key="fm" className="mb-5 rounded-lg border border-paper/15 bg-paper/5 p-4 font-mono text-[11px] leading-relaxed">
+out.push(
+        <div key="fm" className="mb-5 rounded-lg border border-paper/15 bg-paper/5 p-4 font-mono text-[12px] leading-relaxed">
         {meta.map((m, j) => {
           const idx = m.indexOf(":");
           return (
@@ -173,7 +173,7 @@ function Markdown({ src }: { src: string }) {
         i++;
       }
       out.push(
-        <pre key={k} className="my-3 overflow-x-auto rounded-lg border border-paper/15 bg-black/40 p-4 font-mono text-[11px] leading-relaxed text-paper/85">
+        <pre key={k} className="my-3 overflow-x-auto rounded-lg border border-paper/15 bg-black/40 p-4 font-mono text-[12px] leading-relaxed text-paper/85">
           {buf.join("\n")}
         </pre>
       );
@@ -181,13 +181,13 @@ function Markdown({ src }: { src: string }) {
     }
     if (l.startsWith("### "))
       out.push(
-        <h4 key={k} className="mb-1 mt-5 font-mono text-[12px] font-bold uppercase tracking-[0.15em] text-magenta">
+        <h4 key={k} className="mb-1 mt-5 font-mono text-[13px] font-bold uppercase tracking-[0.15em] text-magenta">
           {inline(l.slice(4), k)}
         </h4>
       );
     else if (l.startsWith("## "))
       out.push(
-        <h3 key={k} className="mb-2 mt-7 font-mono text-[13px] font-bold uppercase tracking-[0.18em] text-teal first:mt-0">
+        <h3 key={k} className="mb-2 mt-7 font-mono text-[14px] font-bold uppercase tracking-[0.18em] text-teal first:mt-0">
           {inline(l.slice(3), k)}
         </h3>
       );
@@ -200,14 +200,14 @@ function Markdown({ src }: { src: string }) {
     else if (l.trim() === "---") out.push(<hr key={k} className="my-5 border-paper/15" />);
     else if (l.startsWith("- [ ] "))
       out.push(
-        <p key={k} className="flex gap-2.5 py-0.5 pl-3 text-[13px] leading-relaxed text-paper/75">
+        <p key={k} className="flex gap-2.5 py-0.5 pl-3 text-[14px] leading-relaxed text-paper/75">
           <span className="mt-[5px] block h-3 w-3 shrink-0 rounded-[3px] border border-tangerine/70" />
           <span>{inline(l.slice(6), k)}</span>
         </p>
       );
     else if (l.startsWith("- "))
       out.push(
-        <p key={k} className="flex gap-2.5 py-0.5 pl-3 text-[13px] leading-relaxed text-paper/75">
+        <p key={k} className="flex gap-2.5 py-0.5 pl-3 text-[14px] leading-relaxed text-paper/75">
           <span className="mt-[8px] block h-1 w-1 shrink-0 rounded-full bg-tangerine" />
           <span>{inline(l.slice(2), k)}</span>
         </p>
@@ -216,14 +216,14 @@ function Markdown({ src }: { src: string }) {
       const num = l.match(/^(\d+)\.\s+(.*)/);
       if (num)
         out.push(
-          <p key={k} className="flex gap-3 py-1 pl-3 text-[13px] leading-relaxed text-paper/80">
-            <span className="shrink-0 font-mono text-[11px] font-bold text-tangerine">{num[1]}.</span>
+          <p key={k} className="flex gap-3 py-1 pl-3 text-[14px] leading-relaxed text-paper/80">
+            <span className="shrink-0 font-mono text-[12px] font-bold text-tangerine">{num[1]}.</span>
             <span>{inline(num[2], k)}</span>
           </p>
         );
       else
         out.push(
-          <p key={k} className="py-0.5 text-[13px] leading-relaxed text-paper/70">
+          <p key={k} className="py-0.5 text-[14px] leading-relaxed text-paper/70">
             {inline(l, k)}
           </p>
         );
@@ -272,11 +272,9 @@ export default function AgentSkill() {
   return (
     <section id="skill" className="relative border-t border-ink/10 px-5 py-24 md:px-14 md:py-36">
       <SectionHead
-        fig="fig. 05"
-        kicker="the agent skill"
         title={
           <>
-            The book, <em className="font-light text-tangerine">compiled</em>
+            The book, <span className="font-light text-tangerine">compiled</span>
             <br />
             for AI agents
           </>
@@ -296,7 +294,7 @@ export default function AgentSkill() {
           <a href="https://agentskills.io/specification" target="_blank" rel="noreferrer" className="font-semibold text-ink underline decoration-tangerine decoration-2 underline-offset-2">
             Agent Skills open specification
           </a>{" "}
-          — a folder with a <code className="rounded bg-ink/10 px-1.5 py-0.5 font-mono text-[13px] text-ink">SKILL.md</code>{" "}
+          – a folder with a <code className="rounded bg-ink/10 px-1.5 py-0.5 font-mono text-[13px] text-ink">SKILL.md</code>{" "}
           (name, description, license, metadata) plus references an agent loads on demand. The
           distillation is deliberately narrow, and every principle’s{" "}
           <span className="font-semibold text-ink">authentic source is preserved</span> in{" "}
@@ -312,7 +310,7 @@ export default function AgentSkill() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease, delay: i * 0.06 }}
-            className="rounded-full border border-ink/20 px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-soft"
+            className="rounded-full border border-ink/20 px-4 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-soft"
           >
             {t}
           </motion.span>
@@ -330,7 +328,7 @@ export default function AgentSkill() {
             transition={{ duration: 0.7, ease }}
             className="rounded-2xl border border-ink bg-ink p-6 text-paper"
           >
-            <p className="mb-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-sun">
+            <p className="mb-4 flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.25em] text-sun">
               <Archive className="h-4 w-4" /> the package
             </p>
             <p className="font-display text-lg font-bold leading-snug">information-is-beautiful.zip</p>
@@ -343,7 +341,7 @@ export default function AgentSkill() {
               <Download className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
               download the zip
             </a>
-            <p className="mt-3 break-all font-mono text-[9.5px] leading-relaxed text-paper/35">
+            <p className="mt-3 break-all font-mono text-[12px] leading-relaxed text-paper/35">
               sha256 {ZIP_SHA.slice(0, 24)}…{ZIP_SHA.slice(-8)}
             </p>
           </motion.div>
@@ -356,13 +354,13 @@ export default function AgentSkill() {
             transition={{ duration: 0.7, ease, delay: 0.1 }}
             className="rounded-2xl border border-ink/15 p-6"
           >
-            <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-ink-soft">install & invoke — pick your host</p>
+            <p className="mb-4 font-mono text-[12px] uppercase tracking-[0.25em] text-ink-soft">install & invoke – pick your host</p>
             <div className="mb-5 flex flex-wrap gap-2">
               {HOSTS.map((h, i) => (
                 <button
                   key={h.id}
                   onClick={() => setHost(i)}
-                  className={`flex items-center gap-2 rounded-full border px-3.5 py-2 font-mono text-[10px] uppercase tracking-[0.12em] transition-colors ${i === host ? "border-ink bg-ink text-paper" : "border-ink/25 text-ink-soft hover:border-ink/60"}`}
+                  className={`flex items-center gap-2 rounded-full border px-3.5 py-2 font-mono text-[12px] uppercase tracking-[0.12em] transition-colors ${i === host ? "border-ink bg-ink text-paper" : "border-ink/25 text-ink-soft hover:border-ink/60"}`}
                 >
                   <h.icon className="h-3.5 w-3.5" strokeWidth={1.8} />
                   {h.label}
@@ -380,11 +378,11 @@ export default function AgentSkill() {
               >
                 {Host.steps.map((s, i) => (
                   <li key={i} className="flex gap-3">
-                    <span className="mt-0.5 font-mono text-[11px] font-bold text-tangerine">{i + 1}.</span>
+                    <span className="mt-0.5 font-mono text-[12px] font-bold text-tangerine">{i + 1}.</span>
                     <div className="min-w-0">
                       <p className="text-sm leading-relaxed text-ink-soft">{s.text}</p>
                       {s.code && (
-                        <pre className="mt-2 overflow-x-auto rounded-lg bg-ink p-3.5 font-mono text-[11px] leading-relaxed text-paper/85">
+                        <pre className="mt-2 overflow-x-auto rounded-lg bg-ink p-3.5 font-mono text-[12px] leading-relaxed text-paper/85">
                           {s.code.join("\n")}
                         </pre>
                       )}
@@ -406,7 +404,7 @@ export default function AgentSkill() {
             <Package className="mb-3 h-5 w-5 text-teal" strokeWidth={1.7} />
             <h3 className="font-display text-xl font-bold">Commands & arguments</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-              Skills have no typed signature — there is one “command” per host: the folder’s name.
+              Skills have no typed signature – there is one “command” per host: the folder’s name.
               In Claude Code that name becomes the slash command; whatever you type after it arrives
               as <code className="rounded bg-ink/10 px-1 py-0.5 font-mono text-xs">$ARGUMENTS</code> and the skill
               treats it as the design brief (data, audience, medium). Everywhere else, the argument
@@ -429,7 +427,7 @@ export default function AgentSkill() {
               Principles are teachable; the book’s expression is the author’s. This skill quotes
               nothing from it, and{" "}
               <code className="rounded bg-ink/10 px-1 py-0.5 font-mono text-xs">references/sources.md</code>{" "}
-              maps every principle to its true origin — McCandless, Tufte, Few, Cairo, WCAG. Want
+              maps every principle to its true origin – McCandless, Tufte, Few, Cairo, WCAG. Want
               the real atlas?{" "}
               <a href="#get" className="font-semibold text-ink underline decoration-tangerine decoration-2 underline-offset-2">
                 fig. 06
@@ -460,7 +458,7 @@ export default function AgentSkill() {
               <button
                 onClick={copy}
                 disabled={!content}
-                className="flex items-center gap-2 rounded-full border border-paper/25 px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.15em] transition-colors hover:border-tangerine hover:text-tangerine disabled:opacity-40"
+                className="flex items-center gap-2 rounded-full border border-paper/25 px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.15em] transition-colors hover:border-tangerine hover:text-tangerine disabled:opacity-40"
               >
                 {copied ? <Check className="h-3.5 w-3.5 text-teal" /> : <Copy className="h-3.5 w-3.5" />}
                 {copied ? "copied" : "copy"}
@@ -468,7 +466,7 @@ export default function AgentSkill() {
               <a
                 href={file.path}
                 download
-                className="flex items-center gap-2 rounded-full border border-paper/25 px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.15em] transition-colors hover:border-teal hover:text-teal"
+                className="flex items-center gap-2 rounded-full border border-paper/25 px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.15em] transition-colors hover:border-teal hover:text-teal"
               >
                 <Download className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">file</span>
@@ -487,24 +485,24 @@ export default function AgentSkill() {
 
           <div className="grid md:grid-cols-[230px_1fr]">
             <div className="hidden border-r border-paper/15 p-4 md:block">
-              <p className="mb-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-paper/40">
+              <p className="mb-3 flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.2em] text-paper/40">
                 <FolderTree className="h-3.5 w-3.5" />
                 files
               </p>
-              <p className="px-2 pb-1.5 font-mono text-[10px] text-paper/35">information-is-beautiful/</p>
+              <p className="px-2 pb-1.5 font-mono text-[12px] text-paper/35">information-is-beautiful/</p>
               {FILES.map((f, i) => {
                 const isRef = f.path.includes("/references/");
                 return (
                   <div key={f.path}>
-                    {isRef && i === 1 && <p className="px-2 py-1.5 font-mono text-[10px] text-paper/35">└─ references/</p>}
+                    {isRef && i === 1 && <p className="px-2 py-1.5 font-mono text-[12px] text-paper/35">└─ references/</p>}
                     <button
                       onClick={() => setActive(i)}
                       className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left transition-colors ${i === active ? "bg-paper/10 text-paper" : "text-paper/55 hover:bg-paper/5 hover:text-paper/85"} ${isRef ? "pl-6" : ""}`}
                     >
                       <f.icon className="h-3.5 w-3.5 shrink-0" style={{ color: i === active ? "#ff5d1f" : undefined }} strokeWidth={1.8} />
                       <span>
-                        <span className="block font-mono text-[11px]">{f.label}</span>
-                        <span className="block text-[10px] text-paper/40">{f.note}</span>
+                        <span className="block font-mono text-[12px]">{f.label}</span>
+                        <span className="block text-[11px] text-paper/40">{f.note}</span>
                       </span>
                     </button>
                   </div>
@@ -517,7 +515,7 @@ export default function AgentSkill() {
                 <button
                   key={f.path}
                   onClick={() => setActive(i)}
-                  className={`shrink-0 rounded-full border px-3.5 py-1.5 font-mono text-[10px] transition-colors ${i === active ? "border-tangerine bg-tangerine/15 text-paper" : "border-paper/20 text-paper/50"}`}
+                  className={`shrink-0 rounded-full border px-3.5 py-1.5 font-mono text-[12px] transition-colors ${i === active ? "border-tangerine bg-tangerine/15 text-paper" : "border-paper/20 text-paper/50"}`}
                 >
                   {f.label}
                 </button>
@@ -527,7 +525,7 @@ export default function AgentSkill() {
             <div className="h-[560px] overflow-y-auto p-5 md:p-7">
               {failed ? (
                 <p className="font-mono text-xs leading-relaxed text-paper/60">
-                  (raw files not reachable in this preview — they live in
+                  (raw files not reachable in this preview – they live in
                   <span className="text-teal"> skills/information-is-beautiful/ </span>
                   inside the project)
                 </p>
@@ -539,7 +537,7 @@ export default function AgentSkill() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between border-t border-paper/15 px-5 py-2.5 font-mono text-[9.5px] uppercase tracking-[0.2em] text-paper/35">
+          <div className="flex items-center justify-between border-t border-paper/15 px-5 py-2.5 font-mono text-[12px] uppercase tracking-[0.2em] text-paper/35">
             <span>{file.path.replace(BASE, "skill:")}</span>
             <span className="hidden sm:block">agent skills spec · markdown · MIT</span>
           </div>

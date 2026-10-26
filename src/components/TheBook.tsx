@@ -10,7 +10,7 @@ const cards = [
   {
     icon: Layers,
     title: "An atlas, not a textbook",
-    body: "Across 256 full-colour pages, McCandless distils the data that swamps us — money, health, fear, love — into diagrams you can wander through.",
+    body: "Across 256 full-colour pages, McCandless distils the data that swamps us – money, health, fear, love – into diagrams you can wander through.",
   },
   {
     icon: Palette,
@@ -20,7 +20,7 @@ const cards = [
   {
     icon: BookOpenText,
     title: "Revised & recalculated",
-    body: "The 2012 new edition re-ran every figure on fresher data and was “reimagined” throughout — infographics as living documents.",
+    body: "The 2012 new edition re-ran every figure on fresher data and was “reimagined” throughout – infographics as living documents.",
   },
   {
     icon: Languages,
@@ -44,13 +44,11 @@ export default function TheBook() {
   return (
     <section id="book" className="relative overflow-hidden px-5 py-24 md:px-14 md:py-36">
       <SectionHead
-        fig="fig. 01"
-        kicker="the artefact"
         title={
           <>
             The book that made
             <br />
-            numbers <em className="font-light text-tangerine">gorgeous</em>
+            numbers <span className="font-light text-tangerine">gorgeous</span>
           </>
         }
       />
@@ -74,7 +72,7 @@ export default function TheBook() {
             >
               <img src="/prints.jpg" alt="A fanned stack of colorful data-visualization art prints" className="block w-full" />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between font-mono text-[10px] uppercase tracking-[0.25em] text-paper">
+              <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between font-mono text-[12px] uppercase tracking-[0.25em] text-paper">
                 <span>the studio floor, after printing</span>
                 <span className="text-sun">plate 255/255</span>
               </div>
@@ -85,7 +83,7 @@ export default function TheBook() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.6, ease }}
-            className="absolute -right-3 -top-5 rotate-6 rounded-lg border border-ink bg-sun px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.15em] shadow-[4px_4px_0_#17140e] md:-right-6"
+            className="absolute -right-3 -top-5 rotate-6 rounded-lg border border-ink bg-sun px-4 py-2 font-mono text-[12px] font-bold uppercase tracking-[0.15em] shadow-[4px_4px_0_#17140e] md:-right-6"
           >
             out in print · not pirated
           </motion.div>
@@ -105,7 +103,7 @@ export default function TheBook() {
                 variants={{ off: { opacity: 0, x: 30 }, on: { opacity: 1, x: 0, transition: { duration: 0.6, ease } } }}
                 className="group flex items-baseline justify-between gap-4 border-b border-ink/15 py-4 transition-colors hover:border-tangerine"
               >
-                <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink-soft">{s.label}</span>
+                <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-ink-soft">{s.label}</span>
                 <span className="text-right">
                   <span className="font-display text-xl font-semibold md:text-2xl">{s.value}</span>
                   {s.note && <span className="block text-xs text-ink-soft">{s.note}</span>}
@@ -122,8 +120,8 @@ export default function TheBook() {
             className="mt-8 border-l-2 border-tangerine pl-5 font-display text-lg italic leading-relaxed text-ink-soft md:text-xl"
           >
             “A visual guide to how the world really works, through stunning infographics and data
-            visualisations — thoroughly revised, recalculated and reimagined.”
-            <span className="mt-2 block font-mono text-[10px] uppercase not-italic tracking-[0.25em] text-ink">— the publisher’s jacket copy</span>
+            visualisations – thoroughly revised, recalculated and reimagined.”
+            <span className="mt-2 block font-mono text-[12px] uppercase not-italic tracking-[0.25em] text-ink">– the publisher’s jacket copy</span>
           </motion.p>
         </div>
       </div>

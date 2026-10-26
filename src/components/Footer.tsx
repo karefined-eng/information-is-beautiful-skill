@@ -44,7 +44,7 @@ export default function Footer() {
 
       <div className="mt-16 grid gap-10 border-t border-paper/15 pt-10 md:grid-cols-5">
         <div>
-          <p className="mb-3 flex items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.25em]">
+          <p className="mb-3 flex items-center gap-2 font-mono text-[12px] font-bold uppercase tracking-[0.25em]">
             <Asterisk className="h-4 w-4 text-tangerine" />
             colophon
           </p>
@@ -55,7 +55,7 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <p className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-paper">author</p>
+          <p className="mb-3 font-mono text-[12px] font-bold uppercase tracking-[0.25em] text-paper">author</p>
           <div className="space-y-1 text-sm text-paper/50">
             <p className="flex items-center gap-2">
               <span className="font-display font-medium text-paper/70">karefined</span>
@@ -72,14 +72,14 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <p className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-paper">data, honestly</p>
+          <p className="mb-3 font-mono text-[12px] font-bold uppercase tracking-[0.25em] text-paper">data, honestly</p>
           <p className="text-sm leading-relaxed text-paper/50">
             Every chart on this page is an illustrative homage drawn from scratch. For the real
-            datasets and the real craft, get the book — links above.
+            datasets and the real craft, get the book – links above.
           </p>
         </div>
         <div>
-          <p className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-paper">routes</p>
+          <p className="mb-3 font-mono text-[12px] font-bold uppercase tracking-[0.25em] text-paper">routes</p>
           <ul className="space-y-2 text-sm text-paper/50">
             <li><a href="https://informationisbeautiful.net" target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-tangerine">informationisbeautiful.net <ExternalLink className="h-3 w-3" /></a></li>
             <li><a href="https://davidmccandless.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-teal">davidmccandless.com <ExternalLink className="h-3 w-3" /></a></li>
@@ -91,7 +91,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <p className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-paper">connect</p>
+          <p className="mb-3 font-mono text-[12px] font-bold uppercase tracking-[0.25em] text-paper">connect</p>
           <div className="flex gap-3">
             <a href="https://github.com/karefined-eng" target="_blank" rel="noreferrer" className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10" aria-label="GitHub">
               <GitHubIcon className="h-4.5 w-4.5" />
@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-paper/15 pt-6 font-mono text-[10px] uppercase tracking-[0.25em] text-paper/35">
+      <div className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-paper/15 pt-6 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/35">
         <span>© MMXXVI a tribute, typeset in Fraunces</span>
         <span className="flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-teal" />

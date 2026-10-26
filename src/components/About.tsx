@@ -15,14 +15,14 @@ export default function About() {
         <div className="max-w-3xl mx-auto">
           <Link
             to={location.state?.from || "/"}
-            className="inline-flex items-center gap-2 mb-8 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-ink-soft hover:text-tangerine transition-colors"
+            className="inline-flex items-center gap-2 mb-8 font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-ink-soft hover:text-tangerine transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             Back
           </Link>
 
           <header className="mb-12">
-            <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-tangerine">
+            <p className="mb-4 font-mono text-[12px] uppercase tracking-[0.25em] text-tangerine">
               colophon · about this project
             </p>
             <h1 className="font-display text-[clamp(2.8rem,8vw,7rem)] font-black uppercase leading-[0.9] tracking-tight text-ink">
@@ -36,7 +36,7 @@ export default function About() {
             <div className="space-y-6">
               <h2 className="font-display text-2xl font-bold text-ink">What is this?</h2>
               <p className="text-[15px] leading-relaxed text-ink-soft">
-                This is an unofficial fan tribute to <em className="font-display text-ink">Information is Beautiful</em> — 
+                This is an unofficial fan tribute to <em className="font-display text-ink">Information is Beautiful</em> – 
                 David McCandless' landmark atlas of infographics (William Collins, 2009; revised edition 2012). 
                 It celebrates the book's philosophy: <strong>form follows data; beauty in service of comprehension</strong>.
               </p>
@@ -44,7 +44,7 @@ export default function About() {
               <p className="text-[15px] leading-relaxed text-ink-soft">
                 The site contains interactive homages to six iconic spreads from the book, a live 
                 <strong>chart-matcher playground</strong> that helps you pick the right visual form for your data, 
-                and the full text of the <strong>information-is-beautiful Agent Skill</strong> — an MIT-licensed 
+                and the full text of the <strong>information-is-beautiful Agent Skill</strong> – an MIT-licensed 
                 skill that teaches AI coding agents honest, editorial-quality information design.
               </p>
             </div>
@@ -58,11 +58,11 @@ export default function About() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 rounded-full bg-tangerine shrink-0" />
-                  <span>Not a reproduction of the book's content — all visualizations are illustrative homages drawn from scratch.</span>
+                  <span>Not a reproduction of the book's content – all visualizations are illustrative homages drawn from scratch.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 rounded-full bg-tangerine shrink-0" />
-                  <span>Not a source for the book's datasets — for those, visit <a href="https://informationisbeautiful.net" target="_blank" rel="noreferrer" className="text-tangerine hover:underline">informationisbeautiful.net</a>.</span>
+                  <span>Not a source for the book's datasets – for those, visit <a href="https://informationisbeautiful.net" target="_blank" rel="noreferrer" className="text-tangerine hover:underline">informationisbeautiful.net</a>.</span>
                 </li>
               </ul>
             </div>

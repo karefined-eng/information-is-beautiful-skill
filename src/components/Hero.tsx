@@ -39,7 +39,7 @@ function Line({ children, delay }: { children: React.ReactNode; delay: number })
 
 function ShareButtons() {
   const url = typeof window !== "undefined" ? window.location.href : "https://information-is-beautiful-skill.vercel.app";
-  const title = "Information is Beautiful — An Interactive Tribute";
+  const title = "Information is Beautiful – An Interactive Tribute";
   const text = "An interactive tribute to David McCandless' atlas of infographics, plus an Agent Skill that teaches AI agents honest, editorial data design.";
 
   const shareTwitter = () => {
@@ -107,12 +107,12 @@ export default function Hero() {
       <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-2.5 border-r border-ink/10 bg-[linear-gradient(to_bottom,rgb(23_20_14/0.4)_1px,transparent_1px)] bg-[size:100%_16px] opacity-40" />
 
       {/* corner registration marks */}
-      <div className="pointer-events-none absolute right-5 top-20 hidden font-mono text-[10px] uppercase tracking-[0.25em] text-ink-soft md:block">
-        <p>pl. 01 — opening spread</p>
+      <div className="pointer-events-none absolute right-5 top-20 hidden font-mono text-[12px] uppercase tracking-[0.25em] text-ink-soft md:block">
+        <p>pl. 01 – opening spread</p>
         <p className="mt-1">51.5072° n / 0.1276° w</p>
       </div>
-      <div className="pointer-events-none absolute bottom-24 left-6 hidden rotate-180 font-mono text-[10px] uppercase tracking-[0.25em] text-ink-soft [writing-mode:vertical-rl] md:block">
-        a tribute to the atlas of infographics — not affiliated with the author
+      <div className="pointer-events-none absolute bottom-24 left-6 hidden rotate-180 font-mono text-[12px] uppercase tracking-[0.25em] text-ink-soft [writing-mode:vertical-rl] md:block">
+        a tribute to the atlas of infographics – not affiliated with the author
       </div>
 
       <motion.div style={{ opacity: fade }} className="relative z-10 flex flex-1 flex-col justify-center px-5 md:px-14">
@@ -121,7 +121,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease, delay: 0.1 }}
-            className="mb-5 font-mono text-[11px] uppercase tracking-[0.3em] text-tangerine"
+            className="mb-5 font-mono text-[12px] uppercase tracking-[0.3em] text-tangerine"
           >
             256 pages · 200+ infographics · one man’s mission
           </motion.p>
@@ -133,9 +133,9 @@ export default function Hero() {
               </span>
             </Line>
             <Line delay={0.32}>
-              <span className="block pl-[6vw] text-[clamp(2.4rem,7vw,6.2rem)] font-light italic">
+              <span className="block pl-[6vw] text-[clamp(2.4rem,7vw,6.2rem)] font-light">
                 is{" "}
-                <span className="text-hollow not-italic">truly</span>
+                <span className="text-hollow">truly</span>
               </span>
             </Line>
             <Line delay={0.46}>
@@ -152,12 +152,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease, delay: 0.62 }}
-            className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg"
+            className="max-w-[48ch] text-base leading-relaxed text-ink-soft md:text-lg"
           >
-            An interactive tribute to{" "}
-            <em className="font-display text-ink">Information is Beautiful</em> — David McCandless’
-            cult atlas of infographics that taught the world to see data as a landscape. Explore the
-            spreads, then find a legitimate copy.
+            An interactive tribute to <em className="font-display text-ink">Information is Beautiful</em> – David McCandless's cult atlas of infographics that taught the world to see data as a landscape. Explore the spreads, then find a legitimate copy.
           </motion.p>
 
           <motion.div
@@ -190,9 +187,9 @@ export default function Hero() {
             <defs>
               <path id="circ" d="M 65,65 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" />
             </defs>
-            <circle cx="65" cy="65" r="30" fill="#ff5d1f" />
-            <circle cx="65" cy="65" r="6" fill="#f3eee1" />
-            <text fontSize="10.5" letterSpacing="2.5" fill="#17140e" fontFamily="JetBrains Mono, monospace">
+            <circle cx="65" cy="65" r="30" fill="#d04000" />
+            <circle cx="65" cy="65" r="6" fill="#f5f0e6" />
+            <text fontSize="12" letterSpacing="2.5" fill="#12100a" fontFamily="JetBrains Mono, monospace">
               <textPath href="#circ">NEW EDITION · REVISED · RECALCULATED · REIMAGINED ·</textPath>
             </text>
           </svg>
@@ -206,7 +203,7 @@ export default function Hero() {
         transition={{ delay: 1.4, duration: 1 }}
         className="relative z-10 flex items-center justify-center pb-7"
       >
-        <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-ink-soft">
+        <div className="flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.3em] text-ink-soft">
           <span className="h-px w-10 bg-ink/30" />
           scroll to visualise
           <motion.span animate={{ y: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}>

@@ -56,14 +56,14 @@ export default function Nav() {
               setSoundState(next);
             }}
             aria-pressed={sound}
-            title={sound ? "Sound on — hovers and clicks chirp" : "Sound off — click to enable"}
+            title={sound ? "Sound on – hovers and clicks chirp" : "Sound off – click to enable"}
             className="grid h-9 w-9 place-items-center rounded-full border border-ink/15 text-ink-soft transition-colors hover:border-tangerine hover:text-tangerine"
           >
             {sound ? <Volume2 className="h-4 w-4" /> : <VolumeX className="h-4 w-4" />}
           </button>
           <a
             href="#get"
-            className="rounded-full border border-ink bg-ink px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-paper transition-colors hover:border-tangerine hover:bg-tangerine"
+            className="rounded-full border border-ink bg-ink px-4 py-2 font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-paper transition-colors hover:border-tangerine hover:bg-tangerine"
           >
             Get the book
           </a>

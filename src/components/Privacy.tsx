@@ -15,14 +15,14 @@ export default function Privacy() {
         <div className="max-w-3xl mx-auto">
           <Link
             to={location.state?.from || "/"}
-            className="inline-flex items-center gap-2 mb-8 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-ink-soft hover:text-tangerine transition-colors"
+            className="inline-flex items-center gap-2 mb-8 font-mono text-[12px] font-bold uppercase tracking-[0.2em] text-ink-soft hover:text-tangerine transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             Back
           </Link>
 
           <header className="mb-12">
-            <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-tangerine">
+            <p className="mb-4 font-mono text-[12px] uppercase tracking-[0.25em] text-tangerine">
               colophon · privacy policy
             </p>
             <h1 className="font-display text-[clamp(2.8rem,8vw,7rem)] font-black uppercase leading-[0.9] tracking-tight text-ink">
@@ -67,8 +67,8 @@ export default function Privacy() {
                 The following third-party resources are loaded:
               </p>
               <ul className="space-y-2 mt-3 text-[15px] leading-relaxed text-ink-soft">
-                <li><strong>Google Fonts</strong> (fonts.googleapis.com, fonts.gstatic.com) — for Fraunces, Space Grotesk, and JetBrains Mono fonts. Loaded with <code>preconnect</code> and <code>display=swap</code>. No cookies set.</li>
-                <li><strong>Vercel</strong> — hosting and CDN. Standard server logs only.</li>
+                <li><strong>Google Fonts</strong> (fonts.googleapis.com, fonts.gstatic.com) – for Fraunces, Space Grotesk, and JetBrains Mono fonts. Loaded with <code>preconnect</code> and <code>display=swap</code>. No cookies set.</li>
+                <li><strong>Vercel</strong> – hosting and CDN. Standard server logs only.</li>
               </ul>
               <p className="text-[15px] leading-relaxed text-ink-soft mt-3">
                 No Google Analytics, no Facebook Pixel, no third-party analytics, no advertising networks, 
