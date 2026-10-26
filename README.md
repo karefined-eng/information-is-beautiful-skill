@@ -1,10 +1,54 @@
 # information-is-beautiful
 
-An Agent Skill that teaches AI agents to design beautiful, honest information
-graphics — an original, MIT-licensed synthesis of the design philosophy of
-David McCandless' _Information is Beautiful_, by karefined. Not affiliated with
-the author. No content from the book is reproduced; authentic sources are
-preserved in `references/sources.md`.
+<p align="center">
+  <a href="https://github.com/karefined-eng/information-is-beautiful-skill/stargazers"><img src="https://img.shields.io/github/stars/karefined-eng/information-is-beautiful-skill?style=flat-square&color=111111&label=stars" alt="Stars"></a>
+  <a href="https://github.com/karefined-eng/information-is-beautiful-skill/releases"><img src="https://img.shields.io/github/v/release/karefined-eng/information-is-beautiful-skill?style=flat-square&color=111111&label=release" alt="Release"></a>
+  <img src="https://img.shields.io/badge/works%20with-Claude%20Code,%20Codex,%20Cursor,%20ZCode-111111?style=flat-square" alt="Works with agents">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license"></a>
+</p>
+
+<p align="center">
+  An Agent Skill that teaches AI agents to design beautiful, honest information
+  graphics — an original, MIT-licensed synthesis of the design philosophy of
+  David McCandless' _Information is Beautiful_, by karefined. Not affiliated with
+  the author. No content from the book is reproduced; authentic sources are
+  preserved in `references/sources.md`.
+</p>
+
+<p align="center">
+  <img src="https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/ranking.svg" width="100%" alt="Ranking demo: world populations, before &amp; after" />
+</p>
+
+<p align="center">
+  <strong>Proof — before/after demos.</strong> Each pair draws the same real,
+  cited dataset twice: the left panel is default-software slop; the right panel
+  follows the skill's five laws. Same data, honest insight.
+</p>
+
+## Proof — before/after demos
+
+### 1 · Ranking → sorted bars (most universal)
+[![world populations before/after](https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/ranking.svg)](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/examples/ranking.svg)
+
+UN World Population Prospects 2024. The slop panel sorts alphabetically and clips
+the axis at 500M, so India and China look identical. The skill sorts by magnitude,
+accents India and China in tangerine, and states: *India has passed China as the
+world's most populous nation.*
+
+### 2 · Composition → aggregated stacked bar (the expertise move)
+[![world electricity mix before/after](https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/composition.svg)](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/examples/composition.svg)
+
+Ember Global Electricity Review 2024. Slop: an illegal 8-slice exploded 3D pie.
+Skill: aggregate to Fossil 59% vs Low-carbon 41%, then break out coal/gas/hydro/
+nuclear/wind/solar beneath — knowing which chart to stop drawing.
+
+### 3 · Time → line (localization)
+[![Ghana inflation before/after](https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/before-after.svg)](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/examples/before-after.svg)
+
+Ghana Statistical Service CPI. Slop: a 3D pie of rates over time. Skill: a
+time-proportional line; "Ghana cut inflation from 54% to 5% in three years."
+
+---
 
 ## Structure
 
@@ -16,10 +60,16 @@ information-is-beautiful/
    ├─ chart-matcher.md            # data shape → visual form
    ├─ palettes.md                 # colour as a data channel
    ├─ quality-checklist.md        # the 25-point beauty audit
-   └─ sources.md                  # authentic provenance & citations
+   ├─ sources.md                  # authentic provenance & citations
+   └─ creative-moves.md           # the ingenuity layer (v1.2.0)
 ```
 
 ## Install
+
+**One command (any Agent-Skills-compatible agent):**
+```bash
+npx skills add karefined-eng/information-is-beautiful-skill
+```
 
 **ZCode (personal — every project):**
 ```bash
