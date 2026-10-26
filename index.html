@@ -9,6 +9,7 @@
     />
     <title>Information is Beautiful — An Interactive Tribute</title>
     <link rel="canonical" href="https://information-is-beautiful-skill.vercel.app/" />
+    <link rel="llms" href="/llms.txt" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,14 +38,37 @@
             "@id": "https://information-is-beautiful-skill.vercel.app/#website",
             "url": "https://information-is-beautiful-skill.vercel.app/",
             "name": "Information is Beautiful — An Interactive Tribute",
-            "publisher": { "@id": "https://information-is-beautiful-skill.vercel.app/#author" }
+            "publisher": { "@id": "https://information-is-beautiful-skill.vercel.app/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://information-is-beautiful-skill.vercel.app/#organization",
+            "name": "information-is-beautiful",
+            "url": "https://information-is-beautiful-skill.vercel.app/",
+            "logo": "https://information-is-beautiful-skill.vercel.app/favicon.svg",
+            "sameAs": [
+              "https://github.com/karefined-eng",
+              "https://twitter.com/karefined",
+              "https://linkedin.com/in/karefined"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "email": "hello@karefined.design",
+              "availableLanguage": "English"
+            }
           },
           {
             "@type": "Person",
             "@id": "https://information-is-beautiful-skill.vercel.app/#author",
             "name": "karefined",
             "url": "https://github.com/karefined-eng",
-            "sameAs": ["https://github.com/karefined-eng/information-is-beautiful-skill"]
+            "sameAs": [
+              "https://github.com/karefined-eng",
+              "https://twitter.com/karefined",
+              "https://linkedin.com/in/karefined"
+            ],
+            "worksFor": { "@id": "https://information-is-beautiful-skill.vercel.app/#organization" }
           },
           {
             "@type": "SoftwareApplication",
@@ -52,7 +76,7 @@
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "Any",
             "description": "An Agent Skill that teaches AI coding agents honest, editorial-quality information design — five laws, a chart matcher, and a 25-point quality audit.",
-            "author": { "@type": "Person", "name": "karefined" },
+            "author": { "@id": "https://information-is-beautiful-skill.vercel.app/#author" },
             "license": "https://opensource.org/licenses/MIT",
             "url": "https://github.com/karefined-eng/information-is-beautiful-skill",
             "installUrl": "https://github.com/karefined-eng/information-is-beautiful-skill",

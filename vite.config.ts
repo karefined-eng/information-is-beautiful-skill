@@ -21,6 +21,10 @@ function generateSkillHtml(relPath: string, markdown: string, frontmatter: Recor
   const description = frontmatter.description || "An Agent Skill for information design.";
   const url = `${SITE_URL}/skills/${relPath.replace(/\.md$/, "")}`;
   const ogImage = `${SITE_URL}/prints.jpg`;
+  const authorName = frontmatter.author || "karefined";
+  const version = frontmatter.version || "1.3.0";
+  const datePublished = "2026-10-24";
+  const dateModified = "2026-10-26";
   
   // Convert markdown to HTML for the page content
   const htmlContent = marked.parse(markdown);
@@ -55,18 +59,24 @@ function generateSkillHtml(relPath: string, markdown: string, frontmatter: Recor
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",
         "description": "${description.replace(/"/g, '\\"')}",
-        "author": { "@type": "Person", "name": "karefined" },
+        "author": { "@type": "Person", "name": "${authorName}", "url": "https://github.com/karefined-eng" },
         "license": "https://opensource.org/licenses/MIT",
         "url": "${url}",
         "installUrl": "https://github.com/karefined-eng/information-is-beautiful-skill",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "datePublished": "${datePublished}",
+        "dateModified": "${dateModified}",
+        "version": "${version}"
       },
       {
         "@type": "WebPage",
         "url": "${url}",
         "name": "${title}",
         "description": "${description.replace(/"/g, '\\"')}",
-        "isPartOf": { "@id": "${SITE_URL}/#website" }
+        "isPartOf": { "@id": "${SITE_URL}/#website" },
+        "author": { "@type": "Person", "name": "${authorName}", "url": "https://github.com/karefined-eng" },
+        "datePublished": "${datePublished}",
+        "dateModified": "${dateModified}"
       }
     ]
   }
@@ -110,7 +120,11 @@ function generateSkillHtml(relPath: string, markdown: string, frontmatter: Recor
         ${frontmatter.author ? `<span>Author: ${frontmatter.author}</span>` : ""}
       </div>
     </header>
-    <article>
+    <article itemscope itemtype="https://schema.org/TechArticle">
+      <meta itemprop="author" content="${authorName}" />
+      <meta itemprop="datePublished" content="${datePublished}" />
+      <meta itemprop="dateModified" content="${dateModified}" />
+      <meta itemprop="version" content="${version}" />
       ${htmlContent}
     </article>
     <footer class="footer">

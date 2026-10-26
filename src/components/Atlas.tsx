@@ -1,11 +1,78 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, MousePointerClick } from "lucide-react";
+import { ArrowLeft, ArrowRight, MousePointerClick, Share2, X } from "lucide-react";
 import { useState } from "react";
 import { atlasPieces } from "../data/book";
 import SectionHead from "./SectionHead";
 import { VIZ_RENDERERS } from "./VizRenderers";
 
 const ease = [0.22, 1, 0.36, 1] as const;
+
+// Inline SVG icons for social platforms not in lucide-react
+function TwitterIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 9.72h-3.308l-7.227-8.26L18.244 2.25zM2.25 4.89l8.778 10.02H2.25L2.25 4.89zM12.42 4.89l7.227 8.26-8.502 9.72H12.42L12.42 4.89zM2.25 14.91l8.778 10.02H2.25L2.25 14.91z" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  );
+}
+
+function ShareButtons() {
+  const url = typeof window !== "undefined" ? window.location.href : "https://information-is-beautiful-skill.vercel.app";
+  const title = "Information is Beautiful — Interactive Atlas";
+  const text = "Explore six spreads from the interactive tribute to David McCandless' Information is Beautiful.";
+
+  const shareTwitter = () => {
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, "_blank", "width=550,height=420");
+  };
+
+  const shareLinkedIn = () => {
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, "_blank", "width=550,height=420");
+  };
+
+  const shareNative = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ title, text, url });
+      } catch {
+        // user cancelled
+      }
+    }
+  };
+
+  return (
+    <div className="flex items-center gap-2" role="group" aria-label="Share this spread">
+      <button
+        onClick={shareNative}
+        className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 transition-colors text-ink-soft"
+        aria-label="Share (native)"
+      >
+        <Share2 className="h-4 w-4" />
+      </button>
+      <button
+        onClick={shareTwitter}
+        className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 transition-colors text-ink-soft"
+        aria-label="Share on X"
+      >
+        <TwitterIcon className="h-4 w-4" />
+      </button>
+      <button
+        onClick={shareLinkedIn}
+        className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 transition-colors text-ink-soft"
+        aria-label="Share on LinkedIn"
+      >
+        <LinkedInIcon className="h-4 w-4" />
+      </button>
+    </div>
+  );
+}
 
 export default function Atlas() {
   const [idx, setIdx] = useState(0);
@@ -164,9 +231,12 @@ export default function Atlas() {
                   </button>
                 ))}
               </div>
-              <span className="font-mono text-[11px] tracking-[0.25em] text-ink-soft">
-                {piece.index} / 06
-              </span>
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-[11px] tracking-[0.25em] text-ink-soft">
+                  {piece.index} / 06
+                </span>
+                <ShareButtons />
+              </div>
             </div>
           </div>
         </motion.div>

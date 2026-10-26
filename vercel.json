@@ -13,6 +13,43 @@
     {
       "source": "/prints.jpg",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    },
+    {
+      "source": "/skills/(.*)\\.html",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    },
+    {
+      "source": "/skills/(.*)\\.zip",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    },
+    {
+      "source": "/.well-known/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/AGENTS.md",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/skills/information-is-beautiful/:path*.md",
+      "destination": "/skills/information-is-beautiful/:path*.html",
+      "permanent": true
+    },
+    {
+      "source": "/skills/information-is-beautiful/references/:path*.md",
+      "destination": "/skills/information-is-beautiful/references/:path*.html",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

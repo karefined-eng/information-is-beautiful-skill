@@ -1,0 +1,21 @@
+{
+  "name": "information-is-beautiful",
+  "description": "An interactive tribute to David McCandless' Information is Beautiful, plus an Agent Skill for honest, editorial-quality information design.",
+  "version": "1.3.0",
+  "url": "https://information-is-beautiful-skill.vercel.app",
+  "protocolVersion": "1.0",
+  "skills": [
+    {
+      "name": "information-is-beautiful",
+      "description": "Turn raw data into beautiful, honest information design — editorial-quality charts, graphs, plots, infographics, KPI dashboards, and data-driven layouts.",
+      "entryPoint": "https://information-is-beautiful-skill.vercel.app/skills/information-is-beautiful/SKILL.md"
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  },
+  "contact": {
+    "name": "karefined",
+    "url": "https://github.com/karefined-eng"
+  }
+}
