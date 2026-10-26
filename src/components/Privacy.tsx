@@ -118,8 +118,8 @@ export default function Privacy() {
             <div>
               <h2 className="font-display text-2xl font-bold text-ink mb-4">8. Contact</h2>
               <p className="text-[15px] leading-relaxed text-ink-soft">
-                Questions about this policy or our data practices? Email 
-                <a href="mailto:hello@karefined.design" className="text-tangerine hover:underline">hello@karefined.design</a>.
+Questions about this policy or our data practices? Email
+                <a href="mailto:karefined@gmail.com" className="text-tangerine hover:underline">karefined@gmail.com</a>.
               </p>
             </div>
           </div>

@@ -64,9 +64,9 @@ export default function Footer() {
               </a>
             </p>
             <p className="flex items-center gap-2">
-              <a href="mailto:hello@karefined.design" className="transition-colors hover:text-tangerine" aria-label="Email">
+              <a href="mailto:karefined@gmail.com" className="transition-colors hover:text-tangerine" aria-label="Email">
                 <Mail className="h-3.5 w-3.5" />
-                <span>hello@karefined.design</span>
+                <span>karefined@gmail.com</span>
               </a>
             </p>
           </div>
@@ -102,7 +102,7 @@ export default function Footer() {
             <a href="https://linkedin.com/in/karefined" target="_blank" rel="noreferrer" className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10" aria-label="LinkedIn">
               <LinkedInIcon className="h-4.5 w-4.5" />
             </a>
-            <a href="mailto:hello@karefined.design" className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10" aria-label="Email">
+            <a href="mailto:karefined@gmail.com" className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10" aria-label="Email">
               <Mail className="h-4.5 w-4.5" />
             </a>
           </div>
