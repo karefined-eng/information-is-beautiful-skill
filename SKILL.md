@@ -51,6 +51,21 @@ By default this skill runs at **creativity score 8 / high experimentation**. The
 
 Whenever you bump above the default, state the score you used and why in the handover note. Never let ingenuity override Law II (honest scales) or the failure modes — an ingenious chart that misleads is a fail.
 
+## Onboarding — select your creativity score
+
+If this is your first session with the skill, run the user through a one-time onboarding before drawing anything. Ask these three questions in order, then set the score:
+
+1. **What is this chart for?** (a quick internal metric → score 1–3; a report/deck readers will study → 4–6; a public-facing piece meant to be remembered → 7–9)
+2. **How much does the insight live *between* charts?** (one clear comparison → 1–3; a juxtaposition the reader must see together → 7–9)
+3. **How much risk of novelty can you absorb?** (none — correctness first → 1–3; some novelty if it carries the insight → 7–9)
+
+**Score recommendation:**
+- Mostly 1s → score 2 (standard honest form)
+- Mixed → score 5 (standard form + one emphasis choice)
+- Mostly 3s → score 8 (default; reach for creative moves)
+
+Record the chosen score in the handover note so later sessions reuse it. Re-run onboarding whenever the project's audience or stakes change. Never force a high score — the user owns the creativity dial.
+
 ## The five laws
 
 Check every artifact against all five before shipping:
