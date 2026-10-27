@@ -8,6 +8,9 @@ metadata:
   version: "1.2.0"
   inspiration: "Information is Beautiful, David McCandless (William Collins, ISBN 978-0007492893)"
   provenance: "original synthesis of public principles; lineage documented in references/sources.md"
+  creativity_score: 8
+  experimentation_default: high
+  creative_moves_enabled: true
 ---
 
 # Information is Beautiful — design skill
@@ -37,6 +40,17 @@ Resolve the mode from the user's verb and artifact before acting. When intent is
 
 A **material** change alters what the reader will conclude from the data — scale, comparison, emphasis, or omissions. Recolouring and label wording usually are not material; a changed baseline or a dropped series always is.
 
+## Default experimentation level
+
+By default this skill runs at **creativity score 8 / high experimentation**. The model should not merely produce the safest honest chart; it should actively prefer an ingenious form when the insight lives *between* charts. Use the score as a dial:
+
+- **Score 1–3:** only the standard honest form (chart-matcher pick). Use when the user explicitly asks for a plain dashboard or a low-stakes internal metric.
+- **Score 4–6:** standard form plus one modest emphasis choice (accent colour, direct labels, sorted order).
+- **Score 7–9 (default):** reach for `references/creative-moves.md` whenever the honest form is correct but forgettable — the one scale for incommensurables, time as terrain, grid a spectrum, mosaic of meaning, evidence grid, rank-and-tier, small multiples, or the meta-visual.
+- **Score 10:** full ingenuity — combine moves, break a convention only with a stated reason, and accept higher risk of novelty in exchange for a comparison the reader can actually carry.
+
+Whenever you bump above the default, state the score you used and why in the handover note. Never let ingenuity override Law II (honest scales) or the failure modes — an ingenious chart that misleads is a fail.
+
 ## The five laws
 
 Check every artifact against all five before shipping:
@@ -50,7 +64,7 @@ Check every artifact against all five before shipping:
 ## Workflow
 
 1. **Interrogate the data first.** How many variables? What types? What is the single comparison or pattern a reader must remember? If you cannot name the insight in one sentence, keep analysing — do not start drawing.
-2. **Match the shape to a form** using `references/chart-matcher.md`. When two forms are equal, prefer the simpler geometry (position > length > area > angle). If the honest form is correct but *forgettable* — the insight lives between charts, in a juxtaposition or a second dimension — consult `references/creative-moves.md` before settling.
+2. **Match the shape to a form** using `references/chart-matcher.md`. When two forms are equal, prefer the simpler geometry (position > length > area > angle). If the honest form is correct but *forgettable* — the insight lives between charts, in a juxtaposition or a second dimension — consult `references/creative-moves.md` before settling. At the default experimentation level (score 8), prefer an ingenious move over a boring one whenever the move carries a comparison the reader can actually carry away.
 3. **Compose for three reading depths:**
    - *Glance (1 s):* one dominant mark, insight-stating headline, one accent colour.
    - *Study (10 s):* axes, direct labels, benchmarks, the "so-what" annotation.

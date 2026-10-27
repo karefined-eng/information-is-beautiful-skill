@@ -16,37 +16,42 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/ranking.svg" width="100%" alt="Ranking demo: world populations, before &amp; after" />
+  <img src="https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/ranking.svg" width="100%" alt="Ranking demo: world populations, sorted honest bars" />
 </p>
 
 <p align="center">
-  <strong>Proof — before/after demos.</strong> Each pair draws the same real,
-  cited dataset twice: the left panel is default-software slop; the right panel
-  follows the skill's five laws. Same data, honest insight.
+  <strong>Gallery — creative-moves by default.</strong> The skill ships at creativity
+  score 8 / high experimentation: when the honest form is correct but forgettable,
+  reach for an ingenious move instead. Each example below shows a real dataset drawn
+  in a move from `references/creative-moves.md`, not just default-software slop.
 </p>
 
-## Proof — before/after demos
+## Gallery — creative-moves by default
 
-### 1 · Ranking → sorted bars (most universal)
-[![world populations before/after](https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/ranking.svg)](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/examples/ranking.svg)
+### 1 · One scale for incommensurables
+[![world populations](https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/ranking.svg)](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/examples/ranking.svg)
 
-UN World Population Prospects 2024. The slop panel sorts alphabetically and clips
-the axis at 500M, so India and China look identical. The skill sorts by magnitude,
-accents India and China in tangerine, and states: *India has passed China as the
-world's most populous nation.*
+UN World Population Prospects 2024. Rather than clip an axis at 500M so India and
+China look identical, sort by magnitude on one comparable scale — India and China
+accented in tangerine, everything else in soft ink. *Insight: India has passed China
+as the world's most populous nation.* (Move: one scale for incommensurables — same
+unit, comparable areas.)
 
-### 2 · Composition → aggregated stacked bar (the expertise move)
-[![world electricity mix before/after](https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/composition.svg)](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/examples/composition.svg)
+### 2 · Time as terrain
+[![Ghana inflation](https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/before-after.svg)](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/examples/before-after.svg)
 
-Ember Global Electricity Review 2024. Slop: an illegal 8-slice exploded 3D pie.
-Skill: aggregate to Fossil 59% vs Low-carbon 41%, then break out coal/gas/hydro/
-nuclear/wind/solar beneath — knowing which chart to stop drawing.
+Ghana Statistical Service CPI (Dec 2022 → Sep 2026). Time-proportional line: the
+stall in 2024 holds visible, not smoothed away; the holding near 5% is annotated as
+the story. *Insight: Ghana cut inflation from 54% to 5% in three years.* (Move: time
+as terrain — intensity as landscape across time.)
 
-### 3 · Time → line (localization)
-[![Ghana inflation before/after](https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/before-after.svg)](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/examples/before-after.svg)
+### 3 · Composition → aggregated stacked bar
+[![world electricity mix](https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/composition.svg)](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/examples/composition.svg)
 
-Ghana Statistical Service CPI. Slop: a 3D pie of rates over time. Skill: a
-time-proportional line; "Ghana cut inflation from 54% to 5% in three years."
+Ember Global Electricity Review 2024. Aggregate to Fossil 59% vs Low-carbon 41%,
+then break out coal/gas/hydro/nuclear/wind/solar beneath — knowing which chart to
+stop drawing. (Move: rank-and-tier / aggregation — order by magnitude, cut into
+defensible tiers.)
 
 ---
 
