@@ -58,20 +58,12 @@ information-is-beautiful/
 ├─ README.md                      # this file
 ├─ CHANGELOG.md                   # version history
 └─ references/
-<<<<<<< HEAD
-    ├─ chart-matcher.md           # data shape → visual form
-    ├─ creative-moves.md          # eight generative patterns for unforgettable forms
-    ├─ palettes.md                # colour as a data channel
-    ├─ quality-checklist.md       # the 25-point beauty audit
-    ├─ sources.md                 # authentic provenance & citations
-    └─ ted-law-mapping.md         # TED talk insights → five laws mapping
-=======
-   ├─ chart-matcher.md            # data shape → visual form
-   ├─ palettes.md                 # colour as a data channel
-   ├─ quality-checklist.md        # the 25-point beauty audit
-   ├─ sources.md                  # authentic provenance & citations
-   └─ creative-moves.md           # the ingenuity layer (v1.2.0)
->>>>>>> origin/educated-kidney
+   ├─ chart-matcher.md           # data shape → visual form
+   ├─ creative-moves.md          # eight generative patterns for unforgettable forms
+   ├─ palettes.md                # colour as a data channel
+   ├─ quality-checklist.md       # the 25-point beauty audit
+   ├─ sources.md                 # authentic provenance & citations
+   └─ ted-law-mapping.md         # TED talk insights → five laws mapping
 ```
 
 ## Install
