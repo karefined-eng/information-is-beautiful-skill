@@ -8,6 +8,10 @@
 </p>
 
 <p align="center">
+  <strong>Skill card</strong> · Name: `information-is-beautiful` · Size: ~150 lines SKILL.md + 6 reference files · License: MIT · Updated: Oct 2026 · No binaries, no network — pure markdown.
+</p>
+
+<p align="center">
   An Agent Skill that teaches AI agents to design beautiful, honest information
   graphics — an original, MIT-licensed synthesis of the design philosophy of
   David McCandless' _Information is Beautiful_, by karefined. Not affiliated with
@@ -22,11 +26,11 @@
 <p align="center">
   <strong>Gallery — creative-moves by default.</strong> The skill ships at creativity
   score 8 / high experimentation: when the honest form is correct but forgettable,
-  reach for an ingenious move instead. Each example below shows a real dataset drawn
-  in a move from `references/creative-moves.md`, not just default-software slop.
+  reach for an ingenious move instead. Each example shows a real dataset drawn in a
+  move from `references/creative-moves.md`, not default-software slop.
 </p>
 
-## Gallery — creative-moves by default
+## Proof — before you read anything
 
 ### 1 · One scale for incommensurables
 [![world populations](https://github.com/karefined-eng/information-is-beautiful-skill/raw/main/examples/ranking.svg)](https://github.com/karefined-eng/information-is-beautiful-skill/blob/main/examples/ranking.svg)
@@ -52,6 +56,26 @@ Ember Global Electricity Review 2024. Aggregate to Fossil 59% vs Low-carbon 41%,
 then break out coal/gas/hydro/nuclear/wind/solar beneath — knowing which chart to
 stop drawing. (Move: rank-and-tier / aggregation — order by magnitude, cut into
 defensible tiers.)
+
+---
+
+## When to use us (and when not to)
+
+| User need | Use `information-is-beautiful` | Use instead |
+| --------- | ------------------------------ | ----------- |
+| Generate chart code in SVG/HTML/matplotlib/plotly/d3/recharts/ECharts | Yes | — |
+| Review an existing chart for misleading design, clutter, accessibility | Yes | — |
+| Pick the right chart form for a dataset (bar vs line vs pie vs …) | Yes | — |
+| Build a slide deck, presentation, or static infographic around charts | No | `html-presentation`, `marp-slides`, `pptx` |
+| Design logos, posters, icons, or non-data visuals | No | `concept-to-image`, `canvas-design` |
+| Broader dashboard UX (layout, navigation, interaction) | No | `ux-expert` |
+
+## Definition of done
+
+A chart is done when a reader gets the intended takeaway in five seconds, the visual
+encoding cannot mislead (axes, areas, and colors are proportional and consistent), it
+works for colorblind readers and in grayscale, every number matches the data, and it
+ships with graphic + insight sentence + source line + checklist result.
 
 ---
 
