@@ -66,6 +66,24 @@ If this is your first session with the skill, run the user through a one-time on
 
 Record the chosen score in the handover note so later sessions reuse it. Re-run onboarding whenever the project's audience or stakes change. Never force a high score — the user owns the creativity dial.
 
+## Onboarding — all configurable options
+
+Beyond the creativity score, run the user through these options before the first artifact. Each answer shapes every later decision:
+
+| Option | What to ask | How it shapes output |
+| ------ | ----------- | -------------------- |
+| **Purpose** | Internal metric, report/deck, or public piece? | Internal → simpler, lower score; public → higher score, more annotation |
+| **Audience** | Who reads this? Executives, general public, specialists? | Executive → single insight, big headline; general → plain language, direct labels; specialist → more detail, methods |
+| **Output medium** | SVG, HTML/CSS, or Canvas/WebGL? | SVG for editorial/vector; HTML/CSS for text-heavy data lists; Canvas/WebGL only for > ~10k marks |
+| **Data source** | Where does the data live? CSV, table, metrics, or placeholder? | Real data preferred; if none, state clearly that output uses illustrative placeholder values |
+| **Request mode** | Shape, Build, Audit, or Fix? | Shape = pick form only; Build = deliver artifact; Audit = score against checklist; Fix = smallest corrective change |
+| **Colour channel** | Hue for category, intensity for magnitude, or one accent? | Follows `references/palettes.md`; colourblind-safe pairs |
+| **Accessibility** | Any contrast, colourblind, or screen-reader requirements? | WCAG floor: ≥ 3:1 marks, ≥ 4.5:1 text; colour never the only channel; true alt-text |
+| **Reading depths** | Glance (1 s), study (10 s), or immerse (1 min)? | Controls headline size, label density, source-line detail |
+| **Failure tolerance** | What must never appear? (3D, dual axes, truncated bars, pies > 5 slices) | Hard constraints from the failure-modes list — never overridden |
+
+Record every chosen option in the handover note so later sessions reuse the same configuration. Re-run onboarding whenever the audience, medium, or stakes change. The user owns every dial; the skill only recommends defaults.
+
 ## The five laws
 
 Check every artifact against all five before shipping:
