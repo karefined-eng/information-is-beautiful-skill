@@ -1,10 +1,14 @@
 # information-is-beautiful
 
-An Agent Skill that teaches AI agents to design beautiful, honest information
-graphics — an original, MIT-licensed synthesis of the design philosophy of
-David McCandless' _Information is Beautiful_, by karefined. Not affiliated with
-the author. No content from the book is reproduced; authentic sources are
-preserved in `references/sources.md`.
+An Agent Skill that teaches AI agents to design beautiful, honest, and **emotionally resonant** information graphics — an original, MIT-licensed synthesis of the design philosophy of David McCandless' _Information is Beautiful_, by karefined. Not affiliated with the author. No content from the book is reproduced; authentic sources are preserved in `references/sources.md`.
+
+## v1.3.0 — The Soul of the Craft
+
+This release formalizes the psychological and emotional heart of McCandless's work:
+
+- **Data as Soil:** Agents are now trained on David McCandless's TEDGlobal 2010 insight — the radical inversion of Clive Humby's *"Data is the new oil"* into *"Data is the new soil."* Data is a fertile, living medium where comprehension blooms, not an extractive commodity.
+- **5-Friction Diagnostic Matrix:** Before choosing a geometry, agents now diagnose the reader's emotional starting point (Scale Numbness, Media Anxiety, Tribal Polarization, Epistemic Confusion, Sensory Overwhelm, or Baseline Clarity) and design for genuine cognitive relief — the same intent behind iconic spreads like the *Billion–Dollar–o–Gram* and *Mountains out of Molehills*.
+- **Emotional Honesty Audit:** An expanded quality checklist section guards against manipulative melodrama, manufactured panic, and unearned sentimentality.
 
 ## Structure
 
@@ -13,9 +17,11 @@ information-is-beautiful/
 ├─ SKILL.md                       # instructions + spec frontmatter
 ├─ README.md                      # this file
 └─ references/
+   ├─ emotional-intent.md         # data as soil · 5-friction diagnostic matrix
    ├─ chart-matcher.md            # data shape → visual form
    ├─ palettes.md                 # colour as a data channel
-   ├─ quality-checklist.md        # the 25-point beauty audit
+   ├─ quality-checklist.md        # the beauty audit (inc. emotional honesty)
+   ├─ creative-moves.md           # ingenuity layer · 8 generative patterns
    └─ sources.md                  # authentic provenance & citations
 ```
 
