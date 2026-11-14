@@ -5,10 +5,11 @@
   <a href="https://github.com/karefined-eng/information-is-beautiful-skill/releases"><img src="https://img.shields.io/github/v/release/karefined-eng/information-is-beautiful-skill?style=flat-square&color=111111&label=release" alt="Release"></a>
   <img src="https://img.shields.io/badge/works%20with-Claude%20Code,%20Codex,%20Cursor,%20ZCode-111111?style=flat-square" alt="Works with agents">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license"></a>
+  <img src="https://img.shields.io/badge/motion%20design-Premium%20%2B%20Playful-d04000?style=flat-square" alt="Motion design: Premium + Playful">
 </p>
 
 <p align="center">
-  <strong>Skill card</strong> · Name: `information-is-beautiful` · Size: ~150 lines SKILL.md + 6 reference files · License: MIT · Updated: Oct 2026 · No binaries, no network — pure markdown.
+  <strong>Skill card</strong> · Name: `information-is-beautiful` · Size: ~150 lines SKILL.md + 6 reference files · License: MIT · Updated: Nov 2026 · No binaries, no network — pure markdown.
 </p>
 
 <p align="center">
@@ -228,6 +229,31 @@ The happy path is not the data. Before delivery, check how the artifact behaves 
 - Mark-vs-background contrast ≥ 3:1; body text ≥ 4.5:1. Never red/green as the only categorical distinction. Colourblind-safe pairs from `references/palettes.md`. (Thresholds: WCAG 2.x — see `references/sources.md`, not the book.)
 - Colour is never the only channel: pair it with position, pattern, or direct labels.
 - Every delivered visual carries true alt-text: one sentence of what it *shows*, not what it *is* ("Bar chart of X" is a fail; "Bar chart showing X fell 40% since 2010" passes).
+
+## Motion design (v1.4.0+)
+
+The tribute site implements a cohesive motion design system following the `motion-design` skill methodology:
+
+**Personality:** Premium (base) + Playful (accents)
+- **Premium** — elegant, minimal, 0% overshoot, 350-600ms, cubic-bezier(0.05, 0.7, 0.1, 1). Applied to 80% of animations (page entrances, card reveals, spread transitions).
+- **Playful** — overshoot, ease-out-back, 200-400ms. Applied to accent moments: loader progress, book badge, canvas hand hint.
+
+**Three layers on every component:**
+| Layer | Purpose | Examples |
+|-------|---------|----------|
+| **Primary** | Main action the viewer follows | Section entrances, spread switches, card reveals |
+| **Secondary** | Supporting richness | Icon rotations (Nav logo, Atlas menu), hover scales, shadow follows element |
+| **Ambient** | Background life | Rotating seal (Hero), breathing asterisks (Marquee), floating social icons (Footer), idle bot (AgentSkill) |
+
+**Motion tokens** (in `src/index.css`):
+- Duration palette: `--duration-instant` (80ms) → `--duration-dramatic` (800ms)
+- Easing curves: `--ease-premium`, `--ease-playful`, `--ease-corporate`, `--ease-ambient`
+- Weight classification: `--weight-heavy` (500ms), `--weight-medium` (300ms), `--weight-light` (150ms)
+- Utility classes: `.btn-press`, `.card-hover`, `.shadow-follow`, `.animate-ambient-breathe`, `.animate-ambient-float`
+
+**Accessibility:** Full `prefers-reduced-motion: reduce` support — all animations disable cleanly.
+
+**Components enhanced:** Nav, Hero, TheBook, Atlas, Playground, AgentSkill, Footer, Loader, Marquee (10 total).
 
 ## Output guidance
 

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Sparkles } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function About() {
@@ -10,7 +10,7 @@ export default function About() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.8, ease: [0.05, 0.7, 0.1, 1] }}
       >
         <div className="max-w-3xl mx-auto">
           <Link
@@ -94,6 +94,55 @@ export default function About() {
                 Install Skill
               </a>
             </div>
+          </div>
+
+          <div className="mt-16 pt-10 border-t border-ink/15 space-y-6">
+            <h2 className="font-display text-2xl font-bold text-ink">Motion Design System <span className="text-hollow">(v1.4.0+)</span></h2>
+            <p className="text-[15px] leading-relaxed text-ink-soft">
+              The site implements a cohesive motion design system following the <code className="bg-ink/5 px-1.5 py-0.5 rounded font-mono text-sm">motion-design</code> skill methodology:
+            </p>
+            <ul className="space-y-3 text-[15px] leading-relaxed text-ink-soft">
+              <li className="flex items-start gap-3">
+                <motion.span
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+                  className="mt-1 h-2 w-2 rounded-full bg-tangerine shrink-0"
+                />
+                <span><strong>Personality:</strong> Premium (base, 80%) + Playful (accents, 20%) — elegant with deliberate moments of delight</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <motion.span
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, ease: "easeInOut", repeat: Infinity, delay: 0.2 }}
+                  className="mt-1 h-2 w-2 rounded-full bg-teal shrink-0"
+                />
+                <span><strong>Three layers</strong> on every component: Primary (entrances), Secondary (icon rotations, hover states), Ambient (floating seal, breathing asterisks, drifting icons)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <motion.span
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, ease: "easeInOut", repeat: Infinity, delay: 0.4 }}
+                  className="mt-1 h-2 w-2 rounded-full bg-sun shrink-0"
+                />
+                <span><strong>Motion tokens</strong> in CSS: duration palette, easing curves, weight classification, utility classes</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <motion.span
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, ease: "easeInOut", repeat: Infinity, delay: 0.6 }}
+                  className="mt-1 h-2 w-2 rounded-full bg-magenta shrink-0"
+                />
+                <span><strong>Accessibility:</strong> Full <code className="bg-ink/5 px-1 py-0.5 rounded font-mono text-xs">prefers-reduced-motion</code> support — all animations disable cleanly</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <motion.span
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, ease: "easeInOut", repeat: Infinity, delay: 0.8 }}
+                  className="mt-1 h-2 w-2 rounded-full bg-cobalt shrink-0"
+                />
+                <span><strong>10 components enhanced:</strong> Nav, Hero, TheBook, Atlas, Playground, AgentSkill, Footer, Loader, Marquee</span>
+              </li>
+            </ul>
           </div>
 
           <div className="mt-16 pt-10 border-t border-ink/15 space-y-6">

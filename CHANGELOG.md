@@ -2,6 +2,24 @@
 
 All notable changes to the `information-is-beautiful` skill. Dates are 2026.
 
+## [1.4.0] — 2026-11-14
+
+- **Added:** Motion design system implementing the `motion-design` skill methodology across the entire tribute site
+  - Motion tokens in `src/index.css`: duration palette (instant→dramatic), easing curves (Premium/Playful/Corporate/Ambient), weight classification (Heavy/Medium/Light), utility classes (`.btn-press`, `.card-hover`, `.shadow-follow`, `.animate-ambient-breathe`, `.animate-ambient-float`)
+  - Premium personality (base) + Playful accents: 350-600ms premium easing (cubic-bezier 0.05,0.7,0.1,1) with 0% overshoot; playful overshoot (ease-out-back) on loader, book badge, canvas hand hint
+  - Three motion layers on every component: Primary (entrances/transitions), Secondary (icon rotations, hover scales, shadow follows), Ambient (floating seal, breathing asterisks, drifting social icons, idle bot)
+  - Full `prefers-reduced-motion` support across all animations
+- **Changed:** All 10 interactive components enhanced with cohesive motion language:
+  - Nav: button press feedback, animated logo rotation, sound toggle spring
+  - Hero: scroll-linked seal scale, ambient float, enhanced share buttons
+  - TheBook: playful badge overshoot, icon hover (scale+rotate), card shadow-follow
+  - Atlas: spread transitions with rotateX + playful ease, animated menu, pager dots
+  - Playground: entrance choreography, hand hint rotation, ambient float labels
+  - AgentSkill: bot idle animation, host tab springs, card hover+shadow, file list stagger
+  - Footer: social icon ambient float, asterisk rotation, back-to-top rotation
+  - Loader: playful progress bar, percentage pop, step transitions
+  - Marquee: asterisk ambient rotation+scale, entrance animation
+
 ## [1.3.0] — 2026-10-26
 
 - **Added:** `references/ted-law-mapping.md` — maps every insight from David McCandless' TEDGlobal 2010 talk ("The beauty of data visualization") to the five laws, with timestamps and case-study patterns (Billion Dollar Gram, Mountains Out of Molehills, hidden seasonal patterns).

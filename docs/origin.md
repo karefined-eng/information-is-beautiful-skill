@@ -65,6 +65,7 @@ re-audit procedure, so "looks fine" is never accepted without evidence.
 Public releases follow semver from 1.0.0; earlier numbers were internal
 pre-public drafts and are kept below as lineage only.
 
+- **1.4.0 (Nov 14) — motion design system.** Implements the `motion-design` skill methodology across the entire tribute site: Premium personality (base) + Playful accents, three motion layers (primary/secondary/ambient), motion tokens in `src/index.css` (duration palette, easing curves, weight classification, utility classes), full `prefers-reduced-motion` support. All 10 interactive components enhanced with cohesive motion language (Nav, Hero, TheBook, Atlas, Playground, AgentSkill, Footer, Loader, Marquee).
 - **1.3.0 (Nov 14) — the emotional and psychological layer.** Codifies the
   philosophical heart of the craft: David McCandless's background as a journalist
   facing information anxiety; the radical inversion of Clive Humby's "Data is the
