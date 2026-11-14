@@ -65,6 +65,14 @@ re-audit procedure, so "looks fine" is never accepted without evidence.
 Public releases follow semver from 1.0.0; earlier numbers were internal
 pre-public drafts and are kept below as lineage only.
 
+- **1.3.0 (Nov 14) — the emotional and psychological layer.** Codifies the
+  philosophical heart of the craft: David McCandless's background as a journalist
+  facing information anxiety; the radical inversion of Clive Humby's "Data is the
+  new oil" into "Data is the new soil"; the 5-Friction Diagnostic Matrix (Scale
+  Numbness, Media Anxiety, Tribal Polarization, Epistemic Confusion, Sensory Overwhelm)
+  and the Baseline Clarity neutral path (`references/emotional-intent.md`);
+  Workflow Step 1 expansion to diagnose audience emotional starting points; and
+  an auditable Emotional Honesty section in `references/quality-checklist.md`.
 - **1.0.0 (Oct 24) — first public release.** Skill at the ecosystem-standard
   `skills/<name>/` location with a `.claude-plugin/marketplace.json`
   manifest, installable via `npx skills add`; trigger-optimized description,

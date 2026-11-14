@@ -48,6 +48,8 @@ export interface AtlasPiece {
   tagline: string;
   body: string;
   axis: string;
+  emotionalTension: string;
+  psychologicalRelief: string;
 }
 
 export const atlasPieces: AtlasPiece[] = [
@@ -61,6 +63,8 @@ export const atlasPieces: AtlasPiece[] = [
     body:
       "The book’s signature spread stacks the vast sums that swirl through the news — bailouts, wars, aid, crimes, earnings — into a single coloured lattice. Figures that are meaningless as headlines suddenly snap into proportion. This homage re-blocks some of that money at illustrative scale.",
     axis: "area = $, illustrative values",
+    emotionalTension: "Scale Numbness (Financial Abstraction)",
+    psychologicalRelief: "Grounds abstract billions into physical, proportional spatial reality.",
   },
   {
     id: "snakeoil",
@@ -72,6 +76,8 @@ export const atlasPieces: AtlasPiece[] = [
     body:
       "One of the most beloved charts in the book maps health supplements by the strength of scientific evidence versus their popularity. The higher the bubble floats, the stronger the proof. Garlic hovers near the top; fads sink to the murky bottom. Bubble size is an echo of the original’s spirit — not the dataset.",
     axis: "y = strength of evidence · x = popularity",
+    emotionalTension: "Epistemic Confusion (Hype vs Evidence)",
+    psychologicalRelief: "Separates proven scientific truth from commercial snake oil.",
   },
   {
     id: "molehills",
@@ -83,6 +89,8 @@ export const atlasPieces: AtlasPiece[] = [
     body:
       "A decade of front-page terrors — bird flu, SARS, killer everything — charted by press coverage volume. Each mountain is a fear; most are molehills with terrific PR. The rhythm of alarm becomes visible as landscape. Peaks here are illustrative echoes of that idea.",
     axis: "y = relative press coverage · x = 1998 → 2008",
+    emotionalTension: "Media Anxiety (Cyclical Panic)",
+    psychologicalRelief: "Defangs media hysteria by revealing the seasonal rhythm of alarms.",
   },
   {
     id: "colours",
@@ -94,6 +102,8 @@ export const atlasPieces: AtlasPiece[] = [
     body:
       "The same hue can signal mourning in one culture and celebration in another. The book’s colour wheel aligns shade with meaning across dozens of cultures — a Rosetta stone of chroma. This wheel is an illustrative reconstruction in the spirit of the original.",
     axis: "ring = culture · segment = meaning, illustrative",
+    emotionalTension: "Sensory Overwhelm (Cultural Fragmentation)",
+    psychologicalRelief: "A visual Rosetta stone mapping symbolic meaning across global civilizations.",
   },
   {
     id: "death",
@@ -105,6 +115,8 @@ export const atlasPieces: AtlasPiece[] = [
     body:
       "Humanity’s hundred hardest years, counted. Wars, genocides, famines and disasters rendered as a field of tallying squares so that scale — numb in prose — becomes felt on the page. One of the book’s most sobering spreads, echoed here with illustrative blocks.",
     axis: "1 square ≈ 250,000 lives, illustrative",
+    emotionalTension: "Scale Numbness (Humanitarian / Tragedy Abstraction)",
+    psychologicalRelief: "Restores felt human weight to statistics in prose through unit squares.",
   },
   {
     id: "leftright",
@@ -116,6 +128,8 @@ export const atlasPieces: AtlasPiece[] = [
     body:
       "A respectful X-ray of the political divide: the values, instincts and hopes that animate the left and the right, mirrored across a shared centre. Neither side mocked nor crowned — just mapped. Labels here sketch the concept, not the full canvas of the original.",
     axis: "concept cartography, mirrored",
+    emotionalTension: "Tribal Polarization (Binary Dogma)",
+    psychologicalRelief: "Disarms political tribalism into a multi-axis spectrum of empathy.",
   },
 ];
 

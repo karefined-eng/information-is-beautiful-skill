@@ -1,4 +1,4 @@
-import { cpSync, createReadStream, existsSync, mkdirSync, readFileSync, readdirSync, statSync, unlinkSync, writeFileSync } from "fs";
+import { cpSync, createReadStream, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import AdmZip from "adm-zip";

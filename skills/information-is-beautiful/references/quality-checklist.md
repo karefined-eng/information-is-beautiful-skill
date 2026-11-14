@@ -33,6 +33,14 @@ Run before delivering any visual artifact. Every "no" is a defect to fix, not a 
 - [ ] The one annotation that answers "so what?" exists.
 - [ ] Three reading depths work: glance says the headline; study shows the axes; immerse reveals source, method, caveat.
 
+## Emotional honesty & psychological integrity
+
+- [ ] **Identified tension:** The reader's starting state (scale numbness, media anxiety, tribal polarization, epistemic confusion, sensory overwhelm, or baseline clarity) is identified and addressed per `references/emotional-intent.md`.
+- [ ] **Earned catharsis:** The visual delivers genuine cognitive relief and clarity rather than cheap melodrama or manufactured outrage.
+- [ ] **Anti-alarmism:** The visual is free from manufactured panic, truncated fear axes, or sensationalized clickbait copy.
+- [ ] **Proportional empathy:** Human-centered data (loss of life, health, inequality) is treated with somber dignity, not sensationalized or decorated with gratuitous emotional icons.
+- [ ] **Appropriate framing for neutral data:** For routine operational datasets, baseline clarity is maintained without inventing unnecessary emotional drama.
+
 ## The three physical tests
 
 - [ ] **Squint test** — the dominant pattern survives blur.

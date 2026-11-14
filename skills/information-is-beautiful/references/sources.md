@@ -6,8 +6,9 @@ This skill is an original synthesis of widely taught information-design principl
 
 - **David McCandless, _Information is Beautiful_**, William Collins (HarperCollins), London. First edition 2009, ISBN 978-0007294664; new edition 2012 ("thoroughly revised, recalculated and reimagined"), 256 pp., ISBN 978-0007492893. Published in the US as _The Visual Miscellaneum: A Colorful Guide to the World's Most Consequential Trivia_ (Harper Design, 2009, ISBN 978-0061748363). The skill's entire posture — form follows data, beauty as a means of comprehension, data as landscape — is a response to this atlas. Bibliographic record: https://openlibrary.org/books/OL44136188M/Information_Is_Beautiful
 - **informationisbeautiful.net** — the author's site and the blog the book grew from; hundreds of free visualizations with open datasets, constantly revised. https://informationisbeautiful.net
-- **TEDGlobal 2010 (Oxford, July 2010), "The beauty of data visualization"** — the public statement of the philosophy this skill encodes (infographics as "knowledge compression"; data as "the new soil"). https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization
+- **TEDGlobal 2010 (Oxford, July 2010), "The beauty of data visualization"** — the public statement of the philosophy this skill encodes (infographics as "knowledge compression"; data as "the new soil" in contrast to Clive Humby's 2006 "data is the new oil"; changing people's emotional relationship with numbers; navigating information smog). https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization
   - **Full transcript + law mapping:** `references/ted-law-mapping.md` — every TED quote mapped to the five laws
+  - **Emotional intent & diagnostic matrix:** `references/emotional-intent.md` — the psychological foundations and reader tension matrix
 - **davidmccandless.com** — the author's portfolio; sequels _Knowledge is Beautiful_ (2014) and _Beautiful News_ (2022). https://davidmccandless.com
 - **Legal access routes:** the publisher (HarperCollins), bookshops, public libraries via WorldCat, Open Library controlled lending, Google Books preview.
 

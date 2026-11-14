@@ -1,18 +1,32 @@
 ---
 name: information-is-beautiful
-description: Turn raw data into beautiful, honest information design — editorial-quality charts, graphs, plots, infographics, KPI dashboards, and data-driven layouts for slides, decks, reports, and the web. Use whenever the user asks to plot, graph, chart, or visualize data (CSV, tables, metrics), pick the right chart type, or fix a chart, dashboard, or report visual that looks cluttered, misleading, ugly, or off — including matplotlib, plotly, d3, recharts, ECharts, and SVG work. Not for general page styling — landing pages and marketing sites belong to other skills; this one owns the charts and data layouts inside any page or deck. An original synthesis of David McCandless' public design philosophy, never a copy of the book.
+description: Turn raw data into beautiful, honest, and emotionally resonant information design — editorial-quality charts, graphs, plots, infographics, KPI dashboards, and data-driven layouts for slides, decks, reports, and the web. Use whenever the user asks to plot, graph, chart, or visualize data (CSV, tables, metrics), pick the right chart type, diagnose audience emotional friction, or fix a chart, dashboard, or report visual that looks cluttered, misleading, ugly, or off — including matplotlib, plotly, d3, recharts, ECharts, and SVG work. Not for general page styling — landing pages and marketing sites belong to other skills; this one owns the charts and data layouts inside any page or deck. An original synthesis of David McCandless' public design philosophy, never a copy of the book.
 license: MIT
 compatibility: Any Agent-Skills-compatible agent (Claude Code, VS Code Copilot, OpenAI Codex, Cursor, Gemini CLI and others). Pure markdown; no binaries or network required.
 metadata:
   author: karefined
-  version: "1.2.0"
+  version: "1.3.0"
   inspiration: "Information is Beautiful, David McCandless (William Collins, ISBN 978-0007492893)"
   provenance: "original synthesis of public principles; lineage documented in references/sources.md"
 ---
 
 # Information is Beautiful — design skill
 
-Distill data down to the comparison that matters most, then draw it — beautiful enough to be looked at, honest enough to be trusted. This skill encodes the publicly stated philosophy behind "Information is Beautiful" (form follows data; beauty in service of comprehension) together with classic information-design practice. It contains no content from the book itself; the full lineage of every principle is documented in `references/sources.md`.
+Distill data down to the comparison that matters most, then draw it — beautiful enough to be looked at, honest enough to be trusted, and resonant enough to bring emotional clarity. This skill encodes the publicly stated philosophy behind "Information is Beautiful" (form follows data; beauty in service of comprehension; data as living soil) together with classic information-design practice. It contains no content from the book itself; the full lineage of every principle is documented in `references/sources.md`.
+
+## Psychological intent: Data as living soil
+
+Data visualization is not merely mechanical drafting or decorative styling. It is an intentional instrument for cognitive and emotional relief: an information map for when we are lost in information.
+
+In 2006, Clive Humby coined the industrial maxim: *"Data is the new oil"* — treating data as a cold, extractive commodity. At TEDGlobal 2010, David McCandless inverted this into the soul of *Information is Beautiful*:
+> **"Data is the new soil."**
+
+Soil is fertile, organic, and living. When cultivated with honest scales and clean geometry, it is a medium where human understanding can bloom. When readers encounter incomprehensible billions, media-hyped panic, or polarizing dogma, they experience real cognitive and emotional distress. An honest visual acts as a relief valve:
+- Grounding abstract billions into physical proportion dissolves scale numbness.
+- Charting historical terrain defangs media hysteria and reveals seasonal rhythms.
+- Mapping nuances on a two-axis spectrum disarms tribal polarization.
+
+Always diagnose the reader's emotional tension and design for genuine cognitive catharsis. Details and the 5-Friction Diagnostic Matrix live in `references/emotional-intent.md`.
 
 ## Invocation & arguments
 
@@ -49,7 +63,7 @@ Check every artifact against all five before shipping:
 
 ## Workflow
 
-1. **Interrogate the data first.** How many variables? What types? What is the single comparison or pattern a reader must remember? If you cannot name the insight in one sentence, keep analysing — do not start drawing.
+1. **Interrogate the data and emotional tension.** What is the reader's starting state? Is there active cognitive friction (scale numbness, media panic, cynicism, ideological gridlock) or is this a **Baseline Clarity** request (neutral, routine operational inquiry)? If friction exists, consult `references/emotional-intent.md` to design the visual antidote. If neutral, proceed directly to `references/chart-matcher.md` without manufacturing drama. How many variables? What types? What is the single comparison or pattern a reader must remember? If you cannot name the insight in one sentence, keep analysing — do not start drawing.
 2. **Match the shape to a form** using `references/chart-matcher.md`. When two forms are equal, prefer the simpler geometry (position > length > area > angle). If the honest form is correct but *forgettable* — the insight lives between charts, in a juxtaposition or a second dimension — consult `references/creative-moves.md` before settling.
 3. **Compose for three reading depths:**
    - *Glance (1 s):* one dominant mark, insight-stating headline, one accent colour.
@@ -80,6 +94,7 @@ The happy path is not the data. Before delivery, check how the artifact behaves 
 
 ## Failure modes to reject on sight
 
+- Emotional melodrama, manipulative framing, or manufactured anxiety — emotion must bloom from truth, never from artificial distortion.
 - 3D anything. Dual y-axes implying false correlation. Truncated bar axes.
 - Pies beyond ~5 slices; nested pies; donut-with-random-hole.
 - Default software palettes, default fonts, default legends — defaults are visible.

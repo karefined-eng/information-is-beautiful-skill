@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, Share2, X, Linkedin } from "lucide-react";
+import { ArrowDown, Share2 } from "lucide-react";
 import { useRef } from "react";
 import HeroField from "./HeroField";
 

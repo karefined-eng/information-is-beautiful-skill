@@ -53,6 +53,38 @@ information-is-beautiful/
 | `ls -la` in PowerShell | `ParameterBindingException: A parameter cannot be found that matches parameter name 'la'` | Use `Get-ChildItem -Force` or `dir /a` |
 | `cd path && cmd` in PowerShell | Parser error | Use `cd path; cmd` or `Set-Location path; cmd` |
 | Git not a repo in skill folder | `fatal: not a git repository` | Skill folder is not a git repo; use repo root for git ops |
+| WebFetch source unreliability | 404/403 on survey/enterprise sites | Always have fallback sources (Wikipedia, official docs, GitHub README); document "Source unavailable due to [404/403/auth]" and never synthesize statistics |
+| Google Trends API rate limiting | HTTP 429 on `trends.google.com` URLs | WebFetch to Trends endpoints returns 429 immediately; use browser-based verification or search console/analytics |
+| Research transparency gap | Agents fabricating data when sources fail | When data unavailable, state the specific error; provide analytic answers marked "[Analytical based on available sources]"; never fabricate numerical data |
+
+## WebFetch Source Reliability Pattern
+
+**Environment Trap:** WebFetch returns variable reliability across sources:
+- Sub-pages of surveys often return 404 (URL structure changes)
+- Enterprise marketing sites block automated access (403)
+- Academic/blog sites may require authentication or be ephemeral
+
+**Workflow guardrail:** When primary source fails:
+1. Identify alternative authoritative source (Wikipedia, official docs, GitHub README)
+2. If no alternative exists, state clearly: "Source unavailable due to [404/403/auth]"
+3. Do not attempt to synthesize statistics from partial data without explicit user request
+
+## Google Trends Access
+
+**Environment Fact:** Google Trends API endpoints rate-limit heavily. WebFetch to Google Trends URLs returns HTTP 429 "Too Many Requests" almost immediately.
+
+**Alternative workflow:**
+- Direct user verification: Google Trends website in browser
+- Indirect via search console/analytics if available to user
+- Document this limitation when findings cannot be fetched
+
+## Research Transparency Policy
+
+When requested data is unavailable:
+1. Attempt fetch via available tools (WebFetch, WebSearch if enabled)
+2. If unavailable due to rate limits or 404/403, state the specific error
+3. Provide analytical answer based on available sources, marked as "[Analytical based on available sources]"
+4. Never fabricate numerical data; use phrases like "cannot fetch exact numbers" or "data unavailable via available channels"
 
 ## Maintenance Protocol
 

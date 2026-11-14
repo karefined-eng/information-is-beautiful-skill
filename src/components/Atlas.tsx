@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, MousePointerClick, Share2, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, MousePointerClick, Share2 } from "lucide-react";
 import { useState } from "react";
 import { atlasPieces } from "../data/book";
 import SectionHead from "./SectionHead";
@@ -190,7 +190,19 @@ export default function Atlas() {
                     homage · not the dataset
                   </p>
                 </div>
-                <p className="text-[15px] leading-relaxed text-ink-soft">{piece.body}</p>
+                <div>
+                  <p className="text-[15px] leading-relaxed text-ink-soft">{piece.body}</p>
+                  <div className="mt-4 flex flex-col gap-1.5 rounded-xl border border-ink/10 bg-paper/60 p-3.5">
+                    <div className="flex flex-wrap items-center gap-2 font-mono text-[11.5px] uppercase tracking-[0.15em]">
+                      <span className="h-1.5 w-1.5 rounded-full" style={{ background: piece.color }} />
+                      <span className="font-semibold text-ink">Reader Tension:</span>
+                      <span className="text-ink-soft">{piece.emotionalTension}</span>
+                    </div>
+                    <div className="text-[13px] leading-normal text-ink-soft italic">
+                      “{piece.psychologicalRelief}”
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </AnimatePresence>
 

@@ -4,6 +4,7 @@ import {
   BookMarked,
   Bot,
   Check,
+  Compass,
   Copy,
   Download,
   ExternalLink,
@@ -24,10 +25,11 @@ import SectionHead from "./SectionHead";
 const ease = [0.22, 1, 0.36, 1] as const;
 const BASE = "/skills/information-is-beautiful";
 const ZIP = "/skills/information-is-beautiful.zip";
-const ZIP_SHA = "632b8ed874fc9116cc6f6059a9c058366b38cad81191b9482b963921c96e7311";
+const ZIP_SHA = "2b79c4f8aab971d3d77f4444bc0f4debf6c32ef81682c40c8a4dd0ce93318376";
 
 const FILES = [
   { path: `${BASE}/SKILL.md`, label: "SKILL.md", icon: FileText, note: "instructions + frontmatter" },
+  { path: `${BASE}/references/emotional-intent.md`, label: "emotional-intent.md", icon: Compass, note: "data as living soil & emotional relief" },
   { path: `${BASE}/references/chart-matcher.md`, label: "chart-matcher.md", icon: Waypoints, note: "data shape → visual form" },
   { path: `${BASE}/references/palettes.md`, label: "palettes.md", icon: Palette, note: "colour as a data channel" },
   { path: `${BASE}/references/quality-checklist.md`, label: "quality-checklist.md", icon: ListChecks, note: "the beauty audit" },
@@ -303,7 +305,7 @@ export default function AgentSkill() {
       </motion.div>
 
       <div className="mb-12 flex flex-wrap gap-2.5">
-        {["spec-compliant frontmatter", "5 markdown docs · 19 KB", "MIT · remix freely", "sources preserved", "zip upload-ready"].map((t, i) => (
+        {["spec-compliant frontmatter", "6 markdown docs · 24 KB", "MIT · remix freely", "sources preserved", "zip upload-ready"].map((t, i) => (
           <motion.span
             key={t}
             initial={{ opacity: 0, y: 12 }}
@@ -332,7 +334,7 @@ export default function AgentSkill() {
               <Archive className="h-4 w-4" /> the package
             </p>
             <p className="font-display text-lg font-bold leading-snug">information-is-beautiful.zip</p>
-            <p className="mt-1 text-xs text-paper/55">folder-as-root · 5 markdown files · 12 KB (19 KB unpacked)</p>
+            <p className="mt-1 text-xs text-paper/55">folder-as-root · 6 markdown files · 15 KB (24 KB unpacked)</p>
             <a
               href={ZIP}
               download
@@ -410,6 +412,25 @@ export default function AgentSkill() {
               treats it as the design brief (data, audience, medium). Everywhere else, the argument
               is simply your natural-language request. For scripted reads, the skill resolves its
               references via <code className="rounded bg-ink/10 px-1 py-0.5 font-mono text-xs">$&#123;CLAUDE_SKILL_DIR&#125;</code>.
+            </p>
+          </motion.div>
+
+          {/* data as living soil & emotional relief */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease, delay: 0.15 }}
+            className="rounded-2xl border border-sun/50 bg-sun/10 p-6"
+          >
+            <div className="mb-3 flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.25em] text-ink">
+              <Compass className="h-4 w-4 text-tangerine" strokeWidth={1.8} />
+              <span>Data as Living Soil</span>
+            </div>
+            <h3 className="font-display text-xl font-bold">The Soul of the Craft</h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              Clive Humby called data “the new oil” — an inert, extractive commodity. McCandless inverted it:{" "}
+              <strong className="text-ink">“Data is the new soil.”</strong> A living medium where comprehension blooms. The skill trains agents to diagnose reader tension (scale numbness, media panic, tribal dogma) and design genuine cognitive relief.
             </p>
           </motion.div>
 
