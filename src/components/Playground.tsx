@@ -32,6 +32,9 @@ const TOPICS: [string, number][] = [
   ["Sex", 30],
 ];
 
+const ease = [0.05, 0.7, 0.1, 1] as const;
+const easePlayful = [0.175, 0.885, 0.32, 1.275] as const;
+
 export default function Playground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -238,7 +241,13 @@ export default function Playground() {
         }
       />
 
-<div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6, ease, delay: 0.1 }}
+        className="mb-8 flex flex-wrap items-center justify-between gap-4"
+      >
         <p className="max-w-xl text-base leading-relaxed text-paper/90">
           The book's real lesson is that numbers behave like matter – they cluster, collide and
           settle into patterns. Here are the book's obsessions as physical bubbles. Grab one. Fling
@@ -247,18 +256,18 @@ export default function Playground() {
         <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-paper/40">
           n = 14 topics · census of a curious mind
         </span>
-      </div>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.98, y: 24 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.8, ease }}
         className="relative"
       >
         <div
           ref={wrapRef}
-          className="relative h-[62vh] min-h-[420px] overflow-hidden rounded-3xl border border-paper/15 bg-[radial-gradient(ellipse_at_center,#1e1b12_0%,#12100a_70%)]"
+          className="relative h-[62vh] min-h-[420px] overflow-hidden rounded-3xl border border-paper/15 bg-[radial-gradient(ellipse_at_center,#1e1b12_0%,#12100a_70%)] shadow-follow"
         >
           <canvas
             ref={canvasRef}
@@ -268,23 +277,39 @@ export default function Playground() {
           <AnimatePresence>
             {!touched && (
               <motion.div
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.4 }}
+                initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                transition={{ duration: 0.5, ease: easePlayful }}
                 className="pointer-events-none absolute left-1/2 top-6 flex -translate-x-1/2 items-center gap-3 rounded-full border border-paper/15 bg-ink/70 px-5 py-2.5 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/70 backdrop-blur-sm"
               >
-                <motion.span animate={{ x: [0, 8, -6, 0], y: [0, -4, 2, 0] }} transition={{ repeat: Infinity, duration: 2.4 }}>
+                <motion.span
+                  animate={{ x: [0, 8, -6, 0], y: [0, -4, 2, 0], rotate: [0, 15, -10, 0] }}
+                  transition={{ repeat: Infinity, duration: 2.8, ease: easePlayful }}
+                >
                   <Hand className="h-3.5 w-3.5 text-sun" />
                 </motion.span>
                 drag · fling · collide
               </motion.div>
             )}
           </AnimatePresence>
-          <div className="pointer-events-none absolute bottom-4 left-5 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/30">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="pointer-events-none absolute bottom-4 left-5 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/30 animate-ambient-float"
+          >
             simulation 1.0 · gravity: curiosity
-          </div>
-          <div className="pointer-events-none absolute bottom-4 right-5 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/30">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.7, duration: 1 }}
+            className="pointer-events-none absolute bottom-4 right-5 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/30 animate-ambient-float"
+            style={{ animationDelay: "2.2s" }}
+          >
             canvas physics · no data was harmed
-          </div>
+          </motion.div>
         </div>
       </motion.div>
     </section>

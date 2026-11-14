@@ -3,7 +3,7 @@ import { ArrowDown, Share2 } from "lucide-react";
 import { useRef } from "react";
 import HeroField from "./HeroField";
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ease = [0.05, 0.7, 0.1, 1] as const;
 
 // Inline SVG icons for social platforms not in lucide-react
 function TwitterIcon({ className }: { className?: string }) {
@@ -27,9 +27,9 @@ function Line({ children, delay }: { children: React.ReactNode; delay: number })
     <span className="block overflow-hidden">
       <motion.span
         className="block"
-        initial={{ y: "110%" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1.1, ease, delay }}
+        initial={{ y: "110%", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.9, ease, delay }}
       >
         {children}
       </motion.span>
@@ -62,27 +62,33 @@ function ShareButtons() {
 
   return (
     <div className="flex items-center gap-2" role="group" aria-label="Share this page">
-      <button
+      <motion.button
+        whileHover={{ scale: 1.08, y: -2 }}
+        whileTap={{ scale: 0.95 }}
         onClick={shareNative}
-        className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 transition-colors text-ink-soft"
+        className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 text-ink-soft btn-press"
         aria-label="Share (native)"
       >
         <Share2 className="h-4 w-4" />
-      </button>
-      <button
+      </motion.button>
+      <motion.button
+        whileHover={{ scale: 1.08, y: -2 }}
+        whileTap={{ scale: 0.95 }}
         onClick={shareTwitter}
-        className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 transition-colors text-ink-soft"
+        className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 text-ink-soft btn-press"
         aria-label="Share on X"
       >
         <TwitterIcon className="h-4 w-4" />
-      </button>
-      <button
+      </motion.button>
+      <motion.button
+        whileHover={{ scale: 1.08, y: -2 }}
+        whileTap={{ scale: 0.95 }}
         onClick={shareLinkedIn}
-        className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 transition-colors text-ink-soft"
+        className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 text-ink-soft btn-press"
         aria-label="Share on LinkedIn"
       >
         <LinkedInIcon className="h-4 w-4" />
-      </button>
+      </motion.button>
     </div>
   );
 }
@@ -93,6 +99,7 @@ export default function Hero() {
   const yTitle = useTransform(scrollYProgress, [0, 1], [0, 160]);
   const yMeta = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const scaleSeal = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
 
   return (
     <section
@@ -123,7 +130,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease, delay: 0.1 }}
             className="mb-5 font-mono text-[12px] uppercase tracking-[0.3em] text-tangerine"
           >
-            256 pages · 200+ infographics · one man’s mission
+            256 pages · 200+ infographics · one man's mission
           </motion.p>
 
           <h1 className="font-display leading-[0.86] tracking-[-0.03em] text-ink">
@@ -163,24 +170,27 @@ export default function Hero() {
             transition={{ duration: 0.8, ease, delay: 0.74 }}
             className="flex items-center gap-4"
           >
-            <a
+            <motion.a
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
               href="#atlas"
-              className="group inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-paper transition-colors hover:bg-tangerine"
+              className="group inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-paper transition-colors hover:bg-tangerine btn-press"
             >
               Enter the atlas
               <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
-            </a>
+            </motion.a>
             <ShareButtons />
           </motion.div>
         </motion.div>
       </motion.div>
 
-      {/* rotating seal */}
+      {/* rotating seal - ambient layer */}
       <motion.div
         initial={{ opacity: 0, scale: 0.6 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease, delay: 1 }}
-        className="absolute bottom-16 right-8 z-10 hidden md:block"
+        style={{ scale: scaleSeal }}
+        className="absolute bottom-16 right-8 z-10 hidden md:block animate-ambient-float"
       >
         <div className="animate-slow-spin">
           <svg width="130" height="130" viewBox="0 0 130 130">
@@ -206,7 +216,10 @@ export default function Hero() {
         <div className="flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.3em] text-ink-soft">
           <span className="h-px w-10 bg-ink/30" />
           scroll to visualise
-          <motion.span animate={{ y: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}>
+          <motion.span
+            animate={{ y: [0, 5, 0] }}
+            transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
+          >
             <ArrowDown className="h-3.5 w-3.5" />
           </motion.span>
           <span className="h-px w-10 bg-ink/30" />

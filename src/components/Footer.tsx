@@ -27,6 +27,8 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
+const ease = [0.05, 0.7, 0.1, 1] as const;
+
 export default function Footer() {
   return (
     <footer className="relative border-t border-paper/10 bg-ink px-5 pb-10 pt-20 text-paper md:px-14">
@@ -34,7 +36,7 @@ export default function Footer() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.7, ease }}
         className="text-center font-display text-[clamp(2.6rem,9vw,8rem)] font-black uppercase leading-[0.9] tracking-tight"
       >
         see the <span className="text-hollow-paper">whole</span>
@@ -42,10 +44,22 @@ export default function Footer() {
         picture<span className="text-tangerine">.</span>
       </motion.p>
 
-      <div className="mt-16 grid gap-10 border-t border-paper/15 pt-10 md:grid-cols-5">
-        <div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, ease, delay: 0.1, staggerChildren: 0.06 }}
+        className="mt-16 grid gap-10 border-t border-paper/15 pt-10 md:grid-cols-5"
+      >
+        <motion.div>
           <p className="mb-3 flex items-center gap-2 font-mono text-[12px] font-bold uppercase tracking-[0.25em]">
-            <Asterisk className="h-4 w-4 text-tangerine" />
+            <motion.span
+              animate={{ rotate: [0, 90, 0] }}
+              transition={{ duration: 4, ease: "easeInOut", repeat: Infinity }}
+              className="h-4 w-4 text-tangerine"
+            >
+              <Asterisk />
+            </motion.span>
             colophon
           </p>
           <p className="text-sm leading-relaxed text-paper/50">
@@ -53,74 +67,157 @@ export default function Footer() {
             David McCandless (William Collins). Not affiliated with or endorsed by the author or
             publisher.
           </p>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div>
           <p className="mb-3 font-mono text-[12px] font-bold uppercase tracking-[0.25em] text-paper">author</p>
           <div className="space-y-1 text-sm text-paper/50">
             <p className="flex items-center gap-2">
               <span className="font-display font-medium text-paper/70">karefined</span>
-              <a href="https://github.com/karefined-eng" target="_blank" rel="noreferrer" className="text-paper/40 hover:text-tangerine transition-colors" aria-label="GitHub">
+              <motion.a
+                whileHover={{ scale: 1.15, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://github.com/karefined-eng"
+                target="_blank"
+                rel="noreferrer"
+                className="text-paper/40 hover:text-tangerine transition-colors btn-press"
+                aria-label="GitHub"
+              >
                 <GitHubIcon className="h-3.5 w-3.5" />
-              </a>
+              </motion.a>
             </p>
-            <p className="flex items-center gap-2">
-              <a href="mailto:karefined@gmail.com" className="transition-colors hover:text-tangerine" aria-label="Email">
+            <motion.p
+              whileHover={{ x: 4 }}
+              className="flex items-center gap-2"
+            >
+              <motion.a
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                whileTap={{ scale: 0.95 }}
+                href="mailto:karefined@gmail.com"
+                className="transition-colors hover:text-tangerine btn-press"
+                aria-label="Email"
+              >
                 <Mail className="h-3.5 w-3.5" />
-                <span>karefined@gmail.com</span>
-              </a>
-            </p>
+              </motion.a>
+              <span>karefined@gmail.com</span>
+            </motion.p>
           </div>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div>
           <p className="mb-3 font-mono text-[12px] font-bold uppercase tracking-[0.25em] text-paper">data, honestly</p>
           <p className="text-sm leading-relaxed text-paper/50">
             Every chart on this page is an illustrative homage drawn from scratch. For the real
             datasets and the real craft, get the book – links above.
           </p>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div>
           <p className="mb-3 font-mono text-[12px] font-bold uppercase tracking-[0.25em] text-paper">routes</p>
           <ul className="space-y-2 text-sm text-paper/50">
-            <li><a href="https://informationisbeautiful.net" target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-tangerine">informationisbeautiful.net <ExternalLink className="h-3 w-3" /></a></li>
-            <li><a href="https://davidmccandless.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-teal">davidmccandless.com <ExternalLink className="h-3 w-3" /></a></li>
-            <li><a href="https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization" target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-sun">the TED talk <ExternalLink className="h-3 w-3" /></a></li>
-            <li><a href="https://openlibrary.org/search?q=information+is+beautiful+mccandless" target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-magenta">borrow the book <ExternalLink className="h-3 w-3" /></a></li>
-            <li><a href="#skill" className="transition-colors hover:text-cobalt">the agent skill (SKILL.md)</a></li>
-            <li><Link to="/about" className="transition-colors hover:text-tangerine">about this project</Link></li>
-            <li><Link to="/privacy" className="transition-colors hover:text-tangerine">privacy policy</Link></li>
+            <li><motion.a whileHover={{ x: 4 }} href="https://informationisbeautiful.net" target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-tangerine">informationisbeautiful.net <ExternalLink className="h-3 w-3" /></motion.a></li>
+            <li><motion.a whileHover={{ x: 4 }} href="https://davidmccandless.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-teal">davidmccandless.com <ExternalLink className="h-3 w-3" /></motion.a></li>
+            <li><motion.a whileHover={{ x: 4 }} href="https://www.ted.com/talks/david_mccandless_the_beauty_of_data_visualization" target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-sun">the TED talk <ExternalLink className="h-3 w-3" /></motion.a></li>
+            <li><motion.a whileHover={{ x: 4 }} href="https://openlibrary.org/search?q=information+is+beautiful+mccandless" target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-magenta">borrow the book <ExternalLink className="h-3 w-3" /></motion.a></li>
+            <li><motion.a whileHover={{ x: 4 }} href="#skill" className="transition-colors hover:text-cobalt">the agent skill (SKILL.md)</motion.a></li>
+            <li><motion.a whileHover={{ x: 4 }} href="/about" className="transition-colors hover:text-tangerine">about this project</motion.a></li>
+            <li><motion.a whileHover={{ x: 4 }} href="/privacy" className="transition-colors hover:text-tangerine">privacy policy</motion.a></li>
           </ul>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div>
           <p className="mb-3 font-mono text-[12px] font-bold uppercase tracking-[0.25em] text-paper">connect</p>
           <div className="flex gap-3">
-            <a href="https://github.com/karefined-eng" target="_blank" rel="noreferrer" className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10" aria-label="GitHub">
-              <GitHubIcon className="h-4.5 w-4.5" />
-            </a>
-            <a href="https://twitter.com/karefined" target="_blank" rel="noreferrer" className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10" aria-label="Twitter/X">
-              <TwitterIcon className="h-4.5 w-4.5" />
-            </a>
-            <a href="https://linkedin.com/in/karefined" target="_blank" rel="noreferrer" className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10" aria-label="LinkedIn">
-              <LinkedInIcon className="h-4.5 w-4.5" />
-            </a>
-            <a href="mailto:karefined@gmail.com" className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10" aria-label="Email">
-              <Mail className="h-4.5 w-4.5" />
-            </a>
+            <motion.a
+              whileHover={{ scale: 1.12, y: -3, rotate: 3 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://github.com/karefined-eng"
+              target="_blank"
+              rel="noreferrer"
+              className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10 btn-press"
+              aria-label="GitHub"
+            >
+              <motion.span
+                animate={{ y: [0, -2, 0] }}
+                transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 0 }}
+              >
+                <GitHubIcon className="h-4.5 w-4.5" />
+              </motion.span>
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.12, y: -3, rotate: -3 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://twitter.com/karefined"
+              target="_blank"
+              rel="noreferrer"
+              className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10 btn-press"
+              aria-label="Twitter/X"
+            >
+              <motion.span
+                animate={{ y: [0, -2, 0] }}
+                transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 0.2 }}
+              >
+                <TwitterIcon className="h-4.5 w-4.5" />
+              </motion.span>
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.12, y: -3, rotate: 3 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://linkedin.com/in/karefined"
+              target="_blank"
+              rel="noreferrer"
+              className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10 btn-press"
+              aria-label="LinkedIn"
+            >
+              <motion.span
+                animate={{ y: [0, -2, 0] }}
+                transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 0.4 }}
+              >
+                <LinkedInIcon className="h-4.5 w-4.5" />
+              </motion.span>
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.12, y: -3, rotate: -3 }}
+              whileTap={{ scale: 0.95 }}
+              href="mailto:karefined@gmail.com"
+              className="grid h-9 w-9 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine/10 btn-press"
+              aria-label="Email"
+            >
+              <motion.span
+                animate={{ y: [0, -2, 0] }}
+                transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 0.6 }}
+              >
+                <Mail className="h-4.5 w-4.5" />
+              </motion.span>
+            </motion.a>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-paper/15 pt-6 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/35">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, ease, delay: 0.3 }}
+        className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-paper/15 pt-6 font-mono text-[12px] uppercase tracking-[0.25em] text-paper/35"
+      >
         <span>© MMXXVI a tribute, typeset in Fraunces</span>
         <span className="flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-teal" />
+          <motion.span
+            animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+            className="h-1.5 w-1.5 rounded-full bg-teal"
+          />
           information = beautiful
         </span>
         <div className="flex items-center gap-2">
-          <a href="#top" aria-label="Back to top" className="group grid h-10 w-10 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine">
+          <motion.a
+            whileHover={{ scale: 1.1, y: -2, rotate: -12 }}
+            whileTap={{ scale: 0.95 }}
+            href="#top"
+            aria-label="Back to top"
+            className="group grid h-10 w-10 place-items-center rounded-full border border-paper/30 transition-colors hover:border-tangerine hover:bg-tangerine btn-press"
+          >
             <ArrowUp className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1" />
-          </a>
+          </motion.a>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

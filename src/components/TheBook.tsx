@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { specs } from "../data/book";
 import SectionHead from "./SectionHead";
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ease = [0.05, 0.7, 0.1, 1] as const;
 
 const cards = [
   {
@@ -15,17 +15,17 @@ const cards = [
   {
     icon: Palette,
     title: "Beauty as an interface",
-    body: "Every spread treats colour, scale and whitespace as instruments. The design isn’t decoration on the data; it is the argument.",
+    body: "Every spread treats colour, scale and whitespace as instruments. The design isn't decoration on the data; it is the argument.",
   },
   {
     icon: BookOpenText,
     title: "Revised & recalculated",
-    body: "The 2012 new edition re-ran every figure on fresher data and was “reimagined” throughout – infographics as living documents.",
+    body: "The 2012 new edition re-ran every figure on fresher data and was \"reimagined\" throughout – infographics as living documents.",
   },
   {
     icon: Languages,
     title: "A worldwide language",
-    body: "Published by William Collins in the UK and as “The Visual Miscellaneum” in the US, it has travelled into languages and libraries everywhere.",
+    body: "Published by William Collins in the UK and as \"The Visual Miscellaneum\" in the US, it has travelled into languages and libraries everywhere.",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function TheBook() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1, ease }}
+          transition={{ duration: 0.8, ease }}
           className="relative"
         >
           <div className="[perspective:1200px]">
@@ -67,7 +67,7 @@ export default function TheBook() {
               ref={imgRef}
               onMouseMove={onMove}
               onMouseLeave={() => setTilt({ x: 0, y: 0 })}
-              className="relative overflow-hidden rounded-2xl border border-ink/15 shadow-[0_24px_80px_-20px_rgb(23_20_14/0.35)] transition-transform duration-200 ease-out will-change-transform"
+              className="relative overflow-hidden rounded-2xl border border-ink/15 shadow-[0_24px_80px_-20px_rgb(23_20_14/0.35)] transition-transform duration-300 ease-out will-change-transform shadow-follow"
               style={{ transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }}
             >
               <img src="/prints.jpg" alt="A fanned stack of colorful data-visualization art prints" className="block w-full" />
@@ -82,8 +82,8 @@ export default function TheBook() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.6, ease }}
-            className="absolute -right-3 -top-5 rotate-6 rounded-lg border border-ink bg-sun px-4 py-2 font-mono text-[12px] font-bold uppercase tracking-[0.15em] shadow-[4px_4px_0_#17140e] md:-right-6"
+            transition={{ delay: 0.4, duration: 0.5, ease: [0.175, 0.885, 0.32, 1.275] }}
+            className="absolute -right-3 -top-5 rotate-6 rounded-lg border border-ink bg-sun px-4 py-2 font-mono text-[12px] font-bold uppercase tracking-[0.15em] shadow-[4px_4px_0_#17140e] md:-right-6 animate-ambient-float"
           >
             out in print · not pirated
           </motion.div>
@@ -95,12 +95,12 @@ export default function TheBook() {
             initial="off"
             whileInView="on"
             viewport={{ once: true, margin: "-80px" }}
-            variants={{ on: { transition: { staggerChildren: 0.07 } } }}
+            variants={{ on: { transition: { staggerChildren: 0.06 } } }}
           >
             {specs.map((s) => (
               <motion.div
                 key={s.label}
-                variants={{ off: { opacity: 0, x: 30 }, on: { opacity: 1, x: 0, transition: { duration: 0.6, ease } } }}
+                variants={{ off: { opacity: 0, x: 30 }, on: { opacity: 1, x: 0, transition: { duration: 0.5, ease } } }}
                 className="group flex items-baseline justify-between gap-4 border-b border-ink/15 py-4 transition-colors hover:border-tangerine"
               >
                 <span className="font-mono text-[12px] uppercase tracking-[0.25em] text-ink-soft">{s.label}</span>
@@ -116,12 +116,12 @@ export default function TheBook() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease, delay: 0.3 }}
+            transition={{ duration: 0.6, ease, delay: 0.2 }}
             className="mt-8 border-l-2 border-tangerine pl-5 font-display text-lg italic leading-relaxed text-ink-soft md:text-xl"
           >
-            “A visual guide to how the world really works, through stunning infographics and data
-            visualisations – thoroughly revised, recalculated and reimagined.”
-            <span className="mt-2 block font-mono text-[12px] uppercase not-italic tracking-[0.25em] text-ink">– the publisher’s jacket copy</span>
+            "A visual guide to how the world really works, through stunning infographics and data
+            visualisations – thoroughly revised, recalculated and reimagined."
+            <span className="mt-2 block font-mono text-[12px] uppercase not-italic tracking-[0.25em] text-ink">– the publisher's jacket copy</span>
           </motion.p>
         </div>
       </div>
@@ -131,13 +131,21 @@ export default function TheBook() {
         {cards.map((c, i) => (
           <motion.div
             key={c.title}
+            whileHover={{ y: -6, scale: 1.01, boxShadow: "0 20px 40px -20px rgb(18 16 10 / 0.4)" }}
+            whileTap={{ scale: 0.99 }}
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease, delay: i * 0.08 }}
-            className="group rounded-2xl border border-ink/15 bg-paper-deep/40 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-ink hover:bg-ink hover:text-paper"
+            transition={{ duration: 0.6, ease, delay: i * 0.07 }}
+            className="group rounded-2xl border border-ink/15 bg-paper-deep/40 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-ink hover:bg-ink hover:text-paper card-hover"
           >
-            <c.icon className="mb-5 h-6 w-6 text-tangerine" strokeWidth={1.6} />
+            <motion.span
+              whileHover={{ scale: 1.1, rotate: 3 }}
+              transition={{ duration: 300, ease }}
+              className="mb-5 h-6 w-6 text-tangerine"
+            >
+              <c.icon className="h-6 w-6" strokeWidth={1.6} />
+            </motion.span>
             <h3 className="font-display text-xl font-bold">{c.title}</h3>
             <p className="mt-2.5 text-sm leading-relaxed opacity-70">{c.body}</p>
           </motion.div>

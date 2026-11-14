@@ -22,7 +22,8 @@ import {
 import { useEffect, useRef, useState } from "react";
 import SectionHead from "./SectionHead";
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ease = [0.05, 0.7, 0.1, 1] as const;
+const easePlayful = [0.175, 0.885, 0.32, 1.275] as const;
 const BASE = "/skills/information-is-beautiful";
 const ZIP = "/skills/information-is-beautiful.zip";
 const ZIP_SHA = "2b79c4f8aab971d3d77f4444bc0f4debf6c32ef81682c40c8a4dd0ce93318376";
@@ -68,7 +69,7 @@ const HOSTS: Host[] = [
         code: ["/skills", "/information-is-beautiful chart this CSV of q3 churn by plan"],
       },
       {
-        text: "Or skip the slash: Claude auto-invokes the skill whenever your task matches its description (e.g. “make an infographic of these survey results”). After editing SKILL.md, run /reload-plugins. Plugin-installed copies invoke as /plugin-name:information-is-beautiful.",
+        text: "Or skip the slash: Claude auto-invokes the skill whenever your task matches its description (e.g. \"make an infographic of these survey results\"). After editing SKILL.md, run /reload-plugins. Plugin-installed copies invoke as /plugin-name:information-is-beautiful.",
       },
     ],
   },
@@ -77,12 +78,12 @@ const HOSTS: Host[] = [
     label: "Claude.ai / Desktop",
     icon: UploadCloud,
     steps: [
-      { text: "Enable the runtime first: Settings → Capabilities → switch on “Code execution and file creation” (on Team/Enterprise, an owner enables Skills under Organization settings → Plugins & skills)." },
+      { text: "Enable the runtime first: Settings → Capabilities → switch on \"Code execution and file creation\" (on Team/Enterprise, an owner enables Skills under Organization settings → Plugins & skills)." },
       {
         text: "Upload the zip – it is already packaged folder-as-root exactly as the uploader expects:",
-        code: ["Customize → Skills → “+” → Create skill → Upload a skill", "→ choose information-is-beautiful.zip"],
+        code: ["Customize → Skills → "+" → Create skill → Upload a skill", "→ choose information-is-beautiful.zip"],
       },
-      { text: "Toggle the skill on. There’s no command to remember in chat – ask naturally (“design a comparison of these two datasets as an editorial infographic”) and Claude uses the skill when it fits." },
+      { text: "Toggle the skill on. There's no command to remember in chat – ask naturally (\"design a comparison of these two datasets as an editorial infographic\") and Claude uses the skill when it fits." },
     ],
   },
   {
@@ -99,7 +100,7 @@ const HOSTS: Host[] = [
         ],
       },
       {
-        text: "Or from Python, using the SDK’s directory helper:",
+        text: "Or from Python, using the SDK's directory helper:",
         code: ["client.beta.skills.create(files=files_from_dir(\"information-is-beautiful\"))"],
       },
       {
@@ -141,8 +142,8 @@ function Markdown({ src }: { src: string }) {
       i++;
     }
     i++;
-out.push(
-        <div key="fm" className="mb-5 rounded-lg border border-paper/15 bg-paper/5 p-4 font-mono text-[12px] leading-relaxed">
+    out.push(
+      <div key="fm" className="mb-5 rounded-lg border border-paper/15 bg-paper/5 p-4 font-mono text-[12px] leading-relaxed">
         {meta.map((m, j) => {
           const idx = m.indexOf(":");
           return (
@@ -287,10 +288,16 @@ export default function AgentSkill() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease }}
+        transition={{ duration: 0.6, ease }}
         className="mb-5 flex max-w-3xl items-start gap-4"
       >
-        <Bot className="mt-1 h-6 w-6 shrink-0 text-tangerine" />
+        <motion.span
+          animate={{ scale: [1, 1.05, 1], rotate: [0, 3, 0] }}
+          transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
+          className="mt-1 h-6 w-6 shrink-0 text-tangerine"
+        >
+          <Bot />
+        </motion.span>
         <p className="text-[15px] leading-relaxed text-ink-soft">
           Built to the{" "}
           <a href="https://agentskills.io/specification" target="_blank" rel="noreferrer" className="font-semibold text-ink underline decoration-tangerine decoration-2 underline-offset-2">
@@ -298,7 +305,7 @@ export default function AgentSkill() {
           </a>{" "}
           – a folder with a <code className="rounded bg-ink/10 px-1.5 py-0.5 font-mono text-[13px] text-ink">SKILL.md</code>{" "}
           (name, description, license, metadata) plus references an agent loads on demand. The
-          distillation is deliberately narrow, and every principle’s{" "}
+          distillation is deliberately narrow, and every principle's{" "}
           <span className="font-semibold text-ink">authentic source is preserved</span> in{" "}
           <code className="rounded bg-ink/10 px-1.5 py-0.5 font-mono text-[13px] text-ink">references/sources.md</code>.
         </p>
@@ -308,11 +315,13 @@ export default function AgentSkill() {
         {["spec-compliant frontmatter", "6 markdown docs · 24 KB", "MIT · remix freely", "sources preserved", "zip upload-ready"].map((t, i) => (
           <motion.span
             key={t}
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.98 }}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, ease, delay: i * 0.06 }}
-            className="rounded-full border border-ink/20 px-4 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-soft"
+            transition={{ duration: 0.4, ease, delay: i * 0.05 }}
+            className="rounded-full border border-ink/20 px-4 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] text-ink-soft btn-press"
           >
             {t}
           </motion.span>
@@ -324,25 +333,28 @@ export default function AgentSkill() {
         <div className="space-y-5">
           {/* the package */}
           <motion.div
+            whileHover={{ y: -4, boxShadow: "0 20px 40px -20px rgb(18 16 10 / 0.4)" }}
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease }}
-            className="rounded-2xl border border-ink bg-ink p-6 text-paper"
+            transition={{ duration: 0.6, ease }}
+            className="rounded-2xl border border-ink bg-ink p-6 text-paper card-hover shadow-follow"
           >
             <p className="mb-4 flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.25em] text-sun">
               <Archive className="h-4 w-4" /> the package
             </p>
             <p className="font-display text-lg font-bold leading-snug">information-is-beautiful.zip</p>
             <p className="mt-1 text-xs text-paper/55">folder-as-root · 6 markdown files · 15 KB (24 KB unpacked)</p>
-            <a
+            <motion.a
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
               href={ZIP}
               download
-              className="group mt-4 flex items-center justify-center gap-2.5 rounded-full bg-tangerine px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-ink transition-colors hover:bg-sun"
+              className="group mt-4 flex items-center justify-center gap-2.5 rounded-full bg-tangerine px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-ink transition-colors hover:bg-sun btn-press"
             >
               <Download className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
               download the zip
-            </a>
+            </motion.a>
             <p className="mt-3 break-all font-mono text-[12px] leading-relaxed text-paper/35">
               sha256 {ZIP_SHA.slice(0, 24)}…{ZIP_SHA.slice(-8)}
             </p>
@@ -350,23 +362,31 @@ export default function AgentSkill() {
 
           {/* install & invoke */}
           <motion.div
+            whileHover={{ y: -4, boxShadow: "0 20px 40px -20px rgb(18 16 10 / 0.4)" }}
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease, delay: 0.1 }}
-            className="rounded-2xl border border-ink/15 p-6"
+            transition={{ duration: 0.6, ease, delay: 0.08 }}
+            className="rounded-2xl border border-ink/15 p-6 card-hover shadow-follow"
           >
             <p className="mb-4 font-mono text-[12px] uppercase tracking-[0.25em] text-ink-soft">install & invoke – pick your host</p>
             <div className="mb-5 flex flex-wrap gap-2">
               {HOSTS.map((h, i) => (
-                <button
+                <motion.button
                   key={h.id}
+                  whileHover={{ scale: 1.04, y: -2 }}
+                  whileTap={{ scale: 0.97 }}
                   onClick={() => setHost(i)}
-                  className={`flex items-center gap-2 rounded-full border px-3.5 py-2 font-mono text-[12px] uppercase tracking-[0.12em] transition-colors ${i === host ? "border-ink bg-ink text-paper" : "border-ink/25 text-ink-soft hover:border-ink/60"}`}
+                  className={`flex items-center gap-2 rounded-full border px-3.5 py-2 font-mono text-[12px] uppercase tracking-[0.12em] transition-colors ${i === host ? "border-ink bg-ink text-paper" : "border-ink/25 text-ink-soft hover:border-ink/60"} btn-press`}
                 >
-                  <h.icon className="h-3.5 w-3.5" strokeWidth={1.8} />
+                  <motion.span
+                    animate={{ scale: i === host ? 1.1 : 1 }}
+                    transition={{ duration: 300, ease }}
+                  >
+                    <h.icon className="h-3.5 w-3.5" strokeWidth={1.8} />
+                  </motion.span>
                   {h.label}
-                </button>
+                </motion.button>
               ))}
             </div>
             <AnimatePresence mode="wait">
@@ -375,11 +395,15 @@ export default function AgentSkill() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.3, ease }}
+                transition={{ duration: 0.3, ease, staggerChildren: 0.04 }}
                 className="space-y-4"
               >
                 {Host.steps.map((s, i) => (
-                  <li key={i} className="flex gap-3">
+                  <motion.li
+                    key={i}
+                    variants={{ off: { opacity: 0, x: 20 }, on: { opacity: 1, x: 0, transition: { duration: 0.4, ease } } }}
+                    className="flex gap-3"
+                  >
                     <span className="mt-0.5 font-mono text-[12px] font-bold text-tangerine">{i + 1}.</span>
                     <div className="min-w-0">
                       <p className="text-sm leading-relaxed text-ink-soft">{s.text}</p>
@@ -389,7 +413,7 @@ export default function AgentSkill() {
                         </pre>
                       )}
                     </div>
-                  </li>
+                  </motion.li>
                 ))}
               </motion.ol>
             </AnimatePresence>
@@ -397,16 +421,23 @@ export default function AgentSkill() {
 
           {/* arguments */}
           <motion.div
+            whileHover={{ y: -4, boxShadow: "0 20px 40px -20px rgb(18 16 10 / 0.4)" }}
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease, delay: 0.15 }}
-            className="rounded-2xl border border-ink/15 bg-paper-deep/40 p-6"
+            transition={{ duration: 0.6, ease, delay: 0.12 }}
+            className="rounded-2xl border border-ink/15 bg-paper-deep/40 p-6 card-hover shadow-follow"
           >
-            <Package className="mb-3 h-5 w-5 text-teal" strokeWidth={1.7} />
+            <motion.span
+              animate={{ scale: [1, 1.05, 1], rotate: [0, 2, 0] }}
+              transition={{ duration: 4, ease: "easeInOut", repeat: Infinity }}
+              className="mb-3 h-5 w-5 text-teal"
+            >
+              <Package strokeWidth={1.7} />
+            </motion.span>
             <h3 className="font-display text-xl font-bold">Commands & arguments</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-              Skills have no typed signature – there is one “command” per host: the folder’s name.
+              Skills have no typed signature – there is one "command" per host: the folder's name.
               In Claude Code that name becomes the slash command; whatever you type after it arrives
               as <code className="rounded bg-ink/10 px-1 py-0.5 font-mono text-xs">$ARGUMENTS</code> and the skill
               treats it as the design brief (data, audience, medium). Everywhere else, the argument
@@ -417,11 +448,12 @@ export default function AgentSkill() {
 
           {/* data as living soil & emotional relief */}
           <motion.div
+            whileHover={{ y: -4, boxShadow: "0 20px 40px -20px rgb(18 16 10 / 0.4)" }}
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease, delay: 0.15 }}
-            className="rounded-2xl border border-sun/50 bg-sun/10 p-6"
+            transition={{ duration: 0.6, ease, delay: 0.14 }}
+            className="rounded-2xl border border-sun/50 bg-sun/10 p-6 card-hover shadow-follow"
           >
             <div className="mb-3 flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.25em] text-ink">
               <Compass className="h-4 w-4 text-tangerine" strokeWidth={1.8} />
@@ -429,23 +461,30 @@ export default function AgentSkill() {
             </div>
             <h3 className="font-display text-xl font-bold">The Soul of the Craft</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-              Clive Humby called data “the new oil” — an inert, extractive commodity. McCandless inverted it:{" "}
-              <strong className="text-ink">“Data is the new soil.”</strong> A living medium where comprehension blooms. The skill trains agents to diagnose reader tension (scale numbness, media panic, tribal dogma) and design genuine cognitive relief.
+              Clive Humby called data "the new oil" — an inert, extractive commodity. McCandless inverted it:{" "}
+              <strong className="text-ink">"Data is the new soil."</strong> A living medium where comprehension blooms. The skill trains agents to diagnose reader tension (scale numbness, media panic, tribal dogma) and design genuine cognitive relief.
             </p>
           </motion.div>
 
           {/* provenance */}
           <motion.div
+            whileHover={{ y: -4, boxShadow: "0 20px 40px -20px rgb(18 16 10 / 0.4)" }}
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease, delay: 0.2 }}
-            className="rounded-2xl border border-tangerine/50 bg-tangerine/10 p-6"
+            transition={{ duration: 0.6, ease, delay: 0.16 }}
+            className="rounded-2xl border border-tangerine/50 bg-tangerine/10 p-6 card-hover shadow-follow"
           >
-            <ShieldCheck className="mb-3 h-5 w-5 text-tangerine" strokeWidth={1.7} />
+            <motion.span
+              animate={{ scale: [1, 1.08, 1] }}
+              transition={{ duration: 2.5, ease: "easeInOut", repeat: Infinity }}
+              className="mb-3 h-5 w-5 text-tangerine"
+            >
+              <ShieldCheck strokeWidth={1.7} />
+            </motion.span>
             <h3 className="font-display text-xl font-bold">Provenance, honestly</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-              Principles are teachable; the book’s expression is the author’s. This skill quotes
+              Principles are teachable; the book's expression is the author's. This skill quotes
               nothing from it, and{" "}
               <code className="rounded bg-ink/10 px-1 py-0.5 font-mono text-xs">references/sources.md</code>{" "}
               maps every principle to its true origin – McCandless, Tufte, Few, Cairo, WCAG. Want
@@ -463,8 +502,8 @@ export default function AgentSkill() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.9, ease, delay: 0.1 }}
-          className="overflow-hidden rounded-2xl border border-ink bg-ink text-paper shadow-[0_28px_80px_-24px_rgb(23_20_14/0.5)]"
+          transition={{ duration: 0.8, ease, delay: 0.1 }}
+          className="overflow-hidden rounded-2xl border border-ink bg-ink text-paper shadow-[0_28px_80px_-24px_rgb(23_20_14/0.5)] shadow-follow"
         >
           <div className="flex items-center justify-between gap-4 border-b border-paper/15 px-5 py-3">
             <div className="flex items-center gap-2">
@@ -476,31 +515,37 @@ export default function AgentSkill() {
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <button
+              <motion.button
+                whileHover={{ scale: 1.06, y: -1 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={copy}
                 disabled={!content}
-                className="flex items-center gap-2 rounded-full border border-paper/25 px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.15em] transition-colors hover:border-tangerine hover:text-tangerine disabled:opacity-40"
+                className="flex items-center gap-2 rounded-full border border-paper/25 px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.15em] transition-colors hover:border-tangerine hover:text-tangerine disabled:opacity-40 btn-press"
               >
                 {copied ? <Check className="h-3.5 w-3.5 text-teal" /> : <Copy className="h-3.5 w-3.5" />}
                 {copied ? "copied" : "copy"}
-              </button>
-              <a
+              </motion.button>
+              <motion.a
+                whileHover={{ scale: 1.06, y: -1 }}
+                whileTap={{ scale: 0.95 }}
                 href={file.path}
                 download
-                className="flex items-center gap-2 rounded-full border border-paper/25 px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.15em] transition-colors hover:border-teal hover:text-teal"
+                className="flex items-center gap-2 rounded-full border border-paper/25 px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.15em] transition-colors hover:border-teal hover:text-teal btn-press"
               >
                 <Download className="h-3.5 w-3.5" />
                 <span className="hidden sm:inline">file</span>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.08, rotate: 12 }}
+                whileTap={{ scale: 0.95 }}
                 href={file.path}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Open raw file"
-                className="grid h-7 w-7 place-items-center rounded-full border border-paper/25 transition-colors hover:border-magenta hover:text-magenta"
+                className="grid h-7 w-7 place-items-center rounded-full border border-paper/25 transition-colors hover:border-magenta hover:text-magenta btn-press"
               >
                 <ExternalLink className="h-3.5 w-3.5" />
-              </a>
+              </motion.a>
             </div>
           </div>
 
@@ -516,16 +561,23 @@ export default function AgentSkill() {
                 return (
                   <div key={f.path}>
                     {isRef && i === 1 && <p className="px-2 py-1.5 font-mono text-[12px] text-paper/35">└─ references/</p>}
-                    <button
+                    <motion.button
+                      whileHover={{ x: 4 }}
+                      whileTap={{ scale: 0.98 }}
                       onClick={() => setActive(i)}
-                      className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left transition-colors ${i === active ? "bg-paper/10 text-paper" : "text-paper/55 hover:bg-paper/5 hover:text-paper/85"} ${isRef ? "pl-6" : ""}`}
+                      className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left transition-colors ${i === active ? "bg-paper/10 text-paper" : "text-paper/55 hover:bg-paper/5 hover:text-paper/85"} ${isRef ? "pl-6" : ""} btn-press`}
                     >
-                      <f.icon className="h-3.5 w-3.5 shrink-0" style={{ color: i === active ? "#ff5d1f" : undefined }} strokeWidth={1.8} />
+                      <motion.span
+                        animate={{ scale: i === active ? 1.1 : 1, color: i === active ? "#ff5d1f" : undefined }}
+                        transition={{ duration: 300, ease }}
+                      >
+                        <f.icon className="h-3.5 w-3.5 shrink-0" strokeWidth={1.8} />
+                      </motion.span>
                       <span>
                         <span className="block font-mono text-[12px]">{f.label}</span>
                         <span className="block text-[11px] text-paper/40">{f.note}</span>
                       </span>
-                    </button>
+                    </motion.button>
                   </div>
                 );
               })}
@@ -533,13 +585,15 @@ export default function AgentSkill() {
 
             <div className="flex gap-2 overflow-x-auto border-b border-paper/15 p-3 md:hidden">
               {FILES.map((f, i) => (
-                <button
+                <motion.button
                   key={f.path}
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={() => setActive(i)}
-                  className={`shrink-0 rounded-full border px-3.5 py-1.5 font-mono text-[12px] transition-colors ${i === active ? "border-tangerine bg-tangerine/15 text-paper" : "border-paper/20 text-paper/50"}`}
+                  className={`shrink-0 rounded-full border px-3.5 py-1.5 font-mono text-[12px] transition-colors ${i === active ? "border-tangerine bg-tangerine/15 text-paper" : "border-paper/20 text-paper/50"} btn-press`}
                 >
                   {f.label}
-                </button>
+                </motion.button>
               ))}
             </div>
 

@@ -109,6 +109,123 @@ body {
   color: transparent;
 }
 
+/* ============================================================
+   MOTION DESIGN SYSTEM — Information is Beautiful
+   Personality: Premium (base) + Playful (accents)
+   ============================================================ */
+
+/* --- Duration Palette --- */
+:root {
+  --duration-instant: 80ms;
+  --duration-quick: 150ms;
+  --duration-standard: 300ms;
+  --duration-slow: 500ms;
+  --duration-dramatic: 800ms;
+}
+
+/* --- Easing Curves --- */
+:root {
+  /* Premium: ease-out-cubic-decelerate (Material MD3 Emphasized) */
+  --ease-premium: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --ease-premium-out: cubic-bezier(0.2, 0, 0, 1);
+  --ease-premium-in: cubic-bezier(0.3, 0, 1, 1);
+  --ease-premium-inout: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Playful: overshoot for accents */
+  --ease-playful: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-playful-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Corporate: clean, decisive */
+  --ease-corporate: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Ambient: seamless loops */
+  --ease-ambient: cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* --- Weight Classification --- */
+:root {
+  --weight-heavy: 500ms;
+  --weight-medium: 300ms;
+  --weight-light: 150ms;
+}
+
+/* --- Motion Utilities --- */
+.motion-premium {
+  transition-timing-function: var(--ease-premium);
+}
+.motion-playful {
+  transition-timing-function: var(--ease-playful);
+}
+.motion-corporate {
+  transition-timing-function: var(--ease-corporate);
+}
+
+/* Reduced motion: keep instant, disable others */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Button Press Feedback (Weight: Light) --- */
+.btn-press {
+  transition: transform var(--duration-quick) var(--ease-premium-out), 
+              box-shadow var(--duration-quick) var(--ease-premium-out);
+}
+.btn-press:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px -2px rgb(18 16 10 / 0.3);
+}
+.btn-press:focus-visible {
+  outline: 2px solid var(--color-tangerine);
+  outline-offset: 2px;
+}
+
+/* --- Card Hover (Weight: Medium) --- */
+.card-hover {
+  transition: transform var(--duration-standard) var(--ease-premium-out),
+              box-shadow var(--duration-standard) var(--ease-premium-out),
+              border-color var(--duration-standard) var(--ease-premium-out);
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -20px rgb(18 16 10 / 0.4);
+}
+
+/* --- Secondary Motion: Shadow follows element --- */
+.shadow-follow {
+  transition: box-shadow var(--duration-standard) var(--ease-premium-out),
+              transform var(--duration-standard) var(--ease-premium-out);
+}
+
+/* --- Ambient: Subtle breathing --- */
+@keyframes ambient-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.02); opacity: 0.6; }
+}
+.animate-ambient-breathe {
+  animation: ambient-breathe 6s var(--ease-ambient) infinite;
+}
+
+/* --- Ambient: Gentle float --- */
+@keyframes ambient-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-4px) rotate(0.5deg); }
+  66% { transform: translateY(2px) rotate(-0.3deg); }
+}
+.animate-ambient-float {
+  animation: ambient-float 8s var(--ease-ambient) infinite;
+}
+
+/* --- Entrance Stagger (applied via Framer Motion variants) --- */
+/* Stagger delays defined in components via transition.staggerChildren */
+
+/* --- Existing animations (preserved) --- */
 /* ------- blink for loader cursor / live dot ------- */
 @keyframes blink {
   0%, 100% { opacity: 1; }
@@ -129,7 +246,9 @@ body {
   .animate-marquee-left,
   .animate-marquee-right,
   .animate-slow-spin,
-  .grain::after {
+  .grain::after,
+  .animate-ambient-breathe,
+  .animate-ambient-float {
     animation: none;
   }
 }
