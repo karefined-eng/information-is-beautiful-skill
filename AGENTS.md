@@ -56,6 +56,8 @@ information-is-beautiful/
 | WebFetch source unreliability | 404/403 on survey/enterprise sites | Always have fallback sources (Wikipedia, official docs, GitHub README); document "Source unavailable due to [404/403/auth]" and never synthesize statistics |
 | Google Trends API rate limiting | HTTP 429 on `trends.google.com` URLs | WebFetch to Trends endpoints returns 429 immediately; use browser-based verification or search console/analytics |
 | Research transparency gap | Agents fabricating data when sources fail | When data unavailable, state the specific error; provide analytic answers marked "[Analytical based on available sources]"; never fabricate numerical data |
+| Git add on tracked file in ignored directory | `The following paths are ignored by one of your .gitignore files: docs` | When a tracked file lives inside a gitignored directory (e.g., `docs/origin.md` while `docs/` is ignored), use `git add -f <file>` to stage modifications. |
+| Vite build execution time with packaging | Command backgrounds or takes >10s | `npm run build` compiles client bundles and packages skill assets via AdmZip; expect 12–60s runtime; use max wait (`WaitMsBeforeAsync: 10000`) before backgrounding. |
 
 ## WebFetch Source Reliability Pattern
 
