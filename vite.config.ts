@@ -25,7 +25,7 @@ function generateSkillHtml(relPath: string, markdown: string, frontmatter: Recor
   const version = frontmatter.version || "1.3.0";
   const datePublished = "2026-10-24";
   const dateModified = "2026-10-26";
-  
+
   // Convert markdown to HTML for the page content
   const htmlContent = marked.parse(markdown);
 
@@ -163,7 +163,7 @@ function serveSkills(): Plugin {
         const rel = decodeURIComponent(url.slice("/skills/".length));
         const file = path.resolve(root, rel);
         if (!file.startsWith(root) || !existsSync(file) || !statSync(file).isFile()) return next();
-        
+
         // Serve HTML wrapper for .md files, raw for others
         if (rel.endsWith(".md")) {
           const raw = readFileSync(file, "utf-8");
@@ -182,7 +182,7 @@ function serveSkills(): Plugin {
       const distSkills = path.resolve(__dirname, "dist", "skills");
       const skillSrc = path.resolve(root, SKILL_DIR);
       const skillDest = path.resolve(distSkills, SKILL_DIR);
-      
+
       function copyDir(src: string, dest: string) {
         if (!existsSync(dest)) {
           mkdirSync(dest, { recursive: true });
@@ -199,7 +199,7 @@ function serveSkills(): Plugin {
         }
       }
       copyDir(skillSrc, skillDest);
-      
+
       // Generate HTML wrappers for all .md files from SOURCE
       function processDir(dir: string) {
         const entries = readdirSync(dir, { withFileTypes: true });
@@ -220,7 +220,7 @@ function serveSkills(): Plugin {
         }
       }
       processDir(skillSrc);
-      
+
       const out = path.resolve(distSkills, `${SKILL_DIR}.zip`);
       const zip = new AdmZip();
       zip.addLocalFolder(skillDest, SKILL_DIR);
